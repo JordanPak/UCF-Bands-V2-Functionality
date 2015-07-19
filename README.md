@@ -2,7 +2,7 @@
 # ![UCF logo](http://jpakmedia.com/images/ucf-logo-mini.png) UCF Bands Functionality
 WordPress functionality plugin for UCFBands Genesis theme [University of Central Florida Bands](http://ucfbands.com/) | **#SwordOfBlack #SoundOfGold**
 
-**Version 2.0 Beta** | Designed & Developed By [Jordan Pakrosnis](http://JordanPak.com/)
+**Version 2.0 Beta** | Developed By [Jordan Pakrosnis](http://JordanPak.com/)
 
 ------
 

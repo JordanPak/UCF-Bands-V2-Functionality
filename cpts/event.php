@@ -56,8 +56,33 @@ function ucfbands_cpt_event() {
 		'rewrite'             => $rewrite,
 		'capability_type'     => 'page',
 	);
-	register_post_type( 'events', $args );
+	register_post_type( 'ucfbands_event', $args );
 }
 
 // Hook into the 'init' action
 add_action( 'init', 'ucfbands_cpt_event', 0 );
+
+
+
+/**
+ * UCFBands CPT: Event CMB
+ * Register Event CMB
+ *
+ * @author Jordan Pakrosnis
+ */
+function ucfbands_event_metabox() {
+	$prefix = '_ucfbands_event_';
+
+    // Initialize
+    $cmb = new_cmb2_box( array(
+        'id'            => $prefix . 'metabox',
+        'title'         => __( 'Event Details', 'cmb' ),
+        'object_types'  => array( 'ucfbands_event' ),
+        'context'       => 'normal',
+        'priority'      => 'core',
+    ) );
+    
+
+    
+}
+add_action( 'cmb2_init', 'ucfbands_event_metabox' );

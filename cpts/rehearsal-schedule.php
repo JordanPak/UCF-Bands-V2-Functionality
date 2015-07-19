@@ -118,6 +118,22 @@ function ucfbands_rehearsal_metabox() {
         'type' => 'text',
         'repeatable' => true,
     ) );
+
+    // Announcements
+    $cmb->add_field( array(
+        'name'    => 'Announcements',
+        'desc'    => 'Click "Add Row" to add multiple announcements',
+        'id'      => $prefix . 'announcements',
+        'type'    => 'text',
+        'repeatable' => true,
+    ) );    
     
+    // Rehearsal Cancelled
+    $cmb->add_field( array(
+        'name' => 'Reherasal Cancelled',
+        'desc' => 'Check to show rehearsal as cancelled',
+        'id'   => $prefix . 'is_rehearsal_cancelled',
+        'type' => 'checkbox'
+    ) );    
 }
 add_action( 'cmb2_init', 'ucfbands_rehearsal_metabox' );

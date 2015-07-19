@@ -40,16 +40,15 @@ function ucfbands_cpt_announcement() {
 		'label'               => __( 'ucfbands_announcement', 'text_domain' ),
 		'description'         => __( 'Announcement that can be placed on the home page and optional other pages', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions'),
-		'taxonomies'          => array( 'category' ),
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions'),
+		'taxonomies'          => array( 'band' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => 'mkmc',
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => 1,
-//		'menu_icon'           => 'dashicons-format-quote',
+//		'menu_position'       => 2,
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
@@ -63,3 +62,8 @@ function ucfbands_cpt_announcement() {
 
 // Hook into the 'init' action
 add_action( 'init', 'ucfbands_cpt_announcement', 0 );
+
+
+
+// CMB
+// Not Required!

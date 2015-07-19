@@ -15,9 +15,9 @@
  */
 function ucfbands_cpt_event() {
 	$labels = array(
-		'name'                => _x( 'Upcoming Events', 'Post Type General Name', 'text_domain' ),
-		'singular_name'       => _x( 'Upcoming Event', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'           => __( 'Upcoming Events', 'text_domain' ),
+		'name'                => _x( 'Events', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Event', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Events', 'text_domain' ),
 		'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),
 		'all_items'           => __( 'All Events', 'text_domain' ),
 		'view_item'           => __( 'View Event', 'text_domain' ),
@@ -37,7 +37,7 @@ function ucfbands_cpt_event() {
 	);
 	$args = array(
 		'label'               => __( 'ucfbands_event', 'text_domain' ),
-		'description'         => __( 'UCF Bands Upcoming Event', 'text_domain' ),
+		'description'         => __( 'UCF Bands Events', 'text_domain' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', ),
 		'taxonomies'          => array( 'band' ),

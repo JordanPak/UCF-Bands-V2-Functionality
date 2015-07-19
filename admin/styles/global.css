@@ -1,0 +1,49 @@
+/*
+ *  UCFBands Theme Functionality
+ *  Admin: Global Styling
+ *    
+ *  @author Jordan Pakrosnis
+*/
+
+
+/* WP Admin Dashboard Theme
+================================ */
+
+/*
+    COLOR REFERENCE
+    ===============
+
+    // Gold
+    ucf-gold:          #FFCA06
+    ucf-gold-darker:   #EFBC00
+
+
+    // Gray
+    ucf-gray:          #221E1F
+    ucf-gray-darker:   #141414
+    ucf-gray-darkest:  #111111
+*/
+
+
+/*
+#wphead {
+    background-color: red;
+}
+*/
+
+/*
+a {
+    color: #EFBC00;
+}
+
+#wpadminbar {
+    background-color: #221E1F;
+}
+
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    background-color: #221E1F;
+}
+
+#adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus {
+    color: #FFCAO6;
+}*/

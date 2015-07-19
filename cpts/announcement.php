@@ -48,7 +48,7 @@ function ucfbands_cpt_announcement() {
 		'show_in_menu'        => 'mkmc',
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-//		'menu_position'       => 1,
+//		'menu_position'       => 2,
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
@@ -62,3 +62,8 @@ function ucfbands_cpt_announcement() {
 
 // Hook into the 'init' action
 add_action( 'init', 'ucfbands_cpt_announcement', 0 );
+
+
+
+// CMB
+// Not Required!

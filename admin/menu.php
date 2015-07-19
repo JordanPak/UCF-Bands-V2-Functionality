@@ -31,16 +31,3 @@ function add_ucfbands_functionality_menu() {
 
 // Register the menu function
 add_action( 'admin_menu', 'add_ucfbands_functionality_menu' );
-
-
-
-
-// Placeholder
-function ucfbands_admin_page() {
-    ?>
-    <div class="wrap">
-        <h2>My Plugin Options</h2>
-        your form and page content goes here
-    </div>
-    <?php
-}

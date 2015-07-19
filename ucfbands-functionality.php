@@ -15,15 +15,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 //  DASHBOARD SETUP  //
 //===================//
 
-// Admin Styles
-require_once ( 'admin/admin-styles.php' );
-
-#adminmenu .wp-menu-image img
-
-
 // Admin Menu
-require_once( 'admin/admin-menu.php' );
+require_once( 'admin/menu.php' );
 
+// Admin Dashboard
+require_once( 'admin/dashboard.php' );
 
 
 //=====================//

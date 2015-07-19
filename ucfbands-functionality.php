@@ -44,7 +44,7 @@ require_once( 'cpts/announcement.php' );
 require_once( 'cpts/staff-member.php' );
 
 // Event
-//require_once( 'cpts/event.php' );
+require_once( 'cpts/event.php' );
 
 // Rehearsal Schedule
 //require_once( 'cpts/rehearsal-schedule.php' );

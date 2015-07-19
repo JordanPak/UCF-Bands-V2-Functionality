@@ -47,7 +47,7 @@ function ucfbands_staff() {
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => 5,
+		'menu_position'       => 7,
 		'menu_icon'           => 'dashicons-id-alt',
 		'can_export'          => true,
 		'has_archive'         => true,
@@ -60,3 +60,29 @@ function ucfbands_staff() {
 }
 // Hook into the 'init' action
 add_action( 'init', 'ucfbands_staff', 0 );
+
+
+
+
+
+/**
+ * UCFBands CPT: Staff Member CMB
+ * Register Staff Member CMB
+ *
+ * @author Jordan Pakrosnis
+ */
+function ucfbands_staff_member_metabox() {
+	$prefix = '_ucfbands_staff_member_';
+
+    // Initialize
+    $cmb = new_cmb2_box( array(
+        'id'            => $prefix . 'metabox',
+        'title'         => __( 'Staff Member Details', 'cmb' ),
+        'object_types'  => array( 'ucfbands_staff' ),
+        'context'       => 'normal',
+        'priority'      => 'core',
+    ) );
+    
+
+}
+add_action( 'cmb2_init', 'ucfbands_staff_member_metabox' );

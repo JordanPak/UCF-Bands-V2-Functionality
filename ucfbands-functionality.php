@@ -11,6 +11,15 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
+//===================//
+//  DASHBOARD SETUP  //
+//===================//
+
+// Admin Menu
+require_once( 'admin-menu.php' );
+
+
+
 //=====================//
 //  CUSTOM POST TYPES  //
 //=====================//

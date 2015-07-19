@@ -13,7 +13,7 @@
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_staff() {
+function ucfbands_cpt_staff() {
 	$labels = array(
 		'name'                => _x( 'Staff Members', 'Post Type General Name', 'text_domain' ),
 		'singular_name'       => _x( 'Staff Member', 'Post Type Singular Name', 'text_domain' ),
@@ -59,7 +59,7 @@ function ucfbands_staff() {
 	register_post_type( 'ucfbands_staff', $args );
 }
 // Hook into the 'init' action
-add_action( 'init', 'ucfbands_staff', 0 );
+add_action( 'init', 'ucfbands_cpt_staff', 0 );
 
 
 

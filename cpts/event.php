@@ -22,7 +22,7 @@ function ucfbands_cpt_event() {
 		'all_items'           => __( 'All Events', 'text_domain' ),
 		'view_item'           => __( 'View Event', 'text_domain' ),
 		'add_new_item'        => __( 'Add New Event', 'text_domain' ),
-		'add_new'             => __( 'Add New', 'text_domain' ),
+		'add_new'             => __( 'Add Event', 'text_domain' ),
 		'edit_item'           => __( 'Edit Event', 'text_domain' ),
 		'update_item'         => __( 'Update Event', 'text_domain' ),
 		'search_items'        => __( 'Search Events', 'text_domain' ),

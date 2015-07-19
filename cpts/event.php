@@ -39,7 +39,7 @@ function ucfbands_cpt_event() {
 		'label'               => __( 'ucfbands_event', 'text_domain' ),
 		'description'         => __( 'UCF Bands Events', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', ),
+		'supports'            => array( 'title', 'thumbnail', 'revisions', ),
 		'taxonomies'          => array( 'band' ),
 		'hierarchical'        => false,
 		'public'              => true,

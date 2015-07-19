@@ -62,7 +62,7 @@ add_action( 'init', 'ucfbands_cpt_rehearsal', 0 );
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_reahearsal_metabox() {
+function ucfbands_rehearsal_metabox() {
 	$prefix = '_ucfbands_rehearsal_';
 
     // Initialize
@@ -83,7 +83,41 @@ function ucfbands_reahearsal_metabox() {
         // 'date_format' => 'l jS \of F Y',
     ) );
     
+    // Schedule Group
+    $group_field_id = $cmb->add_field( array(
+        'id'          => $prefix . 'schedule_group',
+        'name'        => 'Schedule',
+        'type'        => 'group',
+        'description' => __( 'Add Schedule List Items', 'cmb' ),
+        'options'     => array(
+            'group_title'   => __( 'Item {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'add_button'    => __( 'Add Schedule Item', 'cmb' ),
+            'remove_button' => __( 'Remove Schedule Item', 'cmb' ),
+            'sortable'      => true // beta
+        ),
+    ) );
+
+    // Schedule Group: Listing Time
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Time',
+        'id'   => 'time',
+        'type' => 'text_time',
+    ) );
     
+    // Schedule Group: Listing Thing
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Thing',
+        'id'   => 'thing',
+        'type' => 'text',
+    ) );
+
+    // Schedule Group: Sub-Item
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Sub-Items (Optional)',
+        'id'   => 'sub-item',
+        'type' => 'text',
+        'repeatable' => true,
+    ) );
     
 }
 add_action( 'cmb2_init', 'ucfbands_rehearsal_metabox' );

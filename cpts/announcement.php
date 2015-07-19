@@ -41,7 +41,7 @@ function ucfbands_cpt_announcement() {
 		'description'         => __( 'Announcement that can be placed on the home page and optional other pages', 'text_domain' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions'),
-		'taxonomies'          => array( 'category' ),
+		'taxonomies'          => array( 'band' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,

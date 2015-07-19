@@ -17,16 +17,16 @@
 function add_ucfbands_functionality_menu() {
     
     //add an item to the menu
-    add_menu_page (
+    add_menu_page(
         'MKMC Dashboard',
         'MKMC',
         'manage_options',
-        'mkmc',
+        'mkmc_dashboard',
         'mkmc_dashboard',
         plugin_dir_url( __FILE__ ).'icons/ucf-icon.png',
         '3.1'
     );
-
+    
 } // add_ucfbands_functionality_menu()
 
 // Register the menu function

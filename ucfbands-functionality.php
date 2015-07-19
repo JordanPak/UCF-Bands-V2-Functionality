@@ -27,10 +27,10 @@ require_once( 'bands.php ' );
 require_once( 'admin/styles/global.php' );
 
 // Admin Menu
-require_once( 'admin/menu.php' );
+//require_once( 'admin/menu.php' );
 
 // Admin Dashboard
-require_once( 'admin/dashboard.php' );
+//require_once( 'admin/dashboard.php' );
 
 
 //=====================//

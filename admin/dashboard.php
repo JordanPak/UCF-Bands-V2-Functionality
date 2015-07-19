@@ -30,7 +30,9 @@ function mkmc_dashboard() {
         
         <h2>MKMC Dashboard</h2>
         
-        There's gonna be stuff here!
+        <br>
+        
+        <a href="<?php  plugin_dir_url( __FILE__ ); ?>" class="button button-primary">Announcements</a>
     
     </div><!-- /.wrap -->
 

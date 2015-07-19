@@ -45,10 +45,11 @@ function ucfbands_cpt_announcement() {
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
-		'show_in_menu'        => 'mkmc',
+		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-//		'menu_position'       => 2,
+		'menu_position'       => 2,
+        'menu_icon'           => 'dashicons-format-quote',
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
@@ -62,6 +63,23 @@ function ucfbands_cpt_announcement() {
 
 // Hook into the 'init' action
 add_action( 'init', 'ucfbands_cpt_announcement', 0 );
+
+
+
+//
+//add_action('admin_menu', 'register_my_custom_submenu_page');
+//
+//function register_my_custom_submenu_page() {
+//	add_submenu_page( 'mkmc', 'My Custom Submenu Page', 'My Custom Submenu Page', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
+//}
+//
+//function my_custom_submenu_page_callback() {
+//	
+//	echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
+//		echo '<h2>My Custom Submenu Page</h2>';
+//	echo '</div>';
+//
+//}
 
 
 

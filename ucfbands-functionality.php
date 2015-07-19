@@ -41,7 +41,7 @@ require_once( 'admin/styles/global.php' );
 require_once( 'cpts/announcement.php' );
 
 // Staff Member
-//require_once( 'cpts/staff-member.php' );
+require_once( 'cpts/staff-member.php' );
 
 // Event
 //require_once( 'cpts/event.php' );

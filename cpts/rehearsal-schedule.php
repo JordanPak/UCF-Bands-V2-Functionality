@@ -33,7 +33,7 @@ function ucfbands_cpt_rehearsal() {
 		'label'               => __( 'ucfbands_rehearsal', 'text_domain' ),
 		'description'         => __( 'Rehearsal Schedule with Details', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'revisions', /*'page-attributes',*/ ),
+		'supports'            => array( /*'title',*/ 'revisions', /*'page-attributes',*/ ),
 		'taxonomies'          => array( /*'category'*/ ), // Taxonomy field instead!!
 		'hierarchical'        => false,
 		'public'              => true,
@@ -134,6 +134,24 @@ function ucfbands_rehearsal_metabox() {
         'desc' => 'Check to show rehearsal as cancelled',
         'id'   => $prefix . 'is_rehearsal_cancelled',
         'type' => 'checkbox'
-    ) );    
+    ) );
+    
+    // Cancelled Rehearsal Message
+    $cmb->add_field( array(
+        'name'    => 'Cancelled Rehearsal Message',
+        'desc'    => 'Optional. Displays only if rehearsal is cancelled.<br>Ex: "The field is REALLY wet, yo."',
+        'id'      => $prefix . 'rehearsal_cancelled_message',
+        'type'    => 'text'
+    ) );
+    
+    // Band
+    $cmb->add_field( array(
+        'name'     => 'Band',
+        'desc'     => 'Band this rehearsal applies to',
+        'id'       => $prefix . 'band',
+        'taxonomy' => 'band', //Enter Taxonomy Slug
+        'type'     => 'taxonomy_radio',
+        'default' => 'marching-knights',
+    ) );
 }
 add_action( 'cmb2_init', 'ucfbands_rehearsal_metabox' );

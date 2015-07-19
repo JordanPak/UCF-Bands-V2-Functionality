@@ -68,53 +68,22 @@ function ucfbands_reahearsal_metabox() {
     // Initialize
     $cmb = new_cmb2_box( array(
         'id'            => $prefix . 'metabox',
-        'title'         => __( 'Staff Member Details', 'cmb' ),
-        'object_types'  => array( 'ucfbands_staff' ),
+        'title'         => __( 'Rehearsal Details', 'cmb' ),
+        'object_types'  => array( 'ucfbands_rehearsal' ),
         'context'       => 'normal',
         'priority'      => 'core',
     ) );
-    
-    // Is Faculty
+
+    // Date
     $cmb->add_field( array(
-        'name' => 'Faculty',
-        'desc' => 'Staff Member is UCF Faculty. Faculty members are listed before non-faculty members in listings.',
-        'id'   => $prefix . 'is_faculty',
-        'type' => 'checkbox'
+        'name' => 'Date',
+        'id'   => $prefix . 'date',
+        'type' => 'text_date_timestamp',
+        // 'timezone_meta_key' => 'wiki_test_timezone',
+        // 'date_format' => 'l jS \of F Y',
     ) );
     
-    // Position
-    $cmb->add_field( array(
-        'name'    => 'Position',
-        'desc'    => 'Ex: "Director of Bands"',
-        'id'      => $prefix . 'position',
-        'type'    => 'text'
-    ) );
     
-    // Email Address
-    $cmb->add_field( array(
-        'name' => 'Email Address',
-        'desc' => '@ucf.edu preferred.',
-        'id'   => 'email',
-        'type' => 'text_email',
-    ) );    
-    
-    // Phone Number
-    $cmb->add_field( array(
-        'name'    => 'Phone Number',
-        'desc'    => 'Format: (407) 823-XXXX. UCF Number Preferred',
-        'id'      => $prefix . 'phone',
-        'type'    => 'text'
-    ) );
-    
-    // Biography
-    $cmb->add_field( array(
-    'name'    => 'Biography',
-    'id'      => 'biography',
-    'type'    => 'wysiwyg',
-    'options' => array(
-        'media_buttons' => false,
-    ),
-    ) );
     
 }
 add_action( 'cmb2_init', 'ucfbands_rehearsal_metabox' );

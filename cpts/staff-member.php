@@ -83,6 +83,47 @@ function ucfbands_staff_member_metabox() {
         'priority'      => 'core',
     ) );
     
-
+    // Is Faculty
+    $cmb->add_field( array(
+        'name' => 'Faculty',
+        'desc' => 'Staff Member is UCF Faculty',
+        'id'   => $prefix . 'is_faculty',
+        'type' => 'checkbox'
+    ) );
+    
+    // Position
+    $cmb->add_field( array(
+        'name'    => 'Position',
+        'desc'    => 'Ex: "Director of Bands"',
+        'id'      => $prefix . 'position',
+        'type'    => 'text'
+    ) );
+    
+    // Email Address
+    $cmb->add_field( array(
+        'name' => 'Email Address',
+        'desc' => '@ucf.edu preferred.',
+        'id'   => 'email',
+        'type' => 'text_email',
+    ) );    
+    
+    // Phone Number
+    $cmb->add_field( array(
+        'name'    => 'Phone Number',
+        'desc'    => 'Format: (407) 823-XXXX. UCF Number Preferred',
+        'id'      => $prefix . 'phone',
+        'type'    => 'text'
+    ) );
+    
+    // Biography
+    $cmb->add_field( array(
+    'name'    => 'Biography',
+    'id'      => 'biography',
+    'type'    => 'wysiwyg',
+    'options' => array(
+        'media_buttons' => false,
+    ),
+    ) );
+    
 }
 add_action( 'cmb2_init', 'ucfbands_staff_member_metabox' );

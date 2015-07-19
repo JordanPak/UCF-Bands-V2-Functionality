@@ -15,19 +15,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 //  DASHBOARD SETUP  //
 //===================//
 
-// Admin CSS
-add_action( 'admin_enqueue_scripts', 'ucfbands_functionality_styles' );
-function ucfbands_functionality_styles() {
-    
-    // Only load on Functionality Dashboard
-    if ( 'ucfbands.php' != $hook ) {
-        return;
-    }
-    
-    // Admin Styles
-    wp_enqueue_style( 'admin-styles', plugin_dir_url( __FILE__ ) . 'admin/style.css' );
-    
-} // ucfbands_functionality_styles()
+// Admin Styles
+require_once ( 'admin/admin-styles.php' );
 
 #adminmenu .wp-menu-image img
 

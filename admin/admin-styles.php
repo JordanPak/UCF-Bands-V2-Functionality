@@ -16,6 +16,6 @@ function ucfbands_functionality_styles() {
 //    }
     
     // Admin Styles
-    wp_enqueue_style( 'admin-styles', plugin_dir_url( __FILE__ ) . 'admin/ucfbands-functionality.css' );
+    wp_enqueue_style( 'admin-styles', plugin_dir_url( __FILE__ ) . 'ucfbands-functionality.css' );
     
 } // ucfbands_functionality_styles()

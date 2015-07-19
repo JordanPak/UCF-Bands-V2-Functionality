@@ -244,13 +244,3 @@ function ucfbands_event_metabox() {
 }
 
 add_action( 'cmb2_init', 'ucfbands_event_metabox' );
-
-
-
-
-
-
-
-
-
-

@@ -39,7 +39,7 @@ function ucfbands_staff() {
 		'label'               => __( 'ucfbands_staff', 'text_domain' ),
 		'description'         => __( 'UCF Bands Staff or Faculty Member', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions'),
+		'supports'            => array( 'title', 'thumbnail', 'revisions'),
 		'taxonomies'          => array(''),
 		'hierarchical'        => false,
 		'public'              => true,
@@ -62,6 +62,25 @@ function ucfbands_staff() {
 add_action( 'init', 'ucfbands_staff', 0 );
 
 
+
+/**
+ * UCFBands CPT: Staff Member
+ * Change Default Title Field to "Staff Member Name"
+ *
+ * @author Jordan Pakrosnis
+ */
+function change_default_title( $title ){
+    
+     $screen = get_current_screen();
+ 
+     if  ( 'ucfbands_staff' == $screen->post_type ) {
+          $title = 'Staff Member Name';
+     }
+ 
+     return $title;
+}
+ 
+add_filter( 'enter_title_here', 'change_default_title' );
 
 
 

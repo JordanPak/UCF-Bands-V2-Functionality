@@ -82,7 +82,80 @@ function ucfbands_event_metabox() {
         'priority'      => 'core',
     ) );
     
-
+    // All-Day Event
+    $cmb->add_field( array(
+        'name' => 'All-Day Event',
+        'desc' => 'Displays "Daily" instead of the start/end time or "TBA"',
+        'id'   => $prefix . 'is_all_day_event',
+        'type' => 'checkbox'
+    ) );    
     
+    // Start Date & Time
+    $cmb->add_field( array(
+        'name' => 'Start Date/Time',
+        'desc' => 'Both <b>Date and Time</b> are required for proper display of event.',
+        'id'   => $prefix . 'start_date_time',
+        'type' => 'text_datetime_timestamp',
+    ) );
+
+    // Finish Date & Time
+    $cmb->add_field( array(
+        'name' => 'Finish Date/Time',
+        'desc' => 'Both <b>Date and Time</b> are required for proper display of event.',
+        'id'   => $prefix . 'finish_date_time',
+        'type' => 'text_datetime_timestamp',
+    ) );
+    
+    // Time TBA
+    $cmb->add_field( array(
+        'name' => 'Time TBA',
+        'desc' => 'Displays "TBA" instead of start time.',
+        'id'   => $prefix . 'is_time_tba',
+        'type' => 'checkbox'
+    ) );  
+    
+    // Show End Time
+    $cmb->add_field( array(
+        'name' => 'Show Finish Time',
+        'desc' => 'If the event has a close estimated end or defined end, check this.',
+        'id'   => $prefix . 'show_finish_time',
+        'type' => 'checkbox'
+    ) );  
+    
+    // Location Name
+    $cmb->add_field( array(
+        'name'    => 'Location Name',
+        'desc'    => 'Leave empty for "TBA"',
+        'default' => 'standard value (optional)',
+        'id'      => $prefix . 'location_name',
+        'type'    => 'text'
+    ) );
+
+    // Google Map
+    $cmb->add_field( array(
+        'name'    => 'Google Map Embed Code',
+        'desc'    => '<br>
+            <b style="color:#444;">How to get a location\'s Google Map Embed iframe code:</b>
+            <ol>
+               <li>Go to <a href="http://google.com/maps" target="_BLANK">Google Maps</a></li>
+               <li>Search for the location (Ex: "University of Central Florida")</li>
+               <li>Open the menu (Hamburger icon at the top-left of the page) and select "Share or Embed Map"</li>
+               <li>Click the "Embed Map" Tab</li>
+               <li>Copy the iframe code into the field above</li>
+            </ol>
+        ',
+        'id'      => $prefix . 'location_google_map',
+        'type'    => 'textarea_code'
+    ) );    
 }
 add_action( 'cmb2_init', 'ucfbands_event_metabox' );
+
+
+
+
+
+
+
+
+
+

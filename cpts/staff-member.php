@@ -8,7 +8,7 @@
 
 
 /**
- * UCFBands CPT: Staff Member
+ * UCFBands CPT: Staff Member Registration
  * Register Staff Member
  *
  * @author Jordan Pakrosnis
@@ -64,7 +64,7 @@ add_action( 'init', 'ucfbands_staff', 0 );
 
 
 /**
- * UCFBands CPT: Staff Member
+ * UCFBands CPT: Staff Member Title Field
  * Change Default Title Field to "Staff Member Name"
  *
  * @author Jordan Pakrosnis
@@ -105,7 +105,7 @@ function ucfbands_staff_member_metabox() {
     // Is Faculty
     $cmb->add_field( array(
         'name' => 'Faculty',
-        'desc' => 'Staff Member is UCF Faculty',
+        'desc' => 'Staff Member is UCF Faculty. Faculty members are listed before non-faculty members in listings.',
         'id'   => $prefix . 'is_faculty',
         'type' => 'checkbox'
     ) );

@@ -47,7 +47,7 @@ require_once( 'cpts/staff-member.php' );
 require_once( 'cpts/event.php' );
 
 // Rehearsal Schedule
-//require_once( 'cpts/rehearsal-schedule.php' );
+require_once( 'cpts/rehearsal-schedule.php' );
 
 // Photo Gallery (TBA)
 //require_once( 'cpts/photo-gallery.php' );

@@ -13,7 +13,7 @@ add_action( 'admin_enqueue_scripts', 'mkmc_dashboard_styles' );
 function mkmc_dashboard_styles() {
     
     // Admin Styles
-    wp_enqueue_style( 'admin-styles', plugin_dir_url( __FILE__ ) . 'styles/dashboard.css' );
+    wp_enqueue_style( 'mkmc-styles', plugin_dir_url( __FILE__ ) . 'styles/dashboard.css' );
     
 } // mkmc_dashboard_styles()
 

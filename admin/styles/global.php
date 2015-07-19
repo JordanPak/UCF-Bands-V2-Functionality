@@ -13,6 +13,6 @@ add_action( 'admin_enqueue_scripts', 'ucfbands_admin_styles' );
 function ucfbands_admin_styles() {
     
     // Admin Styles
-    wp_enqueue_style( 'admin-styles', 'global.css' );
+    wp_enqueue_style( 'admin-styles', plugin_dir_url( __FILE__ ) . 'global.css' );
     
 } // ucfbands_admin_styles()

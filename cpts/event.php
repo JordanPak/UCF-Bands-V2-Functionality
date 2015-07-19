@@ -148,6 +148,23 @@ function ucfbands_event_metabox() {
     ) );    
     
     
+    // Icon Background Color
+    $cmb->add_field( array(
+        'name'             => 'Icon Background Color',
+        'id'               => $prefix. 'icon_background_colo',
+        'type'             => 'radio',
+        'default' => 'ucf-gray',
+        'options' => array(
+            'ucf-gray'	=> __( '<b>Concert Ensemble</b> (Dark Gray)', 'cmb' ),
+            'gold'   	=> __( '<b>Athletic</b> (Gold)', 'cmb' ),
+            'red'       => __( '<b>Audition</b> (Red)', 'cmb' ),
+            'green'	    => __( '<b>General/Clinic/Other</b> (Green)', 'cmb' ),
+//            'primary'	=> __( 'Blue', 'cmb' ),
+//            'warning'	=> __( 'Orange', 'cmb' ),
+//            'default'	=> __( 'Gray', 'cmb' )
+        ),        
+    ) );    
+
     // Schedule Group
     $group_field_id = $cmb->add_field( array(
         'id'          => $prefix . 'schedule_group',
@@ -184,7 +201,48 @@ function ucfbands_event_metabox() {
         'repeatable' => true,
     ) );    
 
+    
+    // Program Group
+    $group_field_id = $cmb->add_field( array(
+        'id'          => $prefix . 'program_group',
+        'name'        => 'Program',
+        'type'        => 'group',
+        'description' => __( 'Build Program', 'cmb' ),
+        'options'     => array(
+            'group_title'   => __( 'Piece {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+            'add_button'    => __( 'Add Piece', 'cmb' ),
+            'remove_button' => __( 'Remove Piece', 'cmb' ),
+            'sortable'      => true // beta
+        ),
+    ) );
+    
+    // Program Group: Piece
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Piece',
+        'desc' => 'Ex: Kirkpatrick Fanfare - Boysen',
+        'id'   => 'piece',
+        'type' => 'text',
+    ) );
+    
+    // Program Group: Sub-Listing
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Piece Note',
+        'desc' => 'Optional. Ex: <i>Laszlo Marosi, Conductor</i>',
+        'id'   => 'piece_note',
+        'type' => 'text',
+        'repeatable' => true,
+    ) );
+    
+    
+    // Program Guest Compooser
+    $cmb->add_field( array(
+        'name'    => 'Program Guest Composer(s)/Conductor(s)',
+        'desc'    => 'Optional. Displays before program pieces.<br>Ex: <i>Carter Pann, Guest Composer</i>',
+        'id'      => $prefix . 'program_guest_composer',
+        'type'    => 'text'
+    ) );
 }
+
 add_action( 'cmb2_init', 'ucfbands_event_metabox' );
 
 

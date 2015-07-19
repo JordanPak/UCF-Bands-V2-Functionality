@@ -20,7 +20,7 @@ function ucfbands_functionality_styles() {
 
 
 // Placeholder
-function ucfbands_admin_page() {
+function mkmc_dashboard() {
     ?>
     <div class="wrap">
         <h2>My Plugin Options</h2>

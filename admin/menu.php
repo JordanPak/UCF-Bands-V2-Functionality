@@ -18,11 +18,11 @@ function add_ucfbands_functionality_menu() {
     
     //add an item to the menu
     add_menu_page (
-        'UCF Bands',
-        'UCF Bands',
+        'MKMC Dashboard',
+        'MKMC',
         'manage_options',
-        'ucfbands',
-        'ucfbands_admin_page',
+        'mkmc',
+        'mkmc_dashboard',
         plugin_dir_url( __FILE__ ).'icons/ucf-icon.png',
         '3.1'
     );

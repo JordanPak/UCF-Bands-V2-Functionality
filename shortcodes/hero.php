@@ -38,6 +38,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     // Attribute Helpers
     $hero_classes = '';
+    $hero_button = '';
     
     // Output
     $shortode_output = '';
@@ -67,8 +68,36 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     
     //-- TITLE --//
+
     if ($hero_title)
         $hero_title = '<h2>' . $hero_title . '</h2>';
+    
+    
+    //-- BUTTON --//
+    
+    // Config button code if there's a button (Determined by existance of button_text)
+    if ($hero_button_text) {
+        $hero_button .= '<br><a class="button button-lg button-outline button-white" ';
+    
+        
+        // Button URL
+        if ($hero_button_url)
+            $hero_button .= 'href="' . $hero_button_url . '"';
+        
+        
+        // Finish Opening Tag
+        $hero_button .= '>';
+        
+        
+        // Button Text
+        $hero_button .= $hero_button_text;
+        
+        
+        // Closing Tag
+        $hero_button .= '</a>';
+        
+    } // If hero_button_text is set
+    
     
     
     //==========//
@@ -95,6 +124,10 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
         // Content
         $shortcode_output .= '<p>' . do_shortcode($content) . '</p>';
+    
+    
+        // Button
+        $shortcode_output .= $hero_button;
     
     
     // Closing Tag

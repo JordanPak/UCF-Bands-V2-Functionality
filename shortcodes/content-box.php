@@ -12,29 +12,22 @@
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_shortcode_content_box( $atts ) {
+function ucfbands_shortcode_content_box( $atts, $content = "" ) {
     
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'size'      => 'med',
         'color'     => '',
-        'outline'   => '',
-        'url'       => '#',
-        'newtab'   => '',
-        'icon'      => '',
-        'text'      => '',
 	), $atts, 'content-box' );
 
     
     //-- SET VARS --//
     
     // Attributes
-//    $button_size =      $atts['size'];
-
+    $content_box_color = $atts['color'];
     
     // Attribute Helpers
-//    $button_classes = '';
+    $content_box_classes = '';
     
     // Output
     $shortode_output = '';

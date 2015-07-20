@@ -37,7 +37,16 @@ function ucfbands_shortcode_content_box( $atts, $content = "" ) {
     //=========//
     //  LOGIC  //
     //=========//    
+
+    //-- CLASSES --//
     
+    // Color
+    if ($content_box_color) {
+        $content_box_classes .= 'content-box-' . $content_box_color;
+    }
+    else {
+        $content_box_classes .= 'content-box-gray';
+    }
     
     
     // Return Output String

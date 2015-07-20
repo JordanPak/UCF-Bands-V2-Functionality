@@ -18,7 +18,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
         'padding'       => 'med',  // Options: sm, med, lg
-        'color'         => 'gold', // Options: Core Colors
+        'color'         => 'gray', // Options: Core Colors
         'image'         => '',
         'title'         => '',
         'button_url'    => '#',

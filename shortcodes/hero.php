@@ -17,20 +17,20 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'padding'           => 'med',
-        'background-color'  => 'gold',
-        'background-image'  => '',
-        'title'             => '',
+        'padding'               => 'med',  // Options: sm, med, lg
+        'background-color'      => 'gold', // Options: Core Colors
+        'background-image-url'  => '',
+        'title'                 => '',
 	), $atts, 'hero' );
 
     
     //-- SET VARS --//
     
     // Attributes
-    $hero_padding =             $atts['padding'];
-    $hero_background_color =    $atts['background-color'];
-    $hero_background_image =    $atts['background-image'];
-    $hero_title =               $atts['title'];
+    $hero_padding =                 $atts['padding'];
+    $hero_background_color =        $atts['background-color'];
+    $hero_background_image_url =    $atts['background-image-url'];
+    $hero_title =                   $atts['title'];
     
     // Attribute Helpers
     $hero_classes = '';
@@ -49,10 +49,21 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     // General
     $hero_classes .= 'hero ';
     
+    // Padding
+    if ($hero_padding)
+        $hero_classes .= 'hero-padding-' . $hero_padding . ' ';
+    
     // Background Color
-    if ($hero_background_color) {
+    if ($hero_background_color)
         $hero_classes .= 'hero-' . $hero_background_color;
-    }
+    
+    
+    // Background Image
+    if ($hero_background_image_url)
+        $hero_background_image_url = ' style="background-image: url(\'' . $hero_background_image_url . '\');" ';
+    
+    
+    //-- TITLE --//
     
     
     
@@ -66,6 +77,10 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     
         // Classes
         $shortcode_output .= 'class="' . $hero_classes . '"';
+    
+    
+        // Background Image
+        $shortcode_output .= $hero_background_image_url;
     
     
     // Close Opening Tag

@@ -17,17 +17,21 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'color'     => '',
+        'padding'           => 'med',
+        'background-color'  => 'gold',
+        'background-image'  => '',
 	), $atts, 'hero' );
 
     
     //-- SET VARS --//
     
     // Attributes
-//    $content_box_color = $atts['color'];
+    $hero_padding =             $atts['padding'];
+    $hero_background_color =    $atts['background-color'];
+    $hero_background_image =    $atts['background-image'];
     
     // Attribute Helpers
-//    $content_box_classes = '';
+    $hero_classes = '';
     
     // Output
     $shortode_output = '';
@@ -50,7 +54,7 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     //==========//
     
     // Start Opening Tag
-    $shortcode_output .= '<div ';
+    $shortcode_output .= '<section ';
     
     
         // Classes
@@ -66,7 +70,7 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     
     
     // Closing Tag
-    $shortcode_output .= '</div>';    
+    $shortcode_output .= '</section>';    
     
     
     

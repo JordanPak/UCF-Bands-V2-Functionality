@@ -65,9 +65,17 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
         $hero_classes .= 'hero-' . $hero_color;
     
     // Background Image
-    if ($hero_image)
-        $hero_image = ' style="background-image: url(\'' . $hero_image . '\');" ';
+    if ($hero_image) {
+        
+        $hero_image = ' 
+            style="
+            background: 
+                linear-gradient( rgba(0,0,0,0.8), rgba(0,0,0,0.8) ), 
+                url(\'' . $hero_image . '\')
+            ; 
+        "';
     
+    } // if hero image
     
     //-- TITLE --//
 

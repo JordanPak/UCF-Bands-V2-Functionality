@@ -71,7 +71,7 @@ require_once( 'shortcodes/button.php' );
 require_once( 'shortcodes/content-box.php' );
 
 // Hero (Bootstrap Jumbotron-like thing)
-//require_once( 'shortcodes/hero.php' );
+require_once( 'shortcodes/hero.php' );
 
 // Block (TBA)
 //require_once( 'shortcodes/block.php' );

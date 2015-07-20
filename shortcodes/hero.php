@@ -20,6 +20,7 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
         'padding'           => 'med',
         'background-color'  => 'gold',
         'background-image'  => '',
+        'title'             => '',
 	), $atts, 'hero' );
 
     
@@ -29,6 +30,7 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     $hero_padding =             $atts['padding'];
     $hero_background_color =    $atts['background-color'];
     $hero_background_image =    $atts['background-image'];
+    $hero_title =               $atts['title'];
     
     // Attribute Helpers
     $hero_classes = '';

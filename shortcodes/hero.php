@@ -78,7 +78,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
         switch ($hero_color) {
             
             case 'gold':
-                $tint_color = 'rgba(255,202,6,0.85)'; // $ucf-gold
+                $tint_color = 'rgba(225,172,6,0.80)'; // $ucf-gold
                 break;
 
             case 'gray':
@@ -87,15 +87,15 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
                 break;
             
             case 'red':
-                $tint_color = 'rgba(212,31,26,0.8)'; // $red
+                $tint_color = 'rgba(192,11,6,0.8)'; // $red -20 on each
                 break;
             
             case 'green':
-                $tint_color = 'rgba(92,184,92,0.8)'; // $green
+                $tint_color = 'rgba(62,154,62,0.80)'; // $green -30 on each
                 break;
             
             case 'blue':
-                $tint_color = 'rgba(66,139,202,0.8)'; // $blue
+                $tint_color = 'rgba(36,109,172,0.8)'; // $blue -30 on each
                 break;
             
         } // switch

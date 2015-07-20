@@ -98,25 +98,26 @@ function ucfbands_shortcode_button( $atts ) {
     $shortcode_output .= '<a ';
     
     
-    // Classes
-    $shortcode_output .= 'class="' . $button_classes . '" ';
-    
-    // URL
-    $shortcode_output .= 'href="' . $button_url . '" ';
-    
-    // Target (new tab)
-    $shortcode_output .= $button_new_tab;
+        // Classes
+        $shortcode_output .= 'class="' . $button_classes . '" ';
+
+        // URL
+        $shortcode_output .= 'href="' . $button_url . '" ';
+
+        // Target (new tab)
+        $shortcode_output .= $button_new_tab;
     
     
     // Close Opening Tag
     $shortcode_output .= '>';
     
     
-    // Icon
-    $shortcode_output .= $button_icon;
+        // Icon
+        $shortcode_output .= $button_icon;
+
+        // Text
+        $shortcode_output .= $button_text;
     
-    // Text
-    $shortcode_output .= $button_text;
     
     // Closing Tag
     $shortcode_output .= '</a>';
@@ -127,21 +128,5 @@ function ucfbands_shortcode_button( $atts ) {
     
 } // ucfbands_shortcode_button()
 
-
 // Register the shortcode
 add_shortcode( 'button', 'ucfbands_shortcode_button' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

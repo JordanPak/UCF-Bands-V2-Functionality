@@ -63,7 +63,8 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     
     //-- TITLE --//
-    
+    if ($hero_title)
+        $hero_title = '<h2>' . $hero_title . '</h2>';
     
     
     //==========//
@@ -85,9 +86,11 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     // Close Opening Tag
     $shortcode_output .= '>';
     
+        // Title
+        $shortcode_output .= $hero_title;
     
         // Content
-        $shortcode_output .= do_shortcode($content);
+        $shortcode_output .= '<p>' . do_shortcode($content) . '</p>';
     
     
     // Closing Tag

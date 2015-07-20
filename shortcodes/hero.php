@@ -95,6 +95,11 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
         $hero_button .= '>';
         
         
+        // Button Icon
+        if ($hero_button_icon)
+            $hero_button .= '<i class="fa fa-' . $hero_button_icon . '"></i>&nbsp;&nbsp;&nbsp;';
+        
+        
         // Button Text
         $hero_button .= $hero_button_text;
         

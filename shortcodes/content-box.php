@@ -67,7 +67,7 @@ function ucfbands_shortcode_content_box( $atts, $content = "" ) {
     
     
         // Content
-        $shortcode_output .= $content;
+        $shortcode_output .= do_shortcode($content);
     
     
     // Closing Tag

@@ -17,7 +17,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'padding'       => 'med',  // Options: sm, med, lg
+        'size'          => 'med',  // Options: sm, med, lg
         'color'         => 'gray', // Options: Core Colors
         'image'         => '',
         'title'         => '',
@@ -30,7 +30,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     //-- SET VARS --//
     
     // Attributes
-    $hero_padding =     $atts['padding'];
+    $hero_size =     $atts['size'];
     $hero_color =       $atts['color'];
     $hero_image =       $atts['image'];
     $hero_title =       $atts['title'];
@@ -57,9 +57,9 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     // General
     $hero_classes .= 'hero ';
     
-    // Padding
-    if ($hero_padding)
-        $hero_classes .= 'hero-padding-' . $hero_padding . ' ';
+    // Size
+    if ($hero_size)
+        $hero_classes .= 'hero-' . $hero_size . ' ';
     
     // Background Color
     if ($hero_color)

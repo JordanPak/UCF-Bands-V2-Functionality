@@ -19,9 +19,9 @@ function ucfbands_shortcode_button( $atts ) {
 	$atts = shortcode_atts( array(
         'size'      => 'med',
         'color'     => '',
-        'outline'   => 'no',
+        'outline'   => '',
         'url'       => '#',
-        'target'    => '',
+        'newtab'   => '',
         'icon'      => '',
         'text'      => '',
 	), $atts, 'button' );
@@ -35,9 +35,12 @@ function ucfbands_shortcode_button( $atts ) {
     $button_color =     $atts['color'];
     $button_outline =   $atts['outline'];
     $button_url =       $atts['url'];
-    $button_target =    $atts['target'];
+    $button_new_tab =   $atts['newtab'];
     $button_icon =      $atts['icon'];
     $button_text =      $atts['text'];
+    
+    // Attribute Helpers
+    $button_classes = '';
     
     // Output
     $shortode_output = '';
@@ -51,21 +54,71 @@ function ucfbands_shortcode_button( $atts ) {
     
     //-- CLASSES --//
     
-    // 
+    // Default
+    $button_classes .= 'button ';
+    
+    // Size
+    if ($button_size) 
+        $button_classes .= 'button-' . $button_size . ' ';
+    
+    // Color
+    if ($button_color)
+        $button_classes .= 'button-' . $button_color . ' ';   
+    
+    // Outline
+    if ($button_outline == 'yes')
+        $button_classes .= 'button-outline ';
     
     
+    //-- URL --//
+    
+    // If "http" isn't found, throw in "http://"
+    if ( strpos($button_url, 'http') === false ) {
+        $button_url = 'http://' . $button_url;
+    }
+    
+    
+    //-- TARGET --//
+    if ($button_new_tab == 'yes')
+        $button_new_tab = 'target="_BLANK"';
+    
+    
+    //-- ICON --//
+    if ($button_icon) {
+        $button_icon = strtolower($button_icon);
+        $button_icon = '<i class="fa fa-' . $button_icon . '"></i>&nbsp;&nbsp;&nbsp;';
+    }
     
     
     //==========//
     //  OUTPUT  //
     //==========//
     
-    // Open Tag
+    // Start Opening Tag
     $shortcode_output .= '<a ';
     
     
+    // Classes
+    $shortcode_output .= 'class="' . $button_classes . '" ';
     
-    // Close Tag
+    // URL
+    $shortcode_output .= 'href="' . $button_url . '" ';
+    
+    // Target (new tab)
+    $shortcode_output .= $button_new_tab;
+    
+    
+    // Close Opening Tag
+    $shortcode_output .= '>';
+    
+    
+    // Icon
+    $shortcode_output .= $button_icon;
+    
+    // Text
+    $shortcode_output .= $button_text;
+    
+    // Closing Tag
     $shortcode_output .= '</a>';
     
     

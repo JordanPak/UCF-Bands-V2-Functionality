@@ -65,7 +65,7 @@ require_once( 'cpts/rehearsal-schedule.php' );
 //-- GENERAL --//
 
 // Button
-//require_once( 'shortcodes/button.php' );
+require_once( 'shortcodes/button.php' );
 
 
 // Content Box

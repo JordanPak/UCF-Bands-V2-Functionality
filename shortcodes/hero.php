@@ -12,25 +12,25 @@
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_shortcode_hero( $atts, $content = "" ) {
+function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'padding'               => 'med',  // Options: sm, med, lg
-        'background-color'      => 'gold', // Options: Core Colors
-        'background-image-url'  => '',
-        'title'                 => '',
+        'padding'   => 'med',  // Options: sm, med, lg
+        'color'     => 'gold', // Options: Core Colors
+        'image'     => '',
+        'title'     => '',
 	), $atts, 'hero' );
 
     
     //-- SET VARS --//
     
     // Attributes
-    $hero_padding =                 $atts['padding'];
-    $hero_background_color =        $atts['background-color'];
-    $hero_background_image_url =    $atts['background-image-url'];
-    $hero_title =                   $atts['title'];
+    $hero_padding = $atts['padding'];
+    $hero_color =   $atts['background-color'];
+    $hero_image =   $atts['image'];
+    $hero_title =   $atts['title'];
     
     // Attribute Helpers
     $hero_classes = '';
@@ -54,13 +54,12 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
         $hero_classes .= 'hero-padding-' . $hero_padding . ' ';
     
     // Background Color
-    if ($hero_background_color)
-        $hero_classes .= 'hero-' . $hero_background_color;
-    
+    if ($hero_color)
+        $hero_classes .= 'hero-' . $hero_color;
     
     // Background Image
-    if ($hero_background_image_url)
-        $hero_background_image_url = ' style="background-image: url(\'' . $hero_background_image_url . '\');" ';
+    if ($hero_image)
+        $hero_image = ' style="background-image: url(\'' . $hero_image . '\');" ';
     
     
     //-- TITLE --//
@@ -80,7 +79,7 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     
     
         // Background Image
-        $shortcode_output .= $hero_background_image_url;
+        $shortcode_output .= $hero_image;
     
     
     // Close Opening Tag

@@ -49,6 +49,32 @@ function ucfbands_shortcode_content_box( $atts, $content = "" ) {
     }
     
     
+    
+    //==========//
+    //  OUTPUT  //
+    //==========//
+    
+    // Start Opening Tag
+    $shortcode_output .= '<div ';
+    
+    
+        // Classes
+        $shortcode_output .= 'class="' . $content_box_classes . '"';
+    
+    
+    // Close Opening Tag
+    $shortcode_output .= '>';
+    
+    
+        // Content
+        $shortcode_output .= $content;
+    
+    
+    // Closing Tag
+    $shortcode_output .= '</div>';    
+    
+    
+    
     // Return Output String
 	return $shortcode_output;
     

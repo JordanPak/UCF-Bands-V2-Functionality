@@ -40,6 +40,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     // Attribute Helpers
     $hero_classes = '';
+    $hero_image_tint = '';
     $hero_button = '';
     
     // Output
@@ -62,18 +63,49 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     
     // Background Color
     if ($hero_color)
-        $hero_classes .= 'hero-' . $hero_color;
+        $hero_classes .= 'hero-' . $hero_color . ' ';
     
     // Background Image
     if ($hero_image) {
         
+        // Add Class
+        $hero_classes .= 'hero-has-image ';
+        
+        
+        // CONFIGURE TINT //
+        
+        // Get Color rgba
+        switch ($hero_color) {
+            
+            case 'gold':
+                $tint_color = 'rgba(255,202,6,0.85)'; // $ucf-gold
+                break;
+
+            case 'gray':
+                $tint_color = 'rgba(0,0,0,0.8)'; // $black;
+                //$tint_color = 'rgba(34,30,31,0.9)'; // $ucf-gray
+                break;
+            
+            case 'red':
+                $tint_color = 'rgba(212,31,26,0.8)'; // $red
+                break;
+            
+            case 'green':
+                $tint_color = 'rgba(92,184,92,0.8)'; // $green
+                break;
+            
+            case 'blue':
+                $tint_color = 'rgba(66,139,202,0.8)'; // $blue
+                break;
+            
+        } // switch
+        
+        $hero_image_tint = 'linear-gradient( ' . $tint_color . ', ' . $tint_color . ' )';
+        
+        
+        // Set Style
         $hero_image = ' 
-            style="
-            background: 
-                linear-gradient( rgba(0,0,0,0.8), rgba(0,0,0,0.8) ), 
-                url(\'' . $hero_image . '\')
-            ; 
-        "';
+            style="background: ' . $hero_image_tint . ', url(\'' . $hero_image . '\');"';
     
     } // if hero image
     

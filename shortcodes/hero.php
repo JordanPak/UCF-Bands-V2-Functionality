@@ -22,6 +22,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
         'image'         => '',
         'title'         => '',
         'button_url'    => '#',
+        'button_icon'   => '',
         'button_text'   => '',
 	), $atts, 'hero' );
 
@@ -29,11 +30,12 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
     //-- SET VARS --//
     
     // Attributes
-    $hero_padding = $atts['padding'];
-    $hero_color =   $atts['color'];
-    $hero_image =   $atts['image'];
-    $hero_title =   $atts['title'];
+    $hero_padding =     $atts['padding'];
+    $hero_color =       $atts['color'];
+    $hero_image =       $atts['image'];
+    $hero_title =       $atts['title'];
     $hero_button_url =  $atts['button_url'];
+    $hero_button_icon = $atts['button_icon'];
     $hero_button_text = $atts['button_text'];
     
     // Attribute Helpers

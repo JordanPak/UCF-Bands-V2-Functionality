@@ -70,11 +70,11 @@ require_once( 'shortcodes/button.php' );
 // Content Box
 require_once( 'shortcodes/content-box.php' );
 
-// Block
-//require_once( 'shortcodes/block.php' );
-
 // Hero (Bootstrap Jumbotron-like thing)
 //require_once( 'shortcodes/hero.php' );
+
+// Block (TBA)
+//require_once( 'shortcodes/block.php' );
 
 
 //-- CPT-BASED --//

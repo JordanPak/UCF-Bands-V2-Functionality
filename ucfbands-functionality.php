@@ -16,7 +16,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 //==================//
 
 // Register Bands Taxonomy
-require_once( 'bands.php ' );
+require_once( 'bands.php' );
 
 
 //===================//

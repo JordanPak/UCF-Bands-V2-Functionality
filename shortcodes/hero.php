@@ -21,7 +21,7 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
         'color'         => 'gold', // Options: Core Colors
         'image'         => '',
         'title'         => '',
-        'button_url'    => '',
+        'button_url'    => '#',
         'button_text'   => '',
 	), $atts, 'hero' );
 
@@ -80,9 +80,13 @@ function ucfbands_shortcode_hero( $atts, $content = null ) {
         $hero_button .= '<br><a class="button button-lg button-outline button-white" ';
     
         
+        // If "http" isn't found in button url, throw in "http://"
+        if ( strpos($hero_button_url, 'http') === false )
+            $hero_button_url = 'http://' . $hero_button_url;
+
+        
         // Button URL
-        if ($hero_button_url)
-            $hero_button .= 'href="' . $hero_button_url . '"';
+        $hero_button .= 'href="' . $hero_button_url . '"';
         
         
         // Finish Opening Tag

@@ -19,6 +19,7 @@ function ucfbands_shortcode_button( $atts ) {
         'text'      => '',
         'size'      => 'med',
         'color'     => '',
+        'outline'   => 'no',
         'url'       => '#',
         'target'    => '',
         'icon'      => '',
@@ -31,6 +32,7 @@ function ucfbands_shortcode_button( $atts ) {
     $button_text =      $atts['text'];
     $button_size =      $atts['size'];
     $button_color =     $atts['color'];
+    $button_outline =   $atts['outline'];
     $button_url =       $atts['url'];
     $button_target =    $atts['target'];
     $button_icon =      $atts['icon'];
@@ -39,13 +41,38 @@ function ucfbands_shortcode_button( $atts ) {
     $shortode_output = '';
     
     
+    //-- LOGIC --//
     
     
     
-	return "foo = {$atts['foo']}";
+    
+    //-- OUTPUT --//
+    
+    
+    $shortcode_output = '<a class="button">Look at this button</a>';
+    
+    
+    
+    // Return Output String
+	return $shortcode_output;
     
 } // ucfbands_shortcode_button()
 
 
 // Register the shortcode
 add_shortcode( 'button', 'ucfbands_shortcode_button' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

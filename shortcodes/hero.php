@@ -44,8 +44,13 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
 
     //-- CLASSES --//
     
-    // Color
-
+    // General
+    $hero_classes .= 'hero ';
+    
+    // Background Color
+    if ($hero_background_color) {
+        $hero_classes .= 'hero-' . $hero_background_color;
+    }
     
     
     
@@ -58,7 +63,7 @@ function ucfbands_shortcode_hero( $atts, $content = "" ) {
     
     
         // Classes
-//        $shortcode_output .= 'class="' . $content_box_classes . '"';
+        $shortcode_output .= 'class="' . $hero_classes . '"';
     
     
     // Close Opening Tag

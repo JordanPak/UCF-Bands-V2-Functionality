@@ -57,6 +57,23 @@ function ucfbands_shortcode_announcements( $atts ) {
     } // if announcements_heading isn't "no"
     
     
+    //-- CPT QUERY --//
+    
+    // Query Options
+    $announcements_args = array(
+        'post_type'         => 'announcement',
+        'category_name'     => $announcements_band,
+        'fields'            => 'ids',
+        'orderby'           => 'meta_value_num',
+        'order'             => 'ASC',
+        'post_count'        => $announcements_num,
+        'posts_per_page'    => $announcements_num,
+    );
+    
+    
+    // Query/Get Posts
+    $announcements = new WP_Query( $announcements_args );
+    
     
     //==========//
     //  OUTPUT  //

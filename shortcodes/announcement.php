@@ -1,24 +1,24 @@
 <?php
 /*
  *  UCFBands Theme Functionality
- *  Shortcode: Announcement
+ *  Shortcode: Announcements
  *    
  *  @author Jordan Pakrosnis
 */
 
 
 /**
- * UCFBands Shortcode: Announcement
+ * UCFBands Shortcode: Announcements
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_shortcode_announcement( $atts ) {
+function ucfbands_shortcode_announcements( $atts ) {
     
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
 //        'size'      => 'med',
-	), $atts, 'announcement' );
+	), $atts, 'announcements' );
 
     
     
@@ -68,4 +68,4 @@ function ucfbands_shortcode_announcement( $atts ) {
 } // ucfbands_shortcode_announcement()
 
 // Register the shortcode
-add_shortcode( 'button', 'ucfbands_shortcode_announcement' );
+add_shortcode( 'button', 'ucfbands_shortcode_announcements' );

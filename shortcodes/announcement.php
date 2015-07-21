@@ -121,10 +121,18 @@ function ucfbands_shortcode_announcements( $atts ) {
         // Start Announcement Wrap
         $shortcode_output .= '<div class="announcement-wrap">';
         
+            
+            // Get & Output Post Title
+            $shortcode_output .=
+                '<h5 class="announcement-title">
+                <a href="' . get_permalink( $announcement ) . '">'
+                    . $announcement_post->post_title .
+                '</h5></a>';
+        
         
             // Get & Output Post Content
             $announcement_content = $announcement_post->post_content;
-            $shortcode_output .= $announcement_content;
+            $shortcode_output .= '<p>' . $announcement_content . '</p>';
         
         
         

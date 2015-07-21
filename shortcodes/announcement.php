@@ -116,10 +116,11 @@ function ucfbands_shortcode_announcements( $atts ) {
         
         // Get Current Post
         $announcement_post = get_post($announcement);
+        
+        
+        
+        // Get & Output Post Content
         $announcement_content = $announcement_post->post_content;
-        
-        $shortcode_output .= 'CHILLIN ';
-        
         $shortcode_output .= $announcement_content;
 
         

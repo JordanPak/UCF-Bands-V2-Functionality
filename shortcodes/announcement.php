@@ -66,11 +66,6 @@ function ucfbands_shortcode_announcements( $atts ) {
     $shortcode_output .= $announcements_heading;
     
     
-
-    
-    // Closing Tag
-    $shortcode_output .= '</a>';
-    
     
     // Return Output String
 	return $shortcode_output;

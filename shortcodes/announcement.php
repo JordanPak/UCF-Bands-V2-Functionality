@@ -118,10 +118,18 @@ function ucfbands_shortcode_announcements( $atts ) {
         $announcement_post = get_post($announcement);
         
         
+        // Start Announcement Wrap
+        $shortcode_output .= '<div class="announcement-wrap">';
         
-        // Get & Output Post Content
-        $announcement_content = $announcement_post->post_content;
-        $shortcode_output .= $announcement_content;
+        
+            // Get & Output Post Content
+            $announcement_content = $announcement_post->post_content;
+            $shortcode_output .= $announcement_content;
+        
+        
+        
+        // End Announcement Wrap
+        $shortcode_output .= '</div>';
 
         
     } // foreach announcements as announcement

@@ -17,7 +17,9 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'num'      => '3', // Number of announcements to show
+        'num'       => '3',     // Number of announcements to show
+        'heading'   => 'yes',   // Show "Announcements" Heading
+        'button'    => 'yes',   // Show "View All" Button next to heading 
 	), $atts, 'announcements' );
 
     
@@ -25,8 +27,10 @@ function ucfbands_shortcode_announcements( $atts ) {
     //-- SET VARS --//
     
     // Attributes
-    $announcements_num = $atts['num'];
-    
+    $announcements_num =        $atts['num'];
+    $announcements_heading =    $atts['heading'];
+    $announcements_button =     $atts['button'];
+        
     // Output
     $shortode_output = '';
     

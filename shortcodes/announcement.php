@@ -18,8 +18,8 @@ function ucfbands_shortcode_announcements( $atts ) {
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
         'num'       => '3',     // Number of announcements to show
-        'heading'   => 'yes',   // Show "Announcements" Heading
-        'button'    => 'yes',   // Show "View All" Button next to heading 
+        'heading'   => '',      // Show "Announcements" Heading
+        'button'    => '',      // Show "View All" Button next to heading 
 	), $atts, 'announcements' );
 
     
@@ -41,10 +41,20 @@ function ucfbands_shortcode_announcements( $atts ) {
     //=========//
     
     
-    //-- CLASSES --//
+    //-- HEADING --//
     
-    // Default
-//    $button_classes .= 'button ';
+    // If no heading, don't do block title or button
+    if ($announcements_heading != 'no') {
+        
+        // Block Button
+        if ($announcements_button != 'no') {
+            $announcements_button = ' <a class="button button-xsm button-white" href="' . get_site_url() . '/announcements' . '">View All</a>';
+        }
+    
+        // Set Block Title
+        $announcements_heading = '<h2 class="block-title">Announcements' . $announcements_button . '</h2>';
+        
+    } // if announcements_heading isn't "no"
     
     
     
@@ -52,8 +62,8 @@ function ucfbands_shortcode_announcements( $atts ) {
     //  OUTPUT  //
     //==========//
     
-    // Start Opening Tag
-    $shortcode_output .= '<a ';
+    // Heading
+    $shortcode_output .= $announcements_heading;
     
     
 
@@ -68,4 +78,4 @@ function ucfbands_shortcode_announcements( $atts ) {
 } // ucfbands_shortcode_announcement()
 
 // Register the shortcode
-add_shortcode( 'button', 'ucfbands_shortcode_announcements' );
+add_shortcode( 'announcements', 'ucfbands_shortcode_announcements' );

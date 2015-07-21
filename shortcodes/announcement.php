@@ -81,9 +81,20 @@ function ucfbands_shortcode_announcements( $atts ) {
     $announcements = new WP_Query( $announcements_args );
     
     
+    
+    //-- NONE FOUND MESSAGE --//
+    
     // If no matches, set the message
     if ( ($announcements->have_posts()) == false ) 
         $no_announcements_found = '<p><b>There are currently no announcements for this band.</b></p>';
+    
+    
+    
+    //-- GET POSTS & META -//
+    
+    // Get the queried posts
+    $announcements = $announcements->get_posts();
+    
 
     
     //==========//
@@ -96,6 +107,24 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     // No Announcements Message
     $shortcode_output .= $no_announcements_found;
+    
+    
+    //-- POST LOOP --//
+    foreach($announcements as $announcement) {
+        
+        
+        // Get Content
+//        $announcement_content = the_content($announcement);
+        
+        $shortcode_output .= 'CHILLIN ';
+        
+//        $shortcode_output .= $announcement_content;
+        
+        
+    
+        
+        
+    } // foreach announcements as announcement
     
     
     // Return Output String

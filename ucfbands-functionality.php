@@ -80,7 +80,7 @@ require_once( 'shortcodes/hero.php' );
 //-- CPT-BASED --//
 
 // Announcement & Announcements Listing
-//require_once( 'shortcodes/announcement.php' );
+require_once( 'shortcodes/announcement.php' );
 
 // Staff Member Listing
 //require_once( 'shortcodes/staff-member.php' );

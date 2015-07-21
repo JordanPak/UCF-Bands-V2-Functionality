@@ -17,7 +17,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-//        'size'      => 'med',
+        'num'      => '3', // Number of announcements to show
 	), $atts, 'announcements' );
 
     
@@ -25,11 +25,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     //-- SET VARS --//
     
     // Attributes
-//    $button_size =      $atts['size'];
-
-    
-    // Attribute Helpers
-//    $button_classes = '';
+    $announcements_num = $atts['num'];
     
     // Output
     $shortode_output = '';

@@ -19,7 +19,8 @@ function ucfbands_shortcode_announcements( $atts ) {
 	$atts = shortcode_atts( array(
         'num'       => '3',     // Number of announcements to show
         'heading'   => '',      // Show "Announcements" Heading
-        'button'    => '',      // Show "View All" Button next to heading 
+        'button'    => '',      // Show "View All" Button next to heading
+        'band'      => '',      // Slug for band in Band taxonomy
 	), $atts, 'announcements' );
 
     
@@ -30,7 +31,12 @@ function ucfbands_shortcode_announcements( $atts ) {
     $announcements_num =        $atts['num'];
     $announcements_heading =    $atts['heading'];
     $announcements_button =     $atts['button'];
-        
+    $announcements_band =       $atts['band'];
+    
+    // Helpers
+    $announcements =            ''; // WP_Query()
+    $no_announcements_found =   '';
+    
     // Output
     $shortode_output = '';
     
@@ -57,6 +63,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     } // if announcements_heading isn't "no"
     
     
+    
     //-- CPT QUERY --//
     
     // Query Options
@@ -70,10 +77,14 @@ function ucfbands_shortcode_announcements( $atts ) {
         'posts_per_page'    => $announcements_num,
     );
     
-    
-    // Query/Get Posts
+    // Query/Get Post IDs
     $announcements = new WP_Query( $announcements_args );
     
+    
+    // If no matches, set the message
+    if ( ($announcements->have_posts()) == false ) 
+        $no_announcements_found = '<p><b>There are currently no announcements for this band.</b></p>';
+
     
     //==========//
     //  OUTPUT  //
@@ -82,6 +93,9 @@ function ucfbands_shortcode_announcements( $atts ) {
     // Heading
     $shortcode_output .= $announcements_heading;
     
+    
+    // No Announcements Message
+    $shortcode_output .= $no_announcements_found;
     
     
     // Return Output String

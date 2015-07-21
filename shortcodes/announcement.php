@@ -109,20 +109,19 @@ function ucfbands_shortcode_announcements( $atts ) {
     $shortcode_output .= $no_announcements_found;
     
     
+    
     //-- POST LOOP --//
     foreach($announcements as $announcement) {
         
         
-        // Get Content
-//        $announcement_content = the_content($announcement);
+        // Get Current Post
+        $announcement_post = get_post($announcement);
+        $announcement_content = $announcement_post->post_content;
         
         $shortcode_output .= 'CHILLIN ';
         
-//        $shortcode_output .= $announcement_content;
-        
-        
-    
-        
+        $shortcode_output .= $announcement_content;
+
         
     } // foreach announcements as announcement
     

@@ -146,7 +146,12 @@ function ucfbands_shortcode_announcements( $atts ) {
         
             // Post Content
             $announcement_content = $announcement_post->post_content;
-            $shortcode_output .= '<p>' . $announcement_content . '</p>';
+            $announcement_content = substr($announcement_content, 0, 105) . '...'; // Get excerpt
+        
+            $shortcode_output .=
+                '<p><a href="' . get_permalink( $announcement ) . '">'
+                    . $announcement_content . 
+                '</a></p>';
         
         
         

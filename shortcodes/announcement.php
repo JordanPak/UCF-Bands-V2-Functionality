@@ -82,11 +82,23 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     
     
+    //==========//
+    //  OUTPUT  //
+    //==========//
+    
+    
+    // Heading
+    $shortcode_output .= $announcements_heading;
+
+    
+    
     //-- NONE FOUND MESSAGE --//
     
     // If no matches, set the message
-    if ( ($announcements->have_posts()) == false ) 
-        $no_announcements_found = '<p><b>There are currently no announcements for this band.</b></p>';
+    if ( ($announcements->have_posts()) == false ) {
+        $shortcode_output .= '<p>There are currently no announcements for this band.</p>';
+        return $shortcode_output;
+    }
     
     
     
@@ -94,19 +106,6 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     // Get the queried posts
     $announcements = $announcements->get_posts();
-    
-
-    
-    //==========//
-    //  OUTPUT  //
-    //==========//
-    
-    // Heading
-    $shortcode_output .= $announcements_heading;
-    
-    
-    // No Announcements Message
-    $shortcode_output .= $no_announcements_found;
     
     
     

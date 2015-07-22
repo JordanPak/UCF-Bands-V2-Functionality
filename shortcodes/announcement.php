@@ -119,10 +119,22 @@ function ucfbands_shortcode_announcements( $atts ) {
         // Get Band Name
         $announcements_band_name = get_term_by( 'slug', $announcements_band, 'band')->name;
         
-        // None Found Message
-        $shortcode_output .=
-            '<p>There are currently no announcements for the ' . $announcements_band_name . '.</p>' . $announcements_wrap_close;
+        // If "all-bands", just do "There are currently no announcements"
+        if ( strtolower($announcements_band_name) != 'all bands') {
         
+            // None Found Message
+            $shortcode_output .=
+                '<p>There are currently no announcements for the ' . $announcements_band_name . '.</p>' . $announcements_wrap_close;
+            
+            
+        } // If not "All Bands"
+        
+        // If "All Bands"
+        else {
+            $shortcode_output .= '<p>There are currently no announcements.</p>' . $announcements_wrap_close;
+        }
+        
+        // Finish Shortcode FN with output.
         return $shortcode_output;
     
     } // None Found

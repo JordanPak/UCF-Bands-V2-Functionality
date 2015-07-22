@@ -193,15 +193,24 @@ add_shortcode( 'announcements', 'ucfbands_shortcode_announcements' );
  * @author  Jordan Pakrosnis
  */
 function announcements_content ( $announcement_post ) {
+                 
+    // Get Post Content
+    $announcement_content = $announcement_post->post_content;
     
-            $announcement_content = $announcement_post->post_content;
-            $announcement_content = strip_tags($announcement_content); // Strip tags (like a's that break the content)
-            $announcement_content = substr($announcement_content, 0, 100) . '...'; // Get excerpt
-        
-            return
-                '<p><a href="' . get_permalink( $announcement ) . '">'
-                    . $announcement_content . 
-                '</a></p>'
-            ;
     
-}
+    // Strip tags to eliminate anchor breaking and large images, etc
+    $announcement_content = strip_tags($announcement_content);
+    
+    
+    // Get "Excerpt" content from content
+    $announcement_content = substr($announcement_content, 0, 100) . '...'; // Get excerpt
+    
+    
+    // Return content wrapped in link to post
+    return
+        '<p><a href="' . get_permalink( $announcement ) . '">'
+            . $announcement_content . 
+        '</a></p>'
+    ;
+    
+} // announcements_content()

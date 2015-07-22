@@ -17,10 +17,10 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'num'       => '3',     // Number of announcements to show
-        'heading'   => '',      // Show "Announcements" Heading
-        'button'    => '',      // Show "View All" Button next to heading
-        'band'      => '',      // Slug for band in Band taxonomy
+        'num'       => '3',         // Number of announcements to show
+        'heading'   => '',          // Show "Announcements" Heading
+        'button'    => '',          // Show "View All" Button next to heading
+        'band'      => 'all-bands', // Slug for band in Band taxonomy
 	), $atts, 'announcements' );
 
     
@@ -71,10 +71,20 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     //-- CPT QUERY --//
     
+    
+    // Taxonomy Query
+    $tax_query = array(
+        array(
+            'taxonomy'  => 'band',
+            'field'     => 'slug',
+            'terms'     => $announcements_band,
+        ),
+    );
+    
     // Query Options
     $announcements_args = array(
         'post_type'         => 'announcement',
-        'category_name'     => $announcements_band,
+        'tax_query'         => $tax_query,
         'fields'            => 'ids',
         'orderby'           => 'meta_value_num',
         'order'             => 'DSC',

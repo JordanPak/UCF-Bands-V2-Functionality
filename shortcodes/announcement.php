@@ -158,15 +158,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     
         
             // Post Content
-            $announcement_content = $announcement_post->post_content;
-            $announcement_content = strip_tags($announcement_content); // Strip tags (like a's that break the content)
-            $announcement_content = substr($announcement_content, 0, 100) . '...'; // Get excerpt
-        
-            $shortcode_output .=
-                '<p><a href="' . get_permalink( $announcement ) . '">'
-                    . $announcement_content . 
-                '</a></p>';
-        
+            $shortcode_output .= announcements_content( $announcement_post );
         
         
         // End Announcement Wrap
@@ -188,3 +180,20 @@ function ucfbands_shortcode_announcements( $atts ) {
 
 // Register the shortcode
 add_shortcode( 'announcements', 'ucfbands_shortcode_announcements' );
+
+
+
+// Post Content
+function announcements_content ( $announcement_post ) {
+    
+            $announcement_content = $announcement_post->post_content;
+            $announcement_content = strip_tags($announcement_content); // Strip tags (like a's that break the content)
+            $announcement_content = substr($announcement_content, 0, 100) . '...'; // Get excerpt
+        
+            return
+                '<p><a href="' . get_permalink( $announcement ) . '">'
+                    . $announcement_content . 
+                '</a></p>'
+            ;
+    
+}

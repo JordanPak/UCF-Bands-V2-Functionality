@@ -96,3 +96,12 @@ require_once( 'shortcodes/announcement.php' );
 
 // Pep Band & Pep Band Listing (TBA)
 //require_once( 'shortcodes/pep-band.php' );
+
+
+
+//=====================//
+//  ARCHIVE TEMPLATES  //
+//=====================//
+
+// Announcements
+require_once( 'archives/archive-announcement.php' );

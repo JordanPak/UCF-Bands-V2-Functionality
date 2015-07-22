@@ -137,7 +137,7 @@ function ucfbands_shortcode_announcements( $atts ) {
         // Finish Shortcode FN with output.
         return $shortcode_output;
     
-    } // None Found
+    } // If None Found
     
     
     

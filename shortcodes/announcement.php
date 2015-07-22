@@ -77,7 +77,7 @@ function ucfbands_shortcode_announcements( $atts ) {
         'category_name'     => $announcements_band,
         'fields'            => 'ids',
         'orderby'           => 'meta_value_num',
-        'order'             => 'ASC',
+        'order'             => 'DSC',
         'post_count'        => $announcements_num,
         'posts_per_page'    => $announcements_num,
     );

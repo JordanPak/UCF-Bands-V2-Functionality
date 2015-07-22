@@ -183,7 +183,15 @@ add_shortcode( 'announcements', 'ucfbands_shortcode_announcements' );
 
 
 
-// Post Content
+
+/**
+ * UCFBands Shortcode: Announcements
+ * Configure Announcements Content
+ *
+ * @param   announcement post
+ * @return  announcement content excerpt string
+ * @author  Jordan Pakrosnis
+ */
 function announcements_content ( $announcement_post ) {
     
             $announcement_content = $announcement_post->post_content;

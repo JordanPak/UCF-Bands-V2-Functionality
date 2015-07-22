@@ -130,6 +130,11 @@ function ucfbands_shortcode_announcements( $atts ) {
         $shortcode_output .= '<div class="announcement-wrap">';
         
         
+            // Post Date
+            $shortcode_output .= 
+                '<span class="announcement-date"><i class="fa fa-calendar"></i>&nbsp; ' .
+                mysql2date( 'F j', $announcement_post->post_date ) . '</span>';
+        
         
             // Post Title
             $shortcode_output .=
@@ -137,13 +142,7 @@ function ucfbands_shortcode_announcements( $atts ) {
                 <a href="' . get_permalink( $announcement ) . '">'
                     . $announcement_post->post_title .
                 '</h5></a>';
-        
-        
-            // Post Date
-            $shortcode_output .= 
-                '<b><i class="fa fa-calendar"></i>&nbsp; ' .
-                mysql2date( 'F j, Y', $announcement_post->post_date ) . '</b>';
-        
+    
         
             // Post Content
             $announcement_content = $announcement_post->post_content;

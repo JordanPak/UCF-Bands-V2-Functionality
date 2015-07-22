@@ -146,6 +146,7 @@ function ucfbands_shortcode_announcements( $atts ) {
         
             // Post Content
             $announcement_content = $announcement_post->post_content;
+            $announcement_content = strip_tags($announcement_content); // Strip tags (like a's that break the content)
             $announcement_content = substr($announcement_content, 0, 105) . '...'; // Get excerpt
         
             $shortcode_output .=

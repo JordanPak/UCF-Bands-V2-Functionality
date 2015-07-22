@@ -47,6 +47,11 @@ function ucfbands_shortcode_announcements( $atts ) {
     //=========//
     
     
+    //-- WRAP --//
+    $announcements_wrap_open =      '<div class="announcements-wrap">';
+    $announcements_wrap_close =     '</div>';
+    
+    
     //-- HEADING --//
     
     // If no heading, don't do block title or button
@@ -87,6 +92,10 @@ function ucfbands_shortcode_announcements( $atts ) {
     //==========//
     
     
+    // Wrap
+    $shortcode_output .= $announcements_wrap_open;
+    
+    
     // Heading
     $shortcode_output .= $announcements_heading;
 
@@ -96,7 +105,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     // If no matches, set the message
     if ( ($announcements->have_posts()) == false ) {
-        $shortcode_output .= '<p>There are currently no announcements for this band.</p>';
+        $shortcode_output .= '<p>There are currently no announcements for this band.</p>' . $announcements_wrap_close;
         return $shortcode_output;
     }
     
@@ -140,6 +149,11 @@ function ucfbands_shortcode_announcements( $atts ) {
 
         
     } // foreach announcements as announcement
+    
+    
+    
+    // Close Wrap
+    $shortcode_output .= $announcements_wrap_close;
     
     
     // Return Output String

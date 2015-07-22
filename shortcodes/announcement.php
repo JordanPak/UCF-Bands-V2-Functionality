@@ -137,7 +137,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     
     //-- POST LOOP --//
-    foreach($announcements as $announcement) {
+    foreach($announcements as $announcement) { // $announcement is just the ID
         
         
         // Get Current Post
@@ -163,7 +163,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     
         
             // Post Content
-            $shortcode_output .= announcements_content( $announcement_post );
+            $shortcode_output .= announcements_content( $announcement, $announcement_post );
         
         
         // End Announcement Wrap
@@ -197,7 +197,7 @@ add_shortcode( 'announcements', 'ucfbands_shortcode_announcements' );
  * @return  announcement content excerpt string
  * @author  Jordan Pakrosnis
  */
-function announcements_content ( $announcement_post ) {
+function announcements_content ( $announcement_id, $announcement_post ) {
                  
     // Get Post Content
     $announcement_content = $announcement_post->post_content;
@@ -213,7 +213,7 @@ function announcements_content ( $announcement_post ) {
     
     // Return content wrapped in link to post
     return
-        '<p><a href="' . get_permalink( $announcement ) . '">'
+        '<p><a href="' . get_permalink( $announcement_id ) . '">'
             . $announcement_content . 
         '</a></p>'
     ;

@@ -105,7 +105,10 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     // If no matches, set the message
     if ( ($announcements->have_posts()) == false ) {
-        $shortcode_output .= '<p>There are currently no announcements for this band.</p>' . $announcements_wrap_close;
+        $shortcode_output .=
+            '<p>There are currently no announcements for the '
+            . get_term_by('slug', $announcements_band, 'band')->name .
+            '.</p>' . $announcements_wrap_close;
         return $shortcode_output;
     }
     

@@ -115,12 +115,17 @@ function ucfbands_shortcode_announcements( $atts ) {
     
     // If no matches, set the message
     if ( ($announcements->have_posts()) == false ) {
+        
+        // Get Band Name
+        $announcements_band_name = get_term_by( 'slug', $announcements_band, 'band')->name;
+        
+        // None Found Message
         $shortcode_output .=
-            '<p>There are currently no announcements for the '
-            . get_term_by('slug', $announcements_band, 'band')->name .
-            '.</p>' . $announcements_wrap_close;
+            '<p>There are currently no announcements for the ' . $announcements_band_name . '.</p>' . $announcements_wrap_close;
+        
         return $shortcode_output;
-    }
+    
+    } // None Found
     
     
     

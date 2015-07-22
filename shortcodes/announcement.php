@@ -220,7 +220,7 @@ function announcements_content ( $announcement_id, $announcement_post ) {
     
     
     // Get "Excerpt" content from content
-    $announcement_content = substr($announcement_content, 0, 100) . '...'; // Get excerpt
+    $announcement_content = substr($announcement_content, 0, 96) . '...'; // Get excerpt
     
     
     // Return content wrapped in link to post

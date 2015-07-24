@@ -40,7 +40,3 @@ function ucfbands_event_query( $num_events, $band ) {
     $events = new WP_Query( $events_args );
     
 } // ucfbands_event_query()
-
-
-
-

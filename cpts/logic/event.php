@@ -147,31 +147,3 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     return $event_meta;
 
 } // ucfbands_event_none_found
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

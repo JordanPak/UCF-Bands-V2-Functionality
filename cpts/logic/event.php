@@ -39,4 +39,8 @@ function ucfbands_event_query( $num_events, $band ) {
     // Query/Get Post IDs
     $events = new WP_Query( $events_args );
     
+    
+    // Return the events
+    return $events;
+    
 } // ucfbands_event_query()

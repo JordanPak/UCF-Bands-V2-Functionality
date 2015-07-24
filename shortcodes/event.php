@@ -15,8 +15,12 @@
 function ucfbands_shortcode_events( $atts ) {
     
     
+    //=========//
+    //  LOGIC  //
+    //=========//
     
-    
+    // Get Events
+    $events = ucfbands_event_query( 5, 'all-bands' );
     
     
 } // ucfbands_shortcode_events()

@@ -51,6 +51,22 @@ function ucfbands_shortcode_events( $atts ) {
     $events_wrap_close =    '</div>';
     
     
+    //-- HEADING --//
+    
+    // If no heading, don't do block title or button
+    if ($events_heading != 'no') {
+        
+        // Block Button
+        if ($events_button != 'no') {
+            $events_button = ' <a class="button button-xsm button-white" href="' . get_site_url() . '/events' . '">View All</a>';
+        }
+    
+        // Set Block Title
+        $events_heading = '<h2 class="block-title"><i class="fa fa-calendar"></i>&nbsp;Events' . $events_button . '</h2>';
+        
+    } // if announcements_heading isn't "no"
+    
+    
     //-- GET EVENTS --//
     $events = ucfbands_event_query( $events_num, $events_band );
     
@@ -63,6 +79,9 @@ function ucfbands_shortcode_events( $atts ) {
     
     // Wrap Open
     $shortcode_output .= $events_wrap_open;
+    
+    // Heading
+    $shortcode_output .= $events_heading;
     
     
     //-- NONE FOUND MESSAGE --//

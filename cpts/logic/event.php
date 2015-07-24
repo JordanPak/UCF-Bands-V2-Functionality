@@ -24,6 +24,19 @@ function ucfbands_event_query( $num_events, $band ) {
             'terms'     => $band,
         ),
     );
+
+    
+    // Meta Query Args
+	// Only get events that haven't passed!
+	$meta_query = array(
+		'relation'	=>	'AND',
+		array(
+			'key'		=>	'_ucfbands_event_finish_date_time',
+			'value'		=>	time(),
+			'compare'	=>	'>'
+		)
+	);
+    
     
     // Event Query Args
     $events_args = array(
@@ -31,9 +44,11 @@ function ucfbands_event_query( $num_events, $band ) {
         'tax_query'         => $tax_query,
         'fields'            => 'ids',
         'orderby'           => 'meta_value_num',
-        'order'             => 'DSC',
+        'order'             => 'ASC',
         'post_count'        => $num_events,
         'posts_per_page'    => $num_events,
+        'meta_key'          => '_ucfbands_event_start_date_time',
+        'meta_query'        => $meta_query
     );
     
     // Query/Get Post IDs
@@ -169,8 +184,20 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     
     // Date Badge Output
     $date_badge = '';
-
     
+    
+    // CONVERT TO TIME STRINGS //
+    $start_month	= date( 'M', $start_date_time );
+    $start_day  	= date( 'j', $start_date_time );
+    $start_time 	= date( 'g:i A', $start_date_time );
+
+    $end_month      = date( 'M', $finish_date_time );
+    $end_day        = date( 'j', $finish_date_time );
+    $end_time       = date( 'g:i A', $finish_date_time );    
+    
+    
+    // For Testing
+    $date_badge .= $start_month . ' ' . $start_day . ' to ' . $end_day . ' | ' . $start_time . ' to ' . $end_time;
     
     
     // Return Date Badge string

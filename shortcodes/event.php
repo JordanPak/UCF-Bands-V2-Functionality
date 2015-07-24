@@ -17,7 +17,7 @@ function ucfbands_shortcode_events( $atts ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'num'       => '3',         // Number of announcements to show
+        'num'       => '5',         // Number of announcements to show
         'heading'   => '',          // Show "Events" Heading
         'button'    => '',          // Show "View All" Button next to heading
         'band'      => 'all-bands', // Slug for band in Band taxonomy
@@ -44,6 +44,15 @@ function ucfbands_shortcode_events( $atts ) {
     //=========//
     //  LOGIC  //
     //=========//
+    
+    
+        
+//	 Time Testing
+	echo 'MySQL Time: ' . current_time( 'mysql' );	
+	date_default_timezone_set('America/New_York');
+	echo '<br>' . date_default_timezone_get();
+	echo ': ' . date('Y-m-d H:i:s') . '<br><br>';
+    
     
     
     //-- WRAP --//
@@ -157,7 +166,7 @@ function ucfbands_shortcode_events( $atts ) {
             
             
             // Close Entry Wrapper
-            $shortcode_output .= '</div>';
+            $shortcode_output .= '<br><br></div>';
             
 
         } // foreach event

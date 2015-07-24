@@ -61,6 +61,9 @@ require_once( 'cpts/register/rehearsal-schedule.php' );
 //  CPT LOGIC  //
 //=============//
 
+// Events
+require_once( 'cpts/logic/event.php' );
+
 
 
 //==============//

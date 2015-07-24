@@ -57,7 +57,7 @@ function ucfbands_event_none_found( $events_band ) {
 
     
     // Output String
-    $shortcode_output = '';
+   $none_found = '';
 
         
     // Get Band Name
@@ -65,25 +65,25 @@ function ucfbands_event_none_found( $events_band ) {
     
     
     // Message Wrap Open
-    $shortcode_output .= '<br><div class="block entry"><p>';
+    $none_found .= '<br><div class="block entry"><p>';
     
 
         // If "all-bands", just do "There are currently no announcements"
         if ( strtolower($events_band_name) != 'all bands')
-            $shortcode_output .= 'There are currently no events for the ' . $events_band_name . '.';
+            $none_found .= 'There are currently no events for the ' . $events_band_name . '.';
 
 
         // If "All Bands"
         else
-            $shortcode_output .= 'There are currently no events.';
+            $none_found .= 'There are currently no events.';
 
     
     // Message Wrap Close
-    $shortcode_output .= '</p></div>';
+    $none_found .= '</p></div>';
     
     
-    // Finish Shortcode FN with output.
-    return $shortcode_output;
+    // Return None Found string
+    return $none_found;
     
     
 } // ucfbands_event_none_found

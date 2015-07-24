@@ -129,11 +129,19 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     
     // Location
     $event_meta['location_name']            = get_post_meta( $event, $meta_id_prefix . 'location_name', true );
-    $event_meta['location_google_map']      = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
     
     // Icon/Band
     $event_meta['icon_background_color']    = get_post_meta( $event, $meta_id_prefix . 'icon_background_color', true );
     
+    
+    
+    // OPTIONAL META //
+    
+    // Google Map
+    if ($google_map)
+        $event_meta['location_google_map']      = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
+    
+        
     
     // Return Meta
     return $event_meta;

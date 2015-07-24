@@ -70,6 +70,8 @@ function ucfbands_shortcode_events( $atts ) {
     //-- GET EVENTS --//
     $events = ucfbands_event_query( $events_num, $events_band );
     
+    // Check for posts
+    $events_has_posts = $events->have_posts();
     
 
     //==========//
@@ -85,33 +87,9 @@ function ucfbands_shortcode_events( $atts ) {
     $shortcode_output .= $events_heading;
     
     
-    //-- NONE FOUND MESSAGE --//
-    
-    // If no matches, set the message
-    if ( ($events->have_posts()) == false ) {
-        
-        // Get Band Name
-        $events_band_name = get_term_by( 'slug', $events_band, 'band')->name;
-        
-        // If "all-bands", just do "There are currently no announcements"
-        if ( strtolower($events_band_name) != 'all bands') {
-        
-            // None Found Message
-            $shortcode_output .=
-                '<br><div class="block entry"><p>There are currently no events for the ' . $events_band_name . '.</p></div>' . $events_wrap_close;
-            
-            
-        } // If not "All Bands"
-        
-        // If "All Bands"
-        else {
-            $shortcode_output .= '<br><div class="block entry"><p>There are currently no events.</p></div>' . $events_wrap_close;
-        }
-        
-        // Finish Shortcode FN with output.
-        return $shortcode_output;
-    
-    } // If None Found        
+    // None Found
+    if ($events_has_posts == false)
+        $shortcode_output .= ucfbands_event_none_found( $events_band );
     
     
     

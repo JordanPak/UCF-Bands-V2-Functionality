@@ -62,7 +62,7 @@ function ucfbands_shortcode_events( $atts ) {
         }
     
         // Set Block Title
-        $events_heading = '<h2 class="block-title"><i class="fa fa-calendar"></i>&nbsp;Events' . $events_button . '</h2>';
+        $events_heading = '<h2 class="block-title"><i class="fa fa-calendar"></i>&nbsp;Upcoming Events' . $events_button . '</h2>';
         
     } // if announcements_heading isn't "no"
     
@@ -93,9 +93,31 @@ function ucfbands_shortcode_events( $atts ) {
     
     
     
+    // If posts are found, process them
+    if ($events_has_posts) {
+    
+        
+        //-- GET POSTS --//
+
+        // Get the queried posts
+        $events = $events->get_posts();
+
+
+        //-- LOOP --//
+        foreach( $events as $event ) {
+
+
+            // Get event meta (params get what we want)
+
+
+        } // foreach event
+    
+        
+    } // if events has posts
+    
+    
     // Wrap Close
     $shortcode_output .= $events_wrap_close;
-    
     
 
     // Return Output

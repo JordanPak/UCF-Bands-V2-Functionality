@@ -46,9 +46,32 @@ function ucfbands_shortcode_events( $atts ) {
     //=========//
     
     
-    // Get Events
-    $events = ucfbands_event_query( 5, 'all-bands' );
+    //-- WRAP --//
+    $events_wrap_open =     '<div class="events-shortcode-wrap">';
+    $events_wrap_close =    '</div>';
     
+    
+    //-- GET EVENTS --//
+    $events = ucfbands_event_query( $events_num, $events_band );
+    
+    
+
+    //==========//
+    //  OUTPUT  //
+    //==========//
+    
+    
+    // Wrap Open
+    $shortcode_output .= $events_wrap_open;
+    
+    
+    // Wrap Close
+    $shortcode_output .= $events_wrap_close;
+    
+    
+
+    // Return Output
+    return $shortcode_output;
     
 } // ucfbands_shortcode_events()
 

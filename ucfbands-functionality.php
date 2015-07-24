@@ -86,7 +86,7 @@ require_once( 'shortcodes/announcement.php' );
 //require_once( 'shortcodes/staff-member.php' );
 
 // Event & Events Listing
-//require_once( 'shortcodes/event.php' );
+require_once( 'shortcodes/event.php' );
 
 // Rehearsal Listings
 //require_once( 'shortcodes/rehearsal.php' );

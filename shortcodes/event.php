@@ -125,7 +125,7 @@ function ucfbands_shortcode_events( $atts ) {
             
                 
                 // Title
-            
+                $shortcode_output .= '<h4 class="event-title">' . $event_post->post_title . '</h4>';
             
             
                 // Time/Daily/TBA

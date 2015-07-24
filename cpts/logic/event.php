@@ -87,3 +87,57 @@ function ucfbands_event_none_found( $events_band ) {
     
     
 } // ucfbands_event_none_found
+
+
+
+/**
+ * UCFBands Event: Get Meta
+ * 
+ * Default Meta
+ *      - Title
+ *      - Date(s) / Time
+ *      - Location
+ *      - Band / Icon BG
+ *
+ * Optional Meta
+ *      - Google Map Iframe
+ *      - Schedule
+ *      - Program w/ Guest
+ *
+ * @author Jordan Pakrosnis
+ * @return string 
+ */
+function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false, $program = false ) {
+
+    
+    // Output String
+    $shortcode_output = '';
+
+        
+    // Get Band Name
+    $events_band_name = get_term_by( 'slug', $events_band, 'band')->name;
+    
+    
+    // Message Wrap Open
+    $shortcode_output .= '<br><div class="block entry"><p>';
+    
+
+        // If "all-bands", just do "There are currently no announcements"
+        if ( strtolower($events_band_name) != 'all bands')
+            $shortcode_output .= 'There are currently no events for the ' . $events_band_name . '.';
+
+
+        // If "All Bands"
+        else
+            $shortcode_output .= 'There are currently no events.';
+
+    
+    // Message Wrap Close
+    $shortcode_output .= '</p></div>';
+    
+    
+    // Finish Shortcode FN with output.
+    return $shortcode_output;
+    
+    
+} // ucfbands_event_none_found

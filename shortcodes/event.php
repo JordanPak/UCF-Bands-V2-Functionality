@@ -105,9 +105,14 @@ function ucfbands_shortcode_events( $atts ) {
 
         //-- LOOP --//
         foreach( $events as $event ) {
-
+            
+            
+            // Get Current Post
+            $event_post = get_post( $event );
+            
 
             // Get event meta (params get what we want)
+            ucfbands_event_get_meta();
 
 
         } // foreach event

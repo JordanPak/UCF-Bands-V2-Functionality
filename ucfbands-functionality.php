@@ -33,27 +33,33 @@ require_once( 'admin/styles/global.php' );
 //require_once( 'admin/dashboard.php' );
 
 
-//=====================//
-//  CUSTOM POST TYPES  //
-//=====================//
+//====================//
+//  CPT REGISTRATION  //
+//====================//
 
 // Announcement
-require_once( 'cpts/announcement.php' );
+require_once( 'cpts/register/announcement.php' );
 
 // Staff Member
-require_once( 'cpts/staff-member.php' );
+require_once( 'cpts/register/staff-member.php' );
 
 // Event
-require_once( 'cpts/event.php' );
+require_once( 'cpts/register/event.php' );
 
 // Rehearsal Schedule
-require_once( 'cpts/rehearsal-schedule.php' );
+require_once( 'cpts/register/rehearsal-schedule.php' );
 
 // Photo Gallery (TBA)
-//require_once( 'cpts/photo-gallery.php' );
+//require_once( 'cpts/register/photo-gallery.php' );
 
 // Pep Band (TBA)
-//require_once( 'cpts/pep-band.php' );
+//require_once( 'cpts/register/pep-band.php' );
+
+
+
+//=============//
+//  CPT LOGIC  //
+//=============//
 
 
 

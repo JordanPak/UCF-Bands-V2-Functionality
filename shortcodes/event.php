@@ -114,6 +114,29 @@ function ucfbands_shortcode_events( $atts ) {
             // Get "Default" event meta (params get what we want)
             $event_meta = ucfbands_event_get_meta( $event );
             
+            
+            // Entry Wrapper
+            $shortcode_output .= '<div class="entry-wrapper">';
+            
+            
+                
+                // Date(s)
+            
+            
+                
+                // Title
+            
+            
+            
+                // Time/Daily/TBA
+            
+            
+                // Location
+            
+            
+            // Close Entry Wrapper
+            $shortcode_output .= '</div>';
+            
 
         } // foreach event
     

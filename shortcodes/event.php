@@ -97,14 +97,14 @@ function ucfbands_shortcode_events( $atts ) {
         
             // None Found Message
             $shortcode_output .=
-                '<p>There are currently no events for the ' . $events_band_name . '.</p>' . $events_wrap_close;
+                '<br><div class="block entry"><p>There are currently no events for the ' . $events_band_name . '.</p></div>' . $events_wrap_close;
             
             
         } // If not "All Bands"
         
         // If "All Bands"
         else {
-            $shortcode_output .= '<p>There are currently no events.</p>' . $events_wrap_close;
+            $shortcode_output .= '<br><div class="block entry"><p>There are currently no events.</p></div>' . $events_wrap_close;
         }
         
         // Finish Shortcode FN with output.

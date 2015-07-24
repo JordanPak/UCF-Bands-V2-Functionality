@@ -108,36 +108,15 @@ function ucfbands_event_none_found( $events_band ) {
  * @return string 
  */
 function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false, $program = false ) {
+    
+    
+    // Set Meta ID
+    $meta_id_prefix = '_ucfbands_event_';
+    
+    
+    // DEFAULT META
+    $is_all_day_event       = get_post_meta( $event, $meta_id_prefix . 'is_all_day_event', true );
 
     
-    // Output String
-    $shortcode_output = '';
 
-        
-    // Get Band Name
-    $events_band_name = get_term_by( 'slug', $events_band, 'band')->name;
-    
-    
-    // Message Wrap Open
-    $shortcode_output .= '<br><div class="block entry"><p>';
-    
-
-        // If "all-bands", just do "There are currently no announcements"
-        if ( strtolower($events_band_name) != 'all bands')
-            $shortcode_output .= 'There are currently no events for the ' . $events_band_name . '.';
-
-
-        // If "All Bands"
-        else
-            $shortcode_output .= 'There are currently no events.';
-
-    
-    // Message Wrap Close
-    $shortcode_output .= '</p></div>';
-    
-    
-    // Finish Shortcode FN with output.
-    return $shortcode_output;
-    
-    
 } // ucfbands_event_none_found

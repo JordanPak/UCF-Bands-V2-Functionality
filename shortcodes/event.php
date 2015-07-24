@@ -119,12 +119,11 @@ function ucfbands_shortcode_events( $atts ) {
             $shortcode_output .= '<div class="entry-wrapper">';
             
             
-                
                 // Date(s)
-//                $shortcode_output .= ucfbands_event_date_badge(
-//                    $event_meta['start_date_time'],
-//                    $event_meta['finish_date_time']
-//                );            
+                $shortcode_output .= ucfbands_event_date_badge(
+                    $event_meta['start_date_time'],
+                    $event_meta['finish_date_time']
+                );            
             
                 
                 // Title

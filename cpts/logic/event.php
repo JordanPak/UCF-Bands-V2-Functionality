@@ -155,3 +155,25 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     return $event_meta;
 
 } // ucfbands_event_none_found
+
+
+
+/**
+ * UCFBands Event: Date Badge
+ *
+ * @author Jordan Pakrosnis
+ * @return string 
+ */
+function ucfbands_event_date_badge( $start_date_time, $finish_date_time ) {
+    
+    
+    // Date Badge Output
+    $date_badge = '';
+
+    
+    
+    
+    // Return Date Badge string
+    return $date_badge;
+
+} // ucfbands_event_none_found

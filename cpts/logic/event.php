@@ -164,7 +164,7 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
  * @author Jordan Pakrosnis
  * @return string 
  */
-function ucfbands_event_date_badge( $start_date_time, $finish_date_time ) {
+function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_background_color ) {
     
     
     // Date Badge Output

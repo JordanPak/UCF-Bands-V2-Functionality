@@ -122,7 +122,8 @@ function ucfbands_shortcode_events( $atts ) {
                 // Date(s)
                 $shortcode_output .= ucfbands_event_date_badge(
                     $event_meta['start_date_time'],
-                    $event_meta['finish_date_time']
+                    $event_meta['finish_date_time'],
+                    $event_meta['icon_background_color']
                 );            
             
                 

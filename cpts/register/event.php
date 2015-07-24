@@ -151,7 +151,7 @@ function ucfbands_event_metabox() {
     // Icon Background Color
     $cmb->add_field( array(
         'name'             => 'Icon Background Color',
-        'id'               => $prefix. 'icon_background_colo',
+        'id'               => $prefix. 'icon_background_color',
         'type'             => 'radio',
         'default' => 'ucf-gray',
         'options' => array(

@@ -112,8 +112,8 @@ function ucfbands_shortcode_events( $atts ) {
             
 
             // Get event meta (params get what we want)
-            ucfbands_event_get_meta( $event );
-
+            $event_meta = ucfbands_event_get_meta( $event );
+            
 
         } // foreach event
     

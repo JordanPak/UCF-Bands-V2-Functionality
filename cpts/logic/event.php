@@ -110,13 +110,60 @@ function ucfbands_event_none_found( $events_band ) {
 function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false, $program = false ) {
     
     
+    // Meta Array
+    $event_meta = array();
+    
+    
     // Set Meta ID
     $meta_id_prefix = '_ucfbands_event_';
     
     
-    // DEFAULT META
-    $is_all_day_event       = get_post_meta( $event, $meta_id_prefix . 'is_all_day_event', true );
-
+    // DEFAULT META //
     
+    // Date/Time
+    $event_meta['is_all_day_event']         = get_post_meta( $event, $meta_id_prefix . 'is_all_day_event', true );
+    $event_meta['start_date_time']          = get_post_meta( $event, $meta_id_prefix . 'start_date_time', true );
+    $event_meta['finish_date_time']         = get_post_meta( $event, $meta_id_prefix . 'finish_date_time', true );
+    $event_meta['is_time_tba']              = get_post_meta( $event, $meta_id_prefix . 'is_time_tba', true );
+    $event_meta['show_finish_time']         = get_post_meta( $event, $meta_id_prefix . 'show_finish_time', true );
+    
+    // Location
+    $event_meta['location_name']            = get_post_meta( $event, $meta_id_prefix . 'location_name', true );
+    $event_meta['location_google_map']      = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
+    
+    // Icon/Band
+    $event_meta['icon_background_color']    = get_post_meta( $event, $meta_id_prefix . 'icon_background_color', true );
+    
+    
+    // Return Meta
+    return $event_meta;
 
 } // ucfbands_event_none_found
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -80,6 +80,7 @@ function ucfbands_shortcode_events( $atts ) {
     // Wrap Open
     $shortcode_output .= $events_wrap_open;
     
+    
     // Heading
     $shortcode_output .= $events_heading;
     

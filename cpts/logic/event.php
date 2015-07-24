@@ -27,18 +27,18 @@ function ucfbands_event_query( $num_events, $band ) {
     
     // Event Query Args
     $events_args = array(
-        'post_type'         => 'event',
+        'post_type'         => 'ucfbands_event',
         'tax_query'         => $tax_query,
         'fields'            => 'ids',
         'orderby'           => 'meta_value_num',
         'order'             => 'DSC',
-        'post_count'        => $events_num,
-        'posts_per_page'    => $events_num,
+        'post_count'        => $num_events,
+        'posts_per_page'    => $num_events,
     );
     
     // Query/Get Post IDs
     $events = new WP_Query( $events_args );
-    
+
     
     // Return the events
     return $events;

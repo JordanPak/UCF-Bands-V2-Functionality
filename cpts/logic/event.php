@@ -138,10 +138,18 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     // OPTIONAL META //
     
     // Google Map
-    if ($google_map)
-        $event_meta['location_google_map']      = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
+    if ( $google_map )
+        $event_meta['location_google_map']  = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
     
+    // Schedule
+    if ( $schedule )
+        $event_meta['schedule_group']       = get_post_meta( $event, $meta_id_prefix . 'schedule_group', true );
         
+    // Program
+    if ( $program )
+        $event_meta['program_group']        = get_post_meta( $event, $meta_id_prefix . 'program_group', true );
+    
+    
     
     // Return Meta
     return $event_meta;

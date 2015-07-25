@@ -187,13 +187,10 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     
     
     // CONVERT TO TIME STRINGS //
-    $start_month	= date( 'M', $start_date_time );
-    $start_day  	= date( 'j', $start_date_time );
-    $start_time 	= date( 'g:i A', $start_date_time );
-
+    $start_month	   = date( 'M', $start_date_time );
+    $start_day  	   = date( 'j', $start_date_time );
     $finish_month      = date( 'M', $finish_date_time );
     $finish_day        = date( 'j', $finish_date_time );
-    $finish_time       = date( 'g:i A', $finish_date_time );
     
     
     
@@ -260,8 +257,25 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
  * @return string 
  */
 function ucfbands_event_time( $start_date_time, $finish_date_time, $is_time_tba, $show_finish_time ) {
+
+    
+    // Time Output
+    $time = '';
     
     
+    // CONVERT TO TIME STRINGS //
+    $start_month	= date( 'M', $start_date_time );
+    $start_day  	= date( 'j', $start_date_time );
+    $start_time 	= date( 'g:i A', $start_date_time );
+    
+    $finish_month      = date( 'M', $finish_date_time );
+    $finish_day        = date( 'j', $finish_date_time );
+    $finish_time       = date( 'g:i A', $finish_date_time );
+    
+    
+    
+    // Return Time String
+    return $time;
     
 } // ucfbands_event_time()
 

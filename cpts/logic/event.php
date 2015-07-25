@@ -274,6 +274,32 @@ function ucfbands_event_time( $start_date_time, $finish_date_time, $is_time_tba,
     
     
     
+    // LOGIC //
+    
+    // TBA Time
+    if ( $is_time_tba )
+        $tba = 'TBA';
+    
+    // NOT TBA or Dauly
+    else {
+        
+        
+        
+        
+    } // Not TBA
+    
+    
+    
+    // OUTPUT //
+    
+    // Time Icon
+    $time .= '<i class="fa fa-clock-o"></i> ';
+    
+    
+    // TBA?
+    $time .= $tba;
+    
+    
     // Return Time String
     return $time;
     

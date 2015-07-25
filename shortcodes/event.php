@@ -116,12 +116,17 @@ function ucfbands_shortcode_events( $atts ) {
             
             
             // Event Location Logic
-            if ( $event_meta['location_name'] == '' )
-                $location = 'TBA';
+            $location = '<span class="location">';
             
-            else
-                $location = $event_meta['location_name'];
+                if ( $event_meta['location_name'] == '' )
+                    $location .= 'TBA';
+
+                else
+                    $location .= '<a href="' . get_permalink( $event ) .'" title="Location Details" rel="Location Details">' . $event_meta['location_name'] . '</a>';
     
+            
+            $location .= '</span>';
+            
             
             
             // Entry Wrapper

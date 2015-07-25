@@ -208,7 +208,7 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
         $month = $start_month;
     
     else
-        $month = $start_month . ' - ' . $finish_month;
+        $month = $start_month . ' / ' . $finish_month;
 
     $month = '<span class="month">' . $month . '</span><br>';
     

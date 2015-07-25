@@ -196,9 +196,6 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     $end_time       = date( 'g:i A', $finish_date_time );    
     
     
-    // For Testing
-    $date_badge .= $start_month . ' ' . $start_day . ' to ' . $end_day . ' | ' . $start_time . ' to ' . $end_time;
-    
     
     // Return Date Badge string
     return $date_badge;

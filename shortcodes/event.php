@@ -46,15 +46,6 @@ function ucfbands_shortcode_events( $atts ) {
     //=========//
     
     
-        
-//	 Time Testing
-	echo 'MySQL Time: ' . current_time( 'mysql' );	
-	date_default_timezone_set('America/New_York');
-	echo '<br>' . date_default_timezone_get();
-	echo ': ' . date('Y-m-d H:i:s') . '<br><br>';
-    
-    
-    
     //-- WRAP --//
     $events_wrap_open =     '<div class="events-shortcode-wrap">';
     $events_wrap_close =    '</div>';

@@ -138,8 +138,8 @@ function ucfbands_shortcode_events( $atts ) {
             
                 // More Info Icon
                 $shortcode_output .= '<span class="more-info">';
-                $shortcode_output .= '<a href="' . get_permalink( $event ) .'" title="See Event Details" rel="See Event Details">';
-                $shortcode_output .= '<span class="see-event-details">See Event Details </span>';
+                $shortcode_output .= '<a href="' . get_permalink( $event ) .'" title="Event Details" rel="Event Details">';
+                $shortcode_output .= '<span class="event-details">Event Details </span>';
                 $shortcode_output .= '<i class="fa fa-info-circle fa-lg"></i></a></span>';
             
                 
@@ -148,7 +148,7 @@ function ucfbands_shortcode_events( $atts ) {
             
                 
                     // Title
-                    $shortcode_output .= '<h4 class="event-title"><a href="' . get_permalink( $event ) . '" title="See Event Details" rel="See Event Details">';
+                    $shortcode_output .= '<h4 class="event-title"><a href="' . get_permalink( $event ) . '" title="Event Details" rel="See Event Details">';
                         $shortcode_output .= $event_post->post_title;
                     $shortcode_output .= '</a></h4>';
 

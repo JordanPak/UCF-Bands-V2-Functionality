@@ -209,17 +209,35 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     else
         $month = $start_month . ' - ' . $end_month;
 
-    $month = '<span class="month">' . $month . '</span>';
+    $month = '<span class="month">' . $month . '</span><br>';
     
+    
+    // Day
+    if ( $start_day == $end_day ) {
+        $day = $start_day;
+        $day_class = '';   
+    }
+    
+    else {
+        $day = $start_day . ' - ' . $end_day;
+        $day_class = ' day-multi';
+    }
+    
+    $day = '<span class="day' . $day_class . '">' . $day . '</span>';
         
     
+    
     // OUTPUT BADGE //
+    
+    // Open Wrapper
     $date_badge .= '<div class="date-badge' . $color . '">';
     
         
         // Month
         $date_badge .= $month;
         
+        // Day
+        $date_badge .= $day;
     
     
     // Close Badge Wrapper

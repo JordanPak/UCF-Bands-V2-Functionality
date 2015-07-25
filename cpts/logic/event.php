@@ -191,9 +191,10 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     $start_day  	= date( 'j', $start_date_time );
     $start_time 	= date( 'g:i A', $start_date_time );
 
-    $end_month      = date( 'M', $finish_date_time );
-    $end_day        = date( 'j', $finish_date_time );
-    $end_time       = date( 'g:i A', $finish_date_time );
+    $finish_month      = date( 'M', $finish_date_time );
+    $finish_day        = date( 'j', $finish_date_time );
+    $finish_time       = date( 'g:i A', $finish_date_time );
+    
     
     
     // LOGIC //
@@ -203,23 +204,23 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     
     
     // Month
-    if ( $start_month == $end_month )
+    if ( $start_month == $finish_month )
         $month = $start_month;
     
     else
-        $month = $start_month . ' - ' . $end_month;
+        $month = $start_month . ' - ' . $finish_month;
 
     $month = '<span class="month">' . $month . '</span><br>';
     
     
     // Day
-    if ( $start_day == $end_day ) {
+    if ( $start_day == $finish_day ) {
         $day = $start_day;
         $day_class = '';   
     }
     
     else {
-        $day = $start_day . ' - ' . $end_day;
+        $day = $start_day . ' - ' . $finish_day;
         $day_class = ' day-multi';
     }
     
@@ -242,6 +243,7 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     
     // Close Badge Wrapper
     $date_badge .= '</div>';
+    
     
     
     // Return Date Badge string

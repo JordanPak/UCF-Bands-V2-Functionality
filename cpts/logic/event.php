@@ -196,16 +196,30 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     $end_time       = date( 'g:i A', $finish_date_time );
     
     
+    // LOGIC //
+    
     // Background Color
     $color = ' date-badge-' . $icon_background_color;
     
     
-    // Badge Wrapper
+    // Month
+    if ( $start_month == $end_month )
+        $month = $start_month;
+    
+    else
+        $month = $start_month . ' - ' . $end_month;
+
+    $month = '<span class="month">' . $month . '</span>';
+    
+        
+    
+    // OUTPUT BADGE //
     $date_badge .= '<div class="date-badge' . $color . '">';
     
         
-        // Testing
-        $date_badge .= 'Date #';
+        // Month
+        $date_badge .= $month;
+        
     
     
     // Close Badge Wrapper

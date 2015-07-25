@@ -135,7 +135,7 @@ function ucfbands_shortcode_events( $atts ) {
 
 
                     // Time/Location Line
-                    $shortcode_output .= '<b>';
+//                    $shortcode_output .= '<b>';
 
 
                         // Time/Daily/TBA
@@ -149,7 +149,8 @@ function ucfbands_shortcode_events( $atts ) {
 
 
                         // Divider
-                        $shortcode_output .= '&nbsp;|&nbsp;';
+                        $shortcode_output .= '<br>';
+//                        $shortcode_output .= '&nbsp;|&nbsp;';
 
 
                         // Location
@@ -157,7 +158,7 @@ function ucfbands_shortcode_events( $atts ) {
 
 
                     // Close Time/Location Line
-                    $shortcode_output .= '</b>';
+//                    $shortcode_output .= '</b>';
             
             
                 // Right-Info Wrapper Close

@@ -137,7 +137,7 @@ function ucfbands_shortcode_events( $atts ) {
                 
             
                 // More Info Icon
-                $shortcode_output .= '<span class="more-info"><a href="' . get_permalink( $event ) .'" title="More Info" rel="See Event Details">';
+                $shortcode_output .= '<span class="more-info"><a href="' . get_permalink( $event ) .'" title="See Event Details" rel="See Event Details">';
                 $shortcode_output .= '<i class="fa fa-info-circle fa-lg"></i></a></span>';
             
                 

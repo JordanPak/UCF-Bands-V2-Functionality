@@ -309,6 +309,7 @@ function ucfbands_event_time( $is_all_day_event, $start_date_time, $finish_date_
     $time .= $time_logic;
     
     
+    
     // Return Time String
     return $time;
     

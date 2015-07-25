@@ -125,39 +125,46 @@ function ucfbands_shortcode_events( $atts ) {
                     $event_meta['finish_date_time'],
                     $event_meta['icon_background_color']
                 );            
-            
                 
-                // Title
-                $shortcode_output .= '<h4 class="event-title">' . $event_post->post_title . '</h4>';
                 
-            
-                // Time/Location Line
-                $shortcode_output .= '<b>';
-            
-            
-                    // Time/Daily/TBA
-    //                $shortcode_output .= ucfbands_event_time(
-    //                    $event_meta['start_date_time'],
-    //                    $event_meta['finish_date_time'],
-    //                    $event_meta['is_time_tba'],
-    //                    $event_meta['show_finish_time']
-    //                );
-
-
-                    // Divider
-                    $shortcode_output .= '&nbsp;|&nbsp;';
-
-
-                    // Location
-                    $shortcode_output .= '<i class="fa fa-map-marker"></i> ' . $event_meta['location_name'];
-                    
+                // Right-Info Wrapper
+                $shortcode_output .= '<div class="right-info">';
                 
-                // Close Time/Location Line
-                $shortcode_output .= '</b>';
+                    // Title
+                    $shortcode_output .= '<h4 class="event-title">' . $event_post->post_title . '</h4>';
+
+
+                    // Time/Location Line
+                    $shortcode_output .= '<b>';
+
+
+                        // Time/Daily/TBA
+        //                $shortcode_output .= ucfbands_event_time(
+        //                    $event_meta['start_date_time'],
+        //                    $event_meta['finish_date_time'],
+        //                    $event_meta['is_time_tba'],
+        //                    $event_meta['show_finish_time']
+        //                );
+
+
+                        // Divider
+                        $shortcode_output .= '&nbsp;|&nbsp;';
+
+
+                        // Location
+                        $shortcode_output .= '<i class="fa fa-map-marker"></i> ' . $event_meta['location_name'];
+
+
+                    // Close Time/Location Line
+                    $shortcode_output .= '</b>';
+            
+            
+                // Right-Info Wrapper Close
+                $shortcode_output .= '</div>';
             
             
             // Close Entry Wrapper
-            $shortcode_output .= '<br><br></div>';
+            $shortcode_output .= '</div>';
             
 
         } // foreach event

@@ -284,10 +284,15 @@ function ucfbands_event_time( $is_all_day_event, $start_date_time, $finish_date_
     else if ( $is_all_day_event ) 
         $time_logic = 'Daily';
     
-    // NOT TBA or Dauly
+    // NOT TBA or Daily; Do start/finish
     else {
         
+        // Start Time
+        $time_logic = $start_time;
         
+        // End Time, as needed
+        if ( $show_finish_time )
+            $time_logic .= ' - ' . $finish_time;
         
         
     } // Not TBA

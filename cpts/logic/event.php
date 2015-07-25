@@ -256,7 +256,7 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
  * @author Jordan Pakrosnis
  * @return string 
  */
-function ucfbands_event_time( $start_date_time, $finish_date_time, $is_time_tba, $show_finish_time ) {
+function ucfbands_event_time( $is_all_day_event, $start_date_time, $finish_date_time, $is_time_tba, $show_finish_time ) {
 
     
     // Time Output
@@ -278,7 +278,11 @@ function ucfbands_event_time( $start_date_time, $finish_date_time, $is_time_tba,
     
     // TBA Time
     if ( $is_time_tba )
-        $tba = 'TBA';
+        $time_logic = 'TBA';
+    
+    // Daily Time
+    else if ( $is_all_day_event ) 
+        $time_logic = 'Daily';
     
     // NOT TBA or Dauly
     else {
@@ -296,8 +300,8 @@ function ucfbands_event_time( $start_date_time, $finish_date_time, $is_time_tba,
     $time .= '<i class="fa fa-clock-o"></i> ';
     
     
-    // TBA?
-    $time .= $tba;
+    // Insert Time Logic
+    $time .= $time_logic;
     
     
     // Return Time String

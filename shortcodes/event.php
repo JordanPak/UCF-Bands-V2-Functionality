@@ -140,6 +140,7 @@ function ucfbands_shortcode_events( $atts ) {
 
                         // Time/Daily/TBA
                         $shortcode_output .= ucfbands_event_time(
+                            $event_meta['is_all_day_event'],
                             $event_meta['start_date_time'],
                             $event_meta['finish_date_time'],
                             $event_meta['is_time_tba'],

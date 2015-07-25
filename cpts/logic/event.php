@@ -250,3 +250,22 @@ function ucfbands_event_date_badge( $start_date_time, $finish_date_time, $icon_b
     return $date_badge;
 
 } // ucfbands_event_none_found
+
+
+
+/**
+ * UCFBands Event: Time
+ *
+ * @author Jordan Pakrosnis
+ * @return string 
+ */
+function ucfbands_event_time( $start_date_time, $finish_date_time, $is_time_tba, $show_finish_time ) {
+    
+    
+    
+} // ucfbands_event_time()
+
+
+
+
+

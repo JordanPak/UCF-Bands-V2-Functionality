@@ -139,12 +139,12 @@ function ucfbands_shortcode_events( $atts ) {
 
 
                         // Time/Daily/TBA
-        //                $shortcode_output .= ucfbands_event_time(
-        //                    $event_meta['start_date_time'],
-        //                    $event_meta['finish_date_time'],
-        //                    $event_meta['is_time_tba'],
-        //                    $event_meta['show_finish_time']
-        //                );
+                        $shortcode_output .= ucfbands_event_time(
+                            $event_meta['start_date_time'],
+                            $event_meta['finish_date_time'],
+                            $event_meta['is_time_tba'],
+                            $event_meta['show_finish_time']
+                        );
 
 
                         // Divider

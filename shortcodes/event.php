@@ -153,10 +153,6 @@ function ucfbands_shortcode_events( $atts ) {
                     $shortcode_output .= '</a></h4>';
 
 
-                    // Time/Location Line
-//                    $shortcode_output .= '<b>';
-
-
                         // Time/Daily/TBA
                         $shortcode_output .= ucfbands_event_time(
                             $event_meta['is_all_day_event'],
@@ -175,10 +171,6 @@ function ucfbands_shortcode_events( $atts ) {
                         // Location
                         $shortcode_output .= '<i class="fa fa-map-marker"></i> ' .  $location;
 
-
-                    // Close Time/Location Line
-//                    $shortcode_output .= '</b>';
-            
             
                 // Right-Info Wrapper Close
                 $shortcode_output .= '</div>';

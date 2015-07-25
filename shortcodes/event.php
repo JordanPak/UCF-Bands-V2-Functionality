@@ -136,7 +136,11 @@ function ucfbands_shortcode_events( $atts ) {
             
                 
                     // Title
-                    $shortcode_output .= '<h4 class="event-title">' . $event_post->post_title . '</h4>';
+                    $shortcode_output .= '<h4 class="event-title">';
+                        $shortcode_output .= '<a href="' . get_permalink( $event ) . '">';
+                            $shortcode_output .= $event_post->post_title;
+                        $shortcode_output .= '</a>';
+                    $shortcode_output .= '</h4>';
 
 
                     // Time/Location Line

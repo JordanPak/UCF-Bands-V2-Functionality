@@ -126,9 +126,14 @@ function ucfbands_shortcode_events( $atts ) {
                     $event_meta['icon_background_color']
                 );            
                 
+            
+                // More Info Icon
+                $shortcode_output .= '<span class="more-info"><i class="fa fa-info-circle fa-lg"></i></span>';
+            
                 
                 // Right-Info Wrapper
                 $shortcode_output .= '<div class="right-info">';
+            
                 
                     // Title
                     $shortcode_output .= '<h4 class="event-title">' . $event_post->post_title . '</h4>';

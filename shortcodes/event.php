@@ -17,7 +17,7 @@ function ucfbands_shortcode_events( $atts ) {
     
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'num'       => '5',         // Number of announcements to show
+        'num'       => '3',         // Number of announcements to show
         'heading'   => '',          // Show "Events" Heading
         'button'    => '',          // Show "View All" Button next to heading
         'band'      => 'all-bands', // Slug for band in Band taxonomy
@@ -95,10 +95,11 @@ function ucfbands_shortcode_events( $atts ) {
     
     // If posts are found, process them
     if ($events_has_posts) {
-    
         
+        
+        // GET EVENTS LISTING //
         $shortcode_output .= ucfbands_events_listing( $events );
-    
+        
         
     } // if events has posts
     

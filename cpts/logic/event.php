@@ -317,5 +317,99 @@ function ucfbands_event_time( $is_all_day_event, $start_date_time, $finish_date_
 
 
 
+function ucfbands_events_listing( $events ) {
 
 
+        //-- GET POSTS --//
+
+        // Get the queried posts
+        $events = $events->get_posts();
+
+
+        //-- LOOP --//
+        foreach( $events as $event ) {
+            
+            
+            // Get Current Post
+            $event_post = get_post( $event );
+            
+
+            // Get "Default" event meta (params get what we want)
+            $event_meta = ucfbands_event_get_meta( $event );
+            
+            
+            // Event Location Logic
+            $location = '<span class="location">';
+            
+                if ( $event_meta['location_name'] == '' )
+                    $location .= 'TBA';
+
+                else
+                    $location .= '<a href="' . get_permalink( $event ) .'" title="Location Details" rel="Location Details">' . $event_meta['location_name'] . '</a>';
+    
+            
+            $location .= '</span>';
+            
+            
+            
+            // Entry Wrapper
+            $shortcode_output .= '<div class="entry-wrapper clearfix">';
+            
+            
+                // Date(s)
+                $shortcode_output .= ucfbands_event_date_badge(
+                    $event_meta['start_date_time'],
+                    $event_meta['finish_date_time'],
+                    $event_meta['icon_background_color']
+                );            
+                
+            
+                // More Info Icon
+                $shortcode_output .= '<span class="more-info">';
+                $shortcode_output .= '<a href="' . get_permalink( $event ) .'" title="Event Details" rel="Event Details">';
+                $shortcode_output .= '<span class="event-details">Event Details </span>';
+                $shortcode_output .= '<i class="fa fa-info-circle fa-lg"></i></a></span>';
+            
+                
+                // Right-Info Wrapper
+                $shortcode_output .= '<div class="right-info">';
+            
+                
+                    // Title
+                    $shortcode_output .= '<h4 class="event-title"><a href="' . get_permalink( $event ) . '" title="Event Details" rel="See Event Details">';
+                        $shortcode_output .= $event_post->post_title;
+                    $shortcode_output .= '</a></h4>';
+
+
+                        // Time/Daily/TBA
+                        $shortcode_output .= ucfbands_event_time(
+                            $event_meta['is_all_day_event'],
+                            $event_meta['start_date_time'],
+                            $event_meta['finish_date_time'],
+                            $event_meta['is_time_tba'],
+                            $event_meta['show_finish_time']
+                        );
+
+
+                        // Divider
+                        $shortcode_output .= '<br>';
+//                        $shortcode_output .= '&nbsp;|&nbsp;';
+
+
+                        // Location
+                        $shortcode_output .= '<i class="fa fa-map-marker"></i> ' .  $location;
+
+            
+                // Right-Info Wrapper Close
+                $shortcode_output .= '</div>';
+            
+            
+            // Close Entry Wrapper
+            $shortcode_output .= '</div>';
+            
+
+        } // foreach event
+    
+    return $shortcode_output;
+
+}

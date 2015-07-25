@@ -115,6 +115,15 @@ function ucfbands_shortcode_events( $atts ) {
             $event_meta = ucfbands_event_get_meta( $event );
             
             
+            // Event Location Logic
+            if ( $event_meta['location_name'] == '' )
+                $location = 'TBA';
+            
+            else
+                $location = $event_meta['location_name'];
+    
+            
+            
             // Entry Wrapper
             $shortcode_output .= '<div class="entry-wrapper clearfix">';
             
@@ -162,7 +171,7 @@ function ucfbands_shortcode_events( $atts ) {
 
 
                         // Location
-                        $shortcode_output .= '<i class="fa fa-map-marker"></i> ' . $event_meta['location_name'];
+                        $shortcode_output .= '<i class="fa fa-map-marker"></i> ' .  $location;
 
 
                     // Close Time/Location Line

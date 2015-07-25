@@ -116,7 +116,7 @@ function ucfbands_shortcode_events( $atts ) {
             
             
             // Entry Wrapper
-            $shortcode_output .= '<div class="entry-wrapper">';
+            $shortcode_output .= '<div class="entry-wrapper clearfix">';
             
             
                 // Date(s)

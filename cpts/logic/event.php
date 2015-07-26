@@ -365,8 +365,13 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
 
 
 
-        // Entry Wrapper
-        $events_listing .= '<div class="entry-wrapper clearfix">';
+        // ENTRY WRAPPER //
+        
+        // If Archive
+        if ( $is_archive )
+            $events_listing .= '<div class="entry-wrapper masonry-block masonry-block-size--one-third">';
+        else
+            $events_listing .= '<div class="entry-wrapper clearfix">';
 
 
             // Date(s)

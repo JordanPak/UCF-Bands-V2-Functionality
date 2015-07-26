@@ -77,7 +77,7 @@ function ucfbands_event_metabox() {
     $cmb = new_cmb2_box( array(
         'id'            => $prefix . 'metabox',
         'title'         => __( 'Event Details', 'cmb' ),
-        'object_types'  => array( 'ucfbands_event' ),
+        'object_types'  => array( 'event' ),
         'context'       => 'normal',
         'priority'      => 'core',
     ) );

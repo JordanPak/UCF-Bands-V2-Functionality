@@ -424,9 +424,19 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
             // If Archive & has details, Show Details Excerpt
             if ( $is_archive && ($event_post->post_content != '') ) {
             
-                $events_listing .= '<hr>';
                 
-                $events_listing .= '<p>' . $event_post->post_content . '</p>';
+                // Events listing HR & Details Excerpt
+                $events_listing .= '<hr><div class="event-details-excerpt">';
+                
+                
+                    // Get "Excerpt" content from content
+                    $event_content = substr($event_post->post_content, 0, 250); // Get excerpt
+
+                    $events_listing .= '<p>' . $event_content . ' | <a href="' . get_permalink( $event ) . '">More Details...</a></p>';
+                
+                
+                // Close excerpt tag
+                $events_listing .= '</div>';
                 
                 
             } // Show Details Excerpt

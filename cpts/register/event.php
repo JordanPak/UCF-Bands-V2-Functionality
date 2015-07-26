@@ -39,7 +39,7 @@ function ucfbands_cpt_event() {
 		'label'               => __( 'ucfbands_event', 'text_domain' ),
 		'description'         => __( 'UCF Bands Events', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'thumbnail', 'revisions', ),
+		'supports'            => array( 'title', 'thumbnail', 'editor', 'revisions', ),
 		'taxonomies'          => array( 'band' ),
 		'hierarchical'        => false,
 		'public'              => true,
@@ -77,7 +77,7 @@ function ucfbands_event_metabox() {
     $cmb = new_cmb2_box( array(
         'id'            => $prefix . 'metabox',
         'title'         => __( 'Event Details', 'cmb' ),
-        'object_types'  => array( 'event' ),
+        'object_types'  => array( 'ucfbands_event' ),
         'context'       => 'normal',
         'priority'      => 'core',
     ) );

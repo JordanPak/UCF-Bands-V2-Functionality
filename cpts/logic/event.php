@@ -419,6 +419,17 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
 
             // Right-Info Wrapper Close
             $events_listing .= '</div>';
+        
+        
+            // If Archive & has details, Show Details Excerpt
+            if ( $is_archive && ($event_post->post_content != '') ) {
+            
+                $events_listing .= '<hr>';
+                
+                $events_listing .= '<p>' . $event_post->post_content . '</p>';
+                
+                
+            } // Show Details Excerpt
 
 
         // Close Entry Wrapper

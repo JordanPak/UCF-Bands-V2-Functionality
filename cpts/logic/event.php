@@ -325,7 +325,7 @@ function ucfbands_event_time( $is_all_day_event, $start_date_time, $finish_date_
  * @author Jordan Pakrosnis
  * @return string 
  */
-function ucfbands_events_listing( $events ) {
+function ucfbands_events_listing( $events, $is_archive = false ) {
 
     
     // Events Listing Output String

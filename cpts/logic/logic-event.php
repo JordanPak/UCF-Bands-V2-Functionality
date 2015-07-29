@@ -209,25 +209,34 @@ function ucfbands_event_address( $address, $location_name ) {
     $address = '';
     
     
-    $address .= '<address>';
-    $address .= '<b>' . $location_name . '</b><br>';
+    // Check for TBA Location
+    if ( $location_name != '' ) {
     
-    if ( $address_1 )
-        $address .= $address_1 . '<br>';
+        $address .= '<address>';
+        $address .= '<b>' . $location_name . '</b><br>';
+
+        if ( $address_1 )
+            $address .= $address_1 . '<br>';
+
+        if ( $address_2 )
+            $address .= $address_2 . '<br>';
+
+        if ( $address_city )
+        $address .= $address_city;
+
+        if ( $address_state )
+            $address .= ', ' . $address_state;
+
+        if ( $address_zip )
+            $address .= ' ' . $address_zip;
+
+        $address .= '</address>';
+        
+    } // location_name exists
     
-    if ( $address_2 )
-        $address .= $address_2 . '<br>';
-    
-    if ( $address_city )
-    $address .= $address_city;
-    
-    if ( $address_state )
-        $address .= ', ' . $address_state;
-    
-    if ( $address_zip )
-        $address .= ' ' . $address_zip;
-    
-    $address .= '</address>';
+    else {
+        $address .= 'To Be Announced';
+    }
     
     
     // Return Address

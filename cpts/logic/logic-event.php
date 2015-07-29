@@ -301,13 +301,21 @@ function ucfbands_event_time( $is_all_day_event, $start_date_time, $finish_date_
     
     // OUTPUT //
     
-    // Time Icon
-    $time .= '<i class="fa fa-clock-o"></i> ';
+    
+    // Wrapper
+    $time .= '<span class="event-time">';
+    
+
+        // Time Icon
+        $time .= '<i class="fa fa-clock-o"></i> ';
+
+
+        // Insert Time Logic
+        $time .= $time_logic;
     
     
-    // Insert Time Logic
-    $time .= $time_logic;
-    
+    // Close Wrapper
+    $time .= '</span>';
     
     
     // Return Time String

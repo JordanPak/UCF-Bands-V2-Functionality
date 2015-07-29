@@ -185,7 +185,7 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
  * 
  * @author Jordan Pakrosnis
  */
-function ucfbands_event_address( $address ) {
+function ucfbands_event_address( $address, $location_name ) {
 
     // Set default values for each address key
     $address = wp_parse_args( $address, array(
@@ -209,6 +209,7 @@ function ucfbands_event_address( $address ) {
     $address = '';
     
     $address .= '<address>';
+    $address .= '<b>' . $location_name . '</b><br>';
     $address .= $address_1 . '<br>';
     if ( $address_2 )
         $address .= $address_2 . '<br>';

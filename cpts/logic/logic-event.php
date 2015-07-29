@@ -157,6 +157,10 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
         $event_meta['location_google_map']  = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
         $event_meta['location_google_map_longitude'] = get_post_meta( $event, $meta_id_prefix . 'location_google_map_longitude', true );
         $event_meta['location_google_map_latitude'] = get_post_meta( $event, $meta_id_prefix . 'location_google_map_latitude', true );
+        
+        // Address
+        $event_meta['location_address']     = get_post_meta( $event, $meta_id_prefix . 'location_address', 1 );
+        
     } // if google_map
     
     // Schedule
@@ -173,6 +177,33 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     return $event_meta;
 
 } // ucfbands_event_none_found
+
+
+
+/**
+ * UCFBands Event: Parse Address
+ * 
+ * @author Jordan Pakrosnis
+ */
+function ucfbands_event_parse_address( $address ) {
+
+    // Set default values for each address key
+    $address = wp_parse_args( $address, array(
+        'address-1' => '',
+        'address-2' => '',
+        'city'      => '',
+        'state'     => '',
+        'zip'       => '',
+    ) );
+
+    // Get Values
+    $address_1 =        esc_html( $address['address-1'] );
+    $address_2 =        esc_html( $address['address-2'] );
+    $address_city =     esc_html( $address['city'] );
+    $address_state =    esc_html( $address['state'] );
+    $address_zip =      esc_html( $address['zip'] );
+    
+} // ucfbands_event_parse_address()
 
 
 

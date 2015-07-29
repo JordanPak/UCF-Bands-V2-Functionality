@@ -128,25 +128,15 @@ function ucfbands_event_metabox() {
         'desc'    => 'Leave empty for "TBA"',
         'id'      => $prefix . 'location_name',
         'type'    => 'text'
-    ) );
-
+    ) ); 
+    
     // Google Map
     $cmb->add_field( array(
-        'name'    => 'Google Map Embed Code',
-        'desc'    => '<br>
-            <b style="color:#444;">How to get a location\'s Google Map Embed iframe code:</b>
-            <ol>
-               <li>Go to <a href="http://google.com/maps" target="_BLANK">Google Maps</a></li>
-               <li>Search for the location (Ex: "University of Central Florida")</li>
-               <li>Open the menu (Hamburger icon at the top-left of the page) and select "Share or Embed Map"</li>
-               <li>Click the "Embed Map" Tab</li>
-               <li>Copy the iframe code into the field above</li>
-            </ol>
-        ',
-        'id'      => $prefix . 'location_google_map',
-        'type'    => 'textarea_code'
-    ) );    
-    
+        'name' => 'Map',
+        'desc' => 'Drag the marker to set the exact location',
+        'id' => $prefix . 'location',
+        'type' => 'pw_map',
+    ) );
     
     // Icon Background Color
     $cmb->add_field( array(

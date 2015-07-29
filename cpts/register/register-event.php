@@ -134,7 +134,7 @@ function ucfbands_event_metabox() {
     $cmb->add_field( array(
         'name' => 'Map',
         'desc' => 'Drag the marker to set the exact location',
-        'id' => $prefix . 'location',
+        'id' => $prefix . 'location_google_map',
         'type' => 'pw_map',
     ) );
     

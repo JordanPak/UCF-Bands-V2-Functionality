@@ -136,6 +136,7 @@ function ucfbands_event_metabox() {
         'desc' => 'Drag the marker to set the exact location',
         'id' => $prefix . 'location_google_map',
         'type' => 'pw_map',
+        'split_values' => true, // Save latitude and longitude as two separate fields
     ) );
     
     // Icon Background Color

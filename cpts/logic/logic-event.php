@@ -203,6 +203,22 @@ function ucfbands_event_address( $address ) {
     $address_state =    esc_html( $address['state'] );
     $address_zip =      esc_html( $address['zip'] );
     
+    
+    // OUTPUT ADDRESS //
+    
+    $address = '';
+    
+    $address .= '<address>';
+    $address .= $address_1 . '<br>';
+    if ( $address_2 )
+        $address .= $address_2 . '<br>';
+    $address .= $address_city . ', ' . $address_state . ' ' . $address_zip;
+    $address .= '</address>';
+    
+    
+    // Return Address
+    return $address;
+    
 } // ucfbands_event_address()
 
 

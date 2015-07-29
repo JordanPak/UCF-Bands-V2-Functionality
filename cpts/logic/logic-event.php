@@ -494,7 +494,10 @@ function ucfbands_event_google_map( $latitude, $longitude ) {
         var mapProp = {
           center:myCenter,
           zoom:16,
-          mapTypeId:google.maps.MapTypeId.ROADMAP
+          mapTypeId:google.maps.MapTypeId.ROADMAP,
+          mapTypeControlOptions: {
+            style:google.maps.MapTypeControlStyle.SMALL
+          },
           };
 
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);

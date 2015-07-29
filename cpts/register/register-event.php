@@ -130,6 +130,14 @@ function ucfbands_event_metabox() {
         'type'    => 'text'
     ) ); 
     
+    // Location Address
+    $cmb->add_field( array(
+        'name'    => 'Address',
+//        'desc'    => 'Leave empty for "TBA"',
+        'id'      => $prefix . 'location_address',
+        'type'    => 'address'
+    ) );
+    
     // Google Map
     $cmb->add_field( array(
         'name' => 'Google Map',

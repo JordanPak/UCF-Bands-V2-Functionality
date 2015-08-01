@@ -168,9 +168,13 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
         $event_meta['schedule_group']       = get_post_meta( $event, $meta_id_prefix . 'schedule_group', true );
         
     // Program
-    if ( $program )
+    if ( $program ) {
+        
         $event_meta['program_group']        = get_post_meta( $event, $meta_id_prefix . 'program_group', true );
+        
+        $event_meta['program_guest_composer']   = get_post_meta( $event, $meta_id_prefix . 'program_guest_composer', true );
     
+    } // program
     
     
     // Return Meta

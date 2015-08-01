@@ -216,13 +216,21 @@ function ucfbands_event_metabox() {
         ),
     ) );
     
-    // Program Group: Piece
+    // Program Group: Piece Title
     $cmb->add_group_field( $group_field_id, array(
-        'name' => 'Piece',
-        'desc' => 'Ex: Kirkpatrick Fanfare - Boysen',
-        'id'   => 'piece',
+        'name' => 'Title',
+        'desc' => 'Ex: Kirkpatrick Fanfare',
+        'id'   => 'title',
         'type' => 'text',
     ) );
+
+    // Program Group: Piece Composer
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Composer(s)',
+        'desc' => 'Ex: Boysen',
+        'id'   => 'composer',
+        'type' => 'text',
+    ) );    
     
     // Program Group: Sub-Listing
     $cmb->add_group_field( $group_field_id, array(

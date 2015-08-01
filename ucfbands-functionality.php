@@ -113,3 +113,54 @@ require_once( 'admin/styles/global.php' );
 
 require_once( 'announcement/announcement-cpt.php' );
 require_once( 'announcement/announcement-shortcode.php' );
+
+
+
+//=========//
+//  EVENT  //
+//=========//
+
+require_once( 'event/event-cpt.php' );
+require_once( 'event/event-cmb2.php' );
+require_once( 'event/event-logic.php' );
+require_once( 'event/event-shortcode.php' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

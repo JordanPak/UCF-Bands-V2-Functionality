@@ -146,6 +146,15 @@ function ucfbands_event_metabox() {
         'type' => 'pw_map',
         'split_values' => true, // Save latitude and longitude as two separate fields
     ) );
+
+    // Admission Price
+    $cmb->add_field( array(
+        'name' => 'Admission/Ticket Price',
+        'desc' => 'Set to 0 for "Free Admission". Leave empty to not show anything.',
+        'id' => $prefix . 'ticket_price',
+        'type' => 'text_money',
+        // 'before_field' => '£', // Replaces default '$'
+    ) );
     
     // Icon Background Color
     $cmb->add_field( array(

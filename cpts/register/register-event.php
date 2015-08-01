@@ -39,7 +39,7 @@ function ucfbands_cpt_event() {
 		'label'               => __( 'ucfbands_event', 'text_domain' ),
 		'description'         => __( 'UCF Bands Events', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'thumbnail', 'revisions', ),
+		'supports'            => array( 'title', 'thumbnail', 'editor', 'revisions', ),
 		'taxonomies'          => array( 'band' ),
 		'hierarchical'        => false,
 		'public'              => true,
@@ -128,30 +128,45 @@ function ucfbands_event_metabox() {
         'desc'    => 'Leave empty for "TBA"',
         'id'      => $prefix . 'location_name',
         'type'    => 'text'
+    ) ); 
+    
+    // Location Address
+    $cmb->add_field( array(
+        'name'    => 'Address',
+//        'desc'    => 'Leave empty for "TBA"',
+        'id'      => $prefix . 'location_address',
+        'type'    => 'address'
     ) );
-
+    
     // Google Map
     $cmb->add_field( array(
-        'name'    => 'Google Map Embed Code',
-        'desc'    => '<br>
-            <b style="color:#444;">How to get a location\'s Google Map Embed iframe code:</b>
-            <ol>
-               <li>Go to <a href="http://google.com/maps" target="_BLANK">Google Maps</a></li>
-               <li>Search for the location (Ex: "University of Central Florida")</li>
-               <li>Open the menu (Hamburger icon at the top-left of the page) and select "Share or Embed Map"</li>
-               <li>Click the "Embed Map" Tab</li>
-               <li>Copy the iframe code into the field above</li>
-            </ol>
-        ',
-        'id'      => $prefix . 'location_google_map',
-        'type'    => 'textarea_code'
+        'name' => 'Google Map',
+        'desc' => 'Drag the marker to set the exact location',
+        'id' => $prefix . 'location_google_map',
+        'type' => 'pw_map',
+        'split_values' => true, // Save latitude and longitude as two separate fields
+    ) );
+
+    // Admission Price
+    $cmb->add_field( array(
+        'name' => 'Admission/Ticket Price',
+        'desc' => '<b>Set to "0.01" for Free Admission</b>. Leave empty or set to 0 to not show anything.',
+        'id' => $prefix . 'ticket_price',
+        'type' => 'text_money',
+        // 'before_field' => '£', // Replaces default '$'
+    ) );
+
+    // Ticket Sales Link
+    $cmb->add_field( array(
+        'name' => 'Ticket Sales Link',
+        'id' => $prefix . 'ticket_link',
+        'type' => 'text',
     ) );    
-    
     
     // Icon Background Color
     $cmb->add_field( array(
         'name'             => 'Icon Background Color',
-        'id'               => $prefix. 'icon_background_colo',
+        'id'               => $prefix. 'icon_background_color',
         'type'             => 'radio',
         'default' => 'ucf-gray',
         'options' => array(
@@ -184,6 +199,7 @@ function ucfbands_event_metabox() {
         'name' => 'Time',
         'id'   => 'time',
         'type' => 'text_time',
+        'time_format' => 'g:i a',
     ) );
     
     // Schedule Group: Listing Thing
@@ -196,7 +212,7 @@ function ucfbands_event_metabox() {
     // Schedule Group: Sub-Item
     $cmb->add_group_field( $group_field_id, array(
         'name' => 'Sub-Items (Optional)',
-        'id'   => 'sub-item',
+        'id'   => 'sub_item',
         'type' => 'text',
         'repeatable' => true,
     ) );    
@@ -216,13 +232,21 @@ function ucfbands_event_metabox() {
         ),
     ) );
     
-    // Program Group: Piece
+    // Program Group: Piece Title
     $cmb->add_group_field( $group_field_id, array(
-        'name' => 'Piece',
-        'desc' => 'Ex: Kirkpatrick Fanfare - Boysen',
-        'id'   => 'piece',
+        'name' => 'Title',
+        'desc' => 'Ex: Kirkpatrick Fanfare',
+        'id'   => 'title',
         'type' => 'text',
     ) );
+
+    // Program Group: Piece Composer
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Composer(s)',
+        'desc' => 'Ex: Boysen',
+        'id'   => 'composer',
+        'type' => 'text',
+    ) );    
     
     // Program Group: Sub-Listing
     $cmb->add_group_field( $group_field_id, array(

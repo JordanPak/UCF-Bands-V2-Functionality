@@ -155,6 +155,13 @@ function ucfbands_event_metabox() {
         'type' => 'text_money',
         // 'before_field' => '£', // Replaces default '$'
     ) );
+
+    // Ticket Sales Link
+    $cmb->add_field( array(
+        'name' => 'Ticket Sales Link',
+        'id' => $prefix . 'ticket_link',
+        'type' => 'text',
+    ) );    
     
     // Icon Background Color
     $cmb->add_field( array(

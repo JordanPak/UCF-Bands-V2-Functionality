@@ -150,7 +150,7 @@ function ucfbands_event_metabox() {
     // Admission Price
     $cmb->add_field( array(
         'name' => 'Admission/Ticket Price',
-        'desc' => 'Set to 0 for "Free Admission". Leave empty to not show anything.',
+        'desc' => '<b>Set to "0.01" for Free Admission</b>. Leave empty or set to 0 to not show anything.',
         'id' => $prefix . 'ticket_price',
         'type' => 'text_money',
         // 'before_field' => '£', // Replaces default '$'

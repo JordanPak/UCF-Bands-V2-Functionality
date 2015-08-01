@@ -34,48 +34,33 @@ require_once( 'admin/styles/global.php' );
 
 
 
-//================//
-//  ANNOUNCEMENT  //
-//================//
+//==============================//
+//  CONTENT TYPES & SHORTCODES  //
+//==============================//
 
+// ANNOUNCEMENT
 require_once( 'announcement/announcement-cpt.php' );
 require_once( 'announcement/announcement-shortcode.php' );
 
 
-
-//=========//
-//  EVENT  //
-//=========//
-
+// EVENT
 require_once( 'event/event-cpt.php' );
 require_once( 'event/event-cmb2.php' );
 require_once( 'event/event-logic.php' );
 require_once( 'event/event-shortcode.php' );
 
 
-
-//======================//
-//  REHEARSAL SCHEDULE  //
-//======================//
-
+// REHEARSAL SCHEDULE
 require_once( 'rehearsal-schedule/rehearsal-schedule-cpt.php' );
 require_once( 'rehearsal-schedule/rehearsal-schedule-cmb2.php' );
 
 
-
-//================//
-//  STAFF MEMBER  //
-//================//
-
+// STAFF MEMBER
 require_once( 'staff-member/staff-member-cpt.php' );
 require_once( 'staff-member/staff-member-cmb2.php' );
 
 
-
-//==================//
-//  SHORTCODE ONLY  //
-//==================//
-
+// SHORTCODE ONLY
 require_once( 'shortcode-only/button-shortcode.php' );
 require_once( 'shortcode-only/content-box-shortcode.php' );
 require_once( 'shortcode-only/hero-shortcode.php' );

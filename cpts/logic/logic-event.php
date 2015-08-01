@@ -148,6 +148,9 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     // Icon/Band
     $event_meta['icon_background_color']    = get_post_meta( $event, $meta_id_prefix . 'icon_background_color', true );
     
+    // Ticket Price
+    $event_meta['ticket_price']             = get_post_meta( $event, $meta_id_prefix . 'ticket_price', true );
+    
     
     
     // OPTIONAL META //

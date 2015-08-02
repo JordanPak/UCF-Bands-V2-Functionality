@@ -56,6 +56,7 @@ require_once( 'event/event-logic-time.php' );
 require_once( 'event/event-logic-parse-address.php' );
 require_once( 'event/event-logic-events-listing.php' );
 require_once( 'event/event-logic-google-map.php' );
+require_once( 'event/event-logic-schedule.php' );
 
 
 

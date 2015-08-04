@@ -33,75 +33,54 @@ require_once( 'admin/styles/global.php' );
 //require_once( 'admin/dashboard.php' );
 
 
-//====================//
-//  CPT REGISTRATION  //
-//====================//
 
-// Announcement
-require_once( 'cpts/register/register-announcement.php' );
+//==============================//
+//  CONTENT TYPES & SHORTCODES  //
+//==============================//
 
-// Staff Member
-require_once( 'cpts/register/register-staff-member.php' );
-
-// Event
-require_once( 'cpts/register/register-event.php' );
-
-// Rehearsal Schedule
-require_once( 'cpts/register/register-rehearsal-schedule.php' );
-
-// Photo Gallery (TBA)
-//require_once( 'cpts/register/register-photo-gallery.php' );
-
-// Pep Band (TBA)
-//require_once( 'cpts/register/register-pep-band.php' );
+// ANNOUNCEMENT
+require_once( 'announcement/announcement-cpt.php' );
+require_once( 'announcement/announcement-shortcode.php' );
 
 
+// EVENT
+require_once( 'event/event-cpt.php' );
+require_once( 'event/event-cmb2.php' );
+require_once( 'event/event-shortcode.php' );
 
-//=============//
-//  CPT LOGIC  //
-//=============//
+require_once( 'event/event-logic-build-query.php' );
+require_once( 'event/event-logic-none-found.php' );
+require_once( 'event/event-logic-get-meta.php' );
+require_once( 'event/event-logic-date-badge.php' );
+require_once( 'event/event-logic-time.php' );
+require_once( 'event/event-logic-parse-address.php' );
+require_once( 'event/event-logic-events-listing.php' );
+require_once( 'event/event-logic-google-map.php' );
+require_once( 'event/event-logic-schedule.php' );
+require_once( 'event/event-logic-program.php' );
 
-// Events
-require_once( 'cpts/logic/logic-event.php' );
+
+// REHEARSAL SCHEDULE
+require_once( 'rehearsal-schedule/rehearsal-schedule-cpt.php' );
+require_once( 'rehearsal-schedule/rehearsal-schedule-cmb2.php' );
+
+
+// STAFF MEMBER
+require_once( 'staff-member/staff-member-cpt.php' );
+require_once( 'staff-member/staff-member-cmb2.php' );
+
+
+// SHORTCODE ONLY
+require_once( 'shortcode-only/button-shortcode.php' );
+require_once( 'shortcode-only/content-box-shortcode.php' );
+require_once( 'shortcode-only/hero-shortcode.php' );
 
 
 
 //==============//
-//  SHORTCODES  //
+//  FUTURE DEV  //
 //==============//
 
-
-//-- GENERAL --//
-
-// Button
-require_once( 'shortcodes/shortcode-button.php' );
-
-// Content Box
-require_once( 'shortcodes/shortcode-content-box.php' );
-
-// Hero (Bootstrap Jumbotron-like thing)
-require_once( 'shortcodes/shortcode-hero.php' );
-
-// Block (TBA)
-//require_once( 'shortcodes/shortcode-block.php' );
-
-
-//-- CPT-BASED --//
-
-// Announcement & Announcements Listing
-require_once( 'shortcodes/shortcode-announcement.php' );
-
-// Staff Member Listing
-//require_once( 'shortcodes/shortcode-staff-member.php' );
-
-// Event & Events Listing
-require_once( 'shortcodes/shortcode-event.php' );
-
-// Rehearsal Listings
-//require_once( 'shortcodes/shortcode-rehearsal.php' );
-
-// Photo Gallery & Photo Galleries (TBA)
-//require_once( 'shortcodes/shortcode-photo-gallery.php' );
-
-// Pep Band & Pep Band Listing (TBA)
-//require_once( 'shortcodes/shortcode-pep-band.php' );
+// Block
+// Photo Gallery & Photo Galleries
+// Pep Band & Pep Band Listing

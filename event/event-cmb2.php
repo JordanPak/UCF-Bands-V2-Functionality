@@ -128,7 +128,7 @@ function ucfbands_event_metabox() {
         'id'          => $prefix . 'schedule_group',
         'name'        => 'Schedule',
         'type'        => 'group',
-        'description' => __( 'Add Schedule List Items', 'cmb' ),
+        'description' => __( 'Add Schedule List Items. Items and sub-items can be formated with <b><a href="https://help.github.com/articles/github-flavored-markdown/" target="_BLANK">GithHub Flavored Markdown</a></b>.', 'cmb' ),
         'options'     => array(
             'group_title'   => __( 'Item {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
             'add_button'    => __( 'Add Schedule Item', 'cmb' ),

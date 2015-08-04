@@ -14,6 +14,11 @@
 function ucfbands_event_schedule( $schedule_items ) {
     
     
+    // Include Parsedown
+    require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
+    $Parsedown = new Parsedown();
+    
+    
     // Schedule Output String
     $schedule = '';
     
@@ -35,7 +40,10 @@ function ucfbands_event_schedule( $schedule_items ) {
 
                 // Start List Item
                 $schedule .= '<li>';
-
+                
+                    // Parse thing into Markdown HTML
+                    $thing = $Parsedown->text($thing);    
+                
                     // Time & Thing
                     $schedule .= '<span>' . $time . '</span>&nbsp;&nbsp;&nbsp;&nbsp;' . $thing;
 
@@ -46,8 +54,15 @@ function ucfbands_event_schedule( $schedule_items ) {
                         // Nested UL
                         $schedule .= '<ul>';
 
-                            foreach ( $sub_items as $sub_item )
+                            foreach ( $sub_items as $sub_item ) {
+                                
+                                // Parse item into Markdown HTML
+                                $sub_item = $Parsedown->text($sub_item);
+                                
+                                // Output Sub item
                                 $schedule .= '<li>' . $sub_item . '</li>';
+                                
+                            } // foreach sub-item
 
                         $schedule .= '</ul>';
 

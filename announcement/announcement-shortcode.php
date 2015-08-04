@@ -215,19 +215,29 @@ function announcements_content ( $announcement_id, $announcement_post ) {
     $announcement_content = $announcement_post->post_content;
     
     
-    // Strip tags to eliminate anchor breaking and large images, etc
-    $announcement_content = strip_tags($announcement_content);
+    // Continue if there's content
+    if ( $announcement_content ) {
     
     
-    // Get "Excerpt" content from content
-    $announcement_content = substr($announcement_content, 0, 96) . '...'; // Get excerpt
+        // Strip tags to eliminate anchor breaking and large images, etc
+        $announcement_content = strip_tags($announcement_content);
+
+
+        // Get "Excerpt" content from content
+        $announcement_content = substr($announcement_content, 0, 96) . '...'; // Get excerpt
+
+
+        // Return content wrapped in link to post
+        return
+            '<p><a href="' . get_permalink( $announcement_id ) . '">'
+                . $announcement_content . 
+            '</a></p>'
+        ;
+        
+    } // if there's content
     
     
-    // Return content wrapped in link to post
-    return
-        '<p><a href="' . get_permalink( $announcement_id ) . '">'
-            . $announcement_content . 
-        '</a></p>'
-    ;
+    // No Content
+    return;
     
 } // announcements_content()

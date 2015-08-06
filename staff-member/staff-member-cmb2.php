@@ -66,7 +66,7 @@ function ucfbands_staff_member_metabox() {
     $cmb->add_field( array(
         'name' => 'Email Address',
         'desc' => '@ucf.edu preferred.',
-        'id'   => 'email',
+        'id'   => $prefix . 'email',
         'type' => 'text_email',
     ) );    
     
@@ -81,7 +81,7 @@ function ucfbands_staff_member_metabox() {
     // Biography
     $cmb->add_field( array(
     'name'    => 'Biography',
-    'id'      => 'biography',
+    'id'      => $prefix . 'biography',
     'type'    => 'wysiwyg',
     'options' => array(
         'media_buttons' => false,

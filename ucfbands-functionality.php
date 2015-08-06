@@ -68,6 +68,7 @@ require_once( 'rehearsal-schedule/rehearsal-schedule-cmb2.php' );
 // STAFF MEMBER
 require_once( 'staff-member/staff-member-cpt.php' );
 require_once( 'staff-member/staff-member-cmb2.php' );
+require_once( 'staff-member/staff-get-meta.php' );
 
 
 // SHORTCODE ONLY

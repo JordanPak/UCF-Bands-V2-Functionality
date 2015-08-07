@@ -66,6 +66,7 @@ require_once( 'rehearsal-schedule/rehearsal-schedule-cmb2.php' );
 require_once( 'rehearsal-schedule/rehearsal-logic-get-meta.php' );
 require_once( 'rehearsal-schedule/rehearsal-logic-schedule.php' );
 require_once( 'rehearsal-schedule/rehearsal-schedule-shortcode.php' );
+require_once( 'rehearsal-schedule/rehearsal-admin.php' );
 
 
 // STAFF MEMBER

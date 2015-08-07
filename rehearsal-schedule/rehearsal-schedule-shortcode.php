@@ -137,6 +137,10 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     // Get the queried posts
     $rehearsals = $rehearsals->get_posts();
     
+
+    // Include Parsedown
+    require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
+    $Parsedown = new Parsedown();
     
     
     // Open Accordion Container
@@ -172,7 +176,37 @@ function ucfbands_shortcode_rehearsals( $atts ) {
                 $shortcode_output .= '<div>';
 
                     
+                    // Get Schedule with Sub-Items
                     $shortcode_output .= ucfbands_rehearsal_schedule( $rehearsal_meta['schedule_group'] );
+            
+            
+                    // Divider
+                    $shortcode_output .= '<hr>';
+            
+            
+                    // Check for Announcements
+                    if ( $rehearsal_meta['announcements'] != '' ) {
+                        
+                        // Announcements Title
+                        $shortcode_output .= '<b>Announcements</b>';
+
+                        // Nested UL
+                        $shortcode_output .= '<ul>';
+
+                            foreach ( $rehearsal_meta['announcements'] as $announcement ) {
+                                
+                                // Parse item into Markdown HTML
+                                $announcement = $Parsedown->text($announcement);
+                                
+                                // Output Sub item
+                                $shortcode_output .= '<li>' . $announcement . '</li>';
+                                
+                            } // foreach sub-item
+
+                        $shortcode_output .= '</ul>';
+
+                    } // if sub-items
+
             
 
                 // Close Accordion Content Div

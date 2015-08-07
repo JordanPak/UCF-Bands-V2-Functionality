@@ -1,7 +1,18 @@
 <?php
+/*
+ *  UCFBands Theme Functionality
+ *  CPT Logic: Rehearsal Schedule Admin Custom Columns
+ *    
+ *  @author Jordan Pakrosnis
+*/
+
 
 add_filter( 'manage_edit-ucfbands_rehearsal_columns', 'edit_rehearsal_columns' ) ;
-
+/**
+ * UCFBands Rehearsal: Edit Rehearsal Columns
+ *
+ * @author Jordan Pakrosnis
+ */
 function edit_rehearsal_columns( $columns ) {
 
 	$columns = array(
@@ -14,15 +25,18 @@ function edit_rehearsal_columns( $columns ) {
 	);
 
 	return $columns;
-}
-
-
+    
+} // edit_rehearsal_columns()
 
 
 
 
 add_action( 'manage_ucfbands_rehearsal_posts_custom_column', 'manage_rehearsal_columns', 10, 2 );
-
+/**
+ * UCFBands Rehearsal: Manage CPT Custom Columns
+ *
+ * @author Jordan Pakrosnis
+ */
 function manage_rehearsal_columns( $column, $post_id ) {
 	global $post;
 
@@ -102,6 +116,7 @@ function manage_rehearsal_columns( $column, $post_id ) {
 		/* Just break out of the switch statement for everything else. */
 		default :
 			break;
-	}
+	
+    } // column switch
     
-}
+} // manage_rehearsal_columns()

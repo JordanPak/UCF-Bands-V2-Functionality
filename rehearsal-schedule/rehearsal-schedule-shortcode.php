@@ -32,7 +32,7 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     $no_rehearsals_found =   '';
     
     // Output
-    $shortode_output = '';
+    $shortcode_output = '';
     
     
     
@@ -131,44 +131,47 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     
     
     
+    // Open Accordion Container
+    $shortcode_output .= '<div class="accordion">';
+    
+    
     //-- POST LOOP --//
     foreach($rehearsals as $rehearsal) { // $announcement is just the ID
         
         
         // Get Current Post
-        $rehearsal_post = get_post($rehearsal);
+        $rehearsal_post = get_post( $rehearsal );
         
         
         // Start Announcement Wrap
-        $shortcode_output .= '<div class="rehearsal-wrap">';
-        
-        
-            // Post Date
-            $shortcode_output .= 
-                '<span class="rehearsal-date"><i class="fa fa-calendar"></i>&nbsp; ' .
-                mysql2date( 'F j', $rehearsal_post->post_date ) . '</span>';
+//        $shortcode_output .= '<div class="rehearsal-wrap">';
         
         
             // Post Title
-            $shortcode_output .=
-                '<h5 class="rehearsal-title">
-                <a href="' . get_permalink( $rehearsal ) . '">'
-                    . $rehearsal_post->post_title .
-                '</h5></a>';
+            $shortcode_output .= '<h5 class="rehearsal-title">' . $rehearsal_post->post_title . '</h5>';
+        
+        
+            // Accordion Content Div
+            $shortcode_output .= '<div>';
+        
+        
+        
+            // Close Accordion Content Div
+            $shortcode_output .= '</div>';
     
         
-            // Post Content
-//            $shortcode_output .= rehearsals_content( $rehearsal, $rehearsal_post );
-        
-        
         // End rehearsal Wrap
-        $shortcode_output .= '</div>';
+//        $shortcode_output .= '</div>';
 
         
     } // foreach rehearsals as rehearsal
     
     
-    $shortcode_output .= '<div id="accordion">
+    // Close Accordion Container
+    $shortcode_output .= '</div>';
+    
+    
+    $shortcode_output .= '<br><br><br><br><div class="accordion">
   <h3>Section 1</h3>
   <div>
     <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.

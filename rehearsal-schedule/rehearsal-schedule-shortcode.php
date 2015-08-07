@@ -214,7 +214,7 @@ function ucfbands_shortcode_rehearsals( $atts ) {
                             $shortcode_output .= '<br><h5>Announcements</h5>';
 
                             // Nested UL
-                            $shortcode_output .= '<ul class="red">';
+                            $shortcode_output .= '<ul class="rehearsal-announcements red">';
 
                             
                                 foreach ( $rehearsal_meta['announcements'] as $announcement ) {

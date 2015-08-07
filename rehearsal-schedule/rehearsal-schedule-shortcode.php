@@ -54,6 +54,15 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     
     
     //-- CPT QUERY --//
+
+    // Taxonomy
+    $tax_query = array(
+        array(
+            'taxonomy'  => 'band',
+            'field'     => 'slug',
+            'terms'     => $rehearsals_band,
+        ),
+    );
     
 	
     // Preparing the query for rehearsals
@@ -72,6 +81,7 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     $rehearsals_args = array(
         'post_type'		=> 'ucfbands_rehearsal',
         'fields' 		=> 'ids', // This is so only the ID is returned instead of the WHOLE post object (Performance)
+        'tax_query'     => $tax_query,
         'meta_key'		=> '_ucfbands_rehearsal_date',
         'orderby' 		=> 'meta_value_num',
         'order' 		=> 'ASC',

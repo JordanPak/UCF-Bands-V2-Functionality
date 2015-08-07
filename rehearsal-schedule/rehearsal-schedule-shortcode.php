@@ -176,36 +176,50 @@ function ucfbands_shortcode_rehearsals( $atts ) {
                 $shortcode_output .= '<div>';
 
                     
-                    // Get Schedule with Sub-Items
-                    $shortcode_output .= ucfbands_rehearsal_schedule( $rehearsal_meta['schedule_group'] );
-            
-            
-                    // Divider
-                    $shortcode_output .= '<hr>';
-            
-            
-                    // Check for Announcements
-                    if ( $rehearsal_meta['announcements'] != '' ) {
+                    if ( $rehearsal_meta['is_rehearsal_cancelled'] ) {
                         
-                        // Announcements Title
-                        $shortcode_output .= '<b>Announcements</b>';
+                        $shortcode_output .= '<p class="rehearsal-cancelled"><b><i class="fa fa-exclamation-triangle"></i> Rehearsal Cancelled</b>';
+                        
+                        $shortcode_output .= '<br>' . $rehearsal_meta['rehearsal_cancelled_message'];
+                        
+                        $shortcode_output .= '</p>';
+                        
+                    } // if rehearsal is cancelled
+            
+                    else {
+                        
+                        // Get Schedule with Sub-Items
+                        $shortcode_output .= ucfbands_rehearsal_schedule( $rehearsal_meta['schedule_group'] );
 
-                        // Nested UL
-                        $shortcode_output .= '<ul>';
 
-                            foreach ( $rehearsal_meta['announcements'] as $announcement ) {
-                                
-                                // Parse item into Markdown HTML
-                                $announcement = $Parsedown->text($announcement);
-                                
-                                // Output Sub item
-                                $shortcode_output .= '<li>' . $announcement . '</li>';
-                                
-                            } // foreach sub-item
+                        // Divider
+                        $shortcode_output .= '<hr>';
 
-                        $shortcode_output .= '</ul>';
 
-                    } // if sub-items
+                        // Check for Announcements
+                        if ( $rehearsal_meta['announcements'] != '' ) {
+
+                            // Announcements Title
+                            $shortcode_output .= '<b>Announcements</b>';
+
+                            // Nested UL
+                            $shortcode_output .= '<ul>';
+
+                                foreach ( $rehearsal_meta['announcements'] as $announcement ) {
+
+                                    // Parse item into Markdown HTML
+                                    $announcement = $Parsedown->text($announcement);
+
+                                    // Output Sub item
+                                    $shortcode_output .= '<li>' . $announcement . '</li>';
+
+                                } // foreach sub-item
+
+                            $shortcode_output .= '</ul>';
+
+                        } // if sub-items
+                        
+                    } // if rehearsal is NOT cancelled
 
             
 

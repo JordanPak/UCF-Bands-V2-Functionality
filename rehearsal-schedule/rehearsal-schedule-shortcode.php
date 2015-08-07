@@ -135,68 +135,41 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     $shortcode_output .= '<div class="accordion">';
     
     
-    //-- POST LOOP --//
-    foreach($rehearsals as $rehearsal) { // $announcement is just the ID
-        
-        
-        // Get Current Post
-        $rehearsal_post = get_post( $rehearsal );
-        
-        
-        // Start Announcement Wrap
-//        $shortcode_output .= '<div class="rehearsal-wrap">';
-        
-        
-            // Post Title
-            $shortcode_output .= '<h5 class="rehearsal-title">' . $rehearsal_post->post_title . '</h5>';
-        
-        
-            // Accordion Content Div
-            $shortcode_output .= '<div>';
-        
-        
-        
-            // Close Accordion Content Div
-            $shortcode_output .= '</div>';
-    
-        
-        // End rehearsal Wrap
-//        $shortcode_output .= '</div>';
+        //-- POST LOOP --//
+        foreach($rehearsals as $rehearsal) { // $announcement is just the ID
 
-        
-    } // foreach rehearsals as rehearsal
-    
+
+            // Get Current Post
+            $rehearsal_post = get_post( $rehearsal );
+
+
+            // Start Announcement Wrap
+    //        $shortcode_output .= '<div class="rehearsal-wrap">';
+
+
+                // Post Title
+                $shortcode_output .= '<h5 class="rehearsal-title">' . $rehearsal_post->post_title . '</h5>';
+
+
+                // Accordion Content Div
+                $shortcode_output .= '<div>';
+
+
+
+                // Close Accordion Content Div
+                $shortcode_output .= '</div>';
+
+
+            // End rehearsal Wrap
+    //        $shortcode_output .= '</div>';
+
+
+        } // foreach rehearsals as rehearsal
+
     
     // Close Accordion Container
     $shortcode_output .= '</div>';
     
-    
-    $shortcode_output .= '<br><br><br><br><div class="accordion">
-  <h3>Section 1</h3>
-  <div>
-    <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.
-    Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
-    condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
-    Nam mi. Proin viverra leo ut odio.</p>
-  </div>
-  <h3>Section 2</h3>
-  <div>
-    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
-    Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
-    faucibus interdum tellus libero ac justo.</p>
-  </div>
-  <h3>Section 3</h3>
-  <div>
-    <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-    Quisque lobortis.Phasellus pellentesque purus in massa.</p>
-    <ul>
-      <li>List item one</li>
-      <li>List item two</li>
-      <li>List item three</li>
-    </ul>
-  </div>
-</div>
- ';
     
     // Close Wrap
     $shortcode_output .= $rehearsals_wrap_close;

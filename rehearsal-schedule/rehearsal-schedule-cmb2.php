@@ -53,6 +53,7 @@ function ucfbands_rehearsal_metabox() {
         'name' => 'Time',
         'id'   => 'time',
         'type' => 'text_time',
+        'time_format' => 'g:i a',
     ) );
     
     // Schedule Group: Listing Thing
@@ -65,7 +66,7 @@ function ucfbands_rehearsal_metabox() {
     // Schedule Group: Sub-Item
     $cmb->add_group_field( $group_field_id, array(
         'name' => 'Sub-Items (Optional)',
-        'id'   => 'sub-item',
+        'id'   => 'sub_item',
         'type' => 'text',
         'repeatable' => true,
     ) );

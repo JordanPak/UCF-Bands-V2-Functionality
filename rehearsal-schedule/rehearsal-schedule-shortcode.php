@@ -160,7 +160,7 @@ function ucfbands_shortcode_rehearsals( $atts ) {
             $rehearsal_date = date( 'l, M jS', $rehearsal_date );
             
 
-            // Start Announcement Wrap
+            // Start Rehearsal Wrap
     //        $shortcode_output .= '<div class="rehearsal-wrap">';
 
 
@@ -172,6 +172,8 @@ function ucfbands_shortcode_rehearsals( $atts ) {
                 $shortcode_output .= '<div>';
 
                     
+                    $shortcode_output .= ucfbands_rehearsal_schedule( $rehearsal_meta['schedule_group'] );
+            
 
                 // Close Accordion Content Div
                 $shortcode_output .= '</div>';

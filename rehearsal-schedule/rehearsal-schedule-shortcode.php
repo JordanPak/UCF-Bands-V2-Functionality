@@ -169,7 +169,7 @@ function ucfbands_shortcode_rehearsals( $atts ) {
 
 
                 // Date
-                $shortcode_output .= '<h5 class="rehearsal-date">' . $rehearsal_date . '</h5>';
+                $shortcode_output .= '<h4 class="rehearsal-date">' . $rehearsal_date . '</h4>';
 
 
                 // Accordion Content Div
@@ -178,9 +178,9 @@ function ucfbands_shortcode_rehearsals( $atts ) {
                     
                     if ( $rehearsal_meta['is_rehearsal_cancelled'] ) {
                         
-                        $shortcode_output .= '<p class="rehearsal-cancelled"><b><i class="fa fa-exclamation-triangle"></i> Rehearsal Cancelled</b>';
+                        $shortcode_output .= '<h5 class="rehearsal-cancelled"> <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Rehearsal Cancelled</h5>';
                         
-                        $shortcode_output .= '<br>' . $rehearsal_meta['rehearsal_cancelled_message'];
+                        $shortcode_output .= '<p>' . $rehearsal_meta['rehearsal_cancelled_message'];
                         
                         $shortcode_output .= '</p>';
                         
@@ -193,18 +193,20 @@ function ucfbands_shortcode_rehearsals( $atts ) {
 
 
                         // Divider
-                        $shortcode_output .= '<hr>';
+//                        $shortcode_output .= '<hr>';
 
 
                         // Check for Announcements
                         if ( $rehearsal_meta['announcements'] != '' ) {
-
+                            
+                            
                             // Announcements Title
-                            $shortcode_output .= '<b>Announcements</b>';
+                            $shortcode_output .= '<br><h5>Announcements</h5>';
 
                             // Nested UL
-                            $shortcode_output .= '<ul>';
+                            $shortcode_output .= '<ul class="red">';
 
+                            
                                 foreach ( $rehearsal_meta['announcements'] as $announcement ) {
 
                                     // Parse item into Markdown HTML
@@ -215,7 +217,9 @@ function ucfbands_shortcode_rehearsals( $atts ) {
 
                                 } // foreach sub-item
 
+                            
                             $shortcode_output .= '</ul>';
+                            
 
                         } // if sub-items
                         

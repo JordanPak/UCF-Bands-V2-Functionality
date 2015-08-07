@@ -24,7 +24,7 @@ function ucfbands_rehearsal_schedule( $schedule_items ) {
     
 
     // Schedule Wrapper
-    $schedule .= '<div class="event-schedule"><b>Schedule</b>';
+    $schedule .= '<div class="event-schedule"><h5>Schedule</h5>';
 
         // Start UL
         $schedule .= '<ul>';

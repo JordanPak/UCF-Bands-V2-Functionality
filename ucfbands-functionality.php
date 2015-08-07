@@ -63,12 +63,12 @@ require_once( 'event/event-logic-program.php' );
 // REHEARSAL SCHEDULE
 require_once( 'rehearsal-schedule/rehearsal-schedule-cpt.php' );
 require_once( 'rehearsal-schedule/rehearsal-schedule-cmb2.php' );
+require_once( 'rehearsal-schedule/rehearsal-schedule-shortcode.php' );
 
 
 // STAFF MEMBER
 require_once( 'staff-member/staff-member-cpt.php' );
 require_once( 'staff-member/staff-member-cmb2.php' );
-require_once( 'staff-member/staff-get-meta.php' );
 
 
 // SHORTCODE ONLY

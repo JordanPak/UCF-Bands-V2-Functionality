@@ -55,28 +55,36 @@ function ucfbands_shortcode_rehearsals( $atts ) {
     
     //-- CPT QUERY --//
     
-    
-    // Taxonomy Query
-    $tax_query = array(
+	
+    // Preparing the query for rehearsals
+    // Only get rehearsals that haven't passed!
+    $meta_quer_args = array(
+        'relation'	=>	'AND',
         array(
-            'taxonomy'  => 'band',
-            'field'     => 'slug',
-            'terms'     => $rehearsals_band,
-        ),
+            'key'		=>	'_ucfbands_rehearsal_date',
+            'value'		=>	time(),
+            'compare'	=>	'>'
+        )
     );
-    
+
+
     // Query Options
     $rehearsals_args = array(
-        'post_type'         => 'ucfbands_rehearsal',
-        'tax_query'         => $tax_query,
-        'fields'            => 'ids',
-        'orderby'           => 'meta_value_num',
-        'order'             => 'DSC',
-    );
+        'post_type'		=> 'ucfbands_rehearsal',
+        'fields' 		=> 'ids', // This is so only the ID is returned instead of the WHOLE post object (Performance)
+        'meta_key'		=> '_ucfbands_rehearsal_date',
+        'orderby' 		=> 'meta_value_num',
+        'order' 		=> 'ASC',
+        'post_count'	=> 3,
+        'posts_per_page'=> 3,
+        'meta_query'	=> $meta_quer_args
+    );    
+
     
     // Query/Get Post IDs
     $rehearsals = new WP_Query( $rehearsals_args );
     
+
     
     
     //==========//

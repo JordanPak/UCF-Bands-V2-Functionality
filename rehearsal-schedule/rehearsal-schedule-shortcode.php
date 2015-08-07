@@ -141,20 +141,29 @@ function ucfbands_shortcode_rehearsals( $atts ) {
 
             // Get Current Post
             $rehearsal_post = get_post( $rehearsal );
-
+            
+            
+            // Get Rehearsal Meta
+            $rehearsal_meta = ucfbands_rehearsal_get_meta( $rehearsal );
+            
+            
+            // Convert Date to Actual Date
+            $rehearsal_date = $rehearsal_meta['date'];
+            $rehearsal_date = date( 'l, M jS', $rehearsal_date );
+            
 
             // Start Announcement Wrap
     //        $shortcode_output .= '<div class="rehearsal-wrap">';
 
 
-                // Post Title
-                $shortcode_output .= '<h5 class="rehearsal-title">' . $rehearsal_post->post_title . '</h5>';
+                // Date
+                $shortcode_output .= '<h5 class="rehearsal-date">' . $rehearsal_date . '</h5>';
 
 
                 // Accordion Content Div
                 $shortcode_output .= '<div>';
 
-
+                    
 
                 // Close Accordion Content Div
                 $shortcode_output .= '</div>';

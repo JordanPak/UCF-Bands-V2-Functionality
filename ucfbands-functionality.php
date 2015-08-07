@@ -63,6 +63,7 @@ require_once( 'event/event-logic-program.php' );
 // REHEARSAL SCHEDULE
 require_once( 'rehearsal-schedule/rehearsal-schedule-cpt.php' );
 require_once( 'rehearsal-schedule/rehearsal-schedule-cmb2.php' );
+require_once( 'rehearsal-schedule/rehearsal-get-meta.php' );
 require_once( 'rehearsal-schedule/rehearsal-schedule-shortcode.php' );
 
 

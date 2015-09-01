@@ -79,6 +79,7 @@ require_once( 'staff-member/staff-get-meta.php' );
 require_once( 'shortcode-only/button-shortcode.php' );
 require_once( 'shortcode-only/content-box-shortcode.php' );
 require_once( 'shortcode-only/hero-shortcode.php' );
+require_once( 'shortcode-only/ucfbands-gallery-shortcode.php' );
 require_once( 'shortcode-only/foogallery-archive-shortcode.php' );
 require_once( 'shortcode-only/fg-archive-link-shortcode.php' );
 

@@ -12,7 +12,7 @@
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_shortcode_fg_archive_link( $atts, $content = "" ) {
+function ucfbands_shortcode_fg_archive_link( $atts ) {
 
 
     //-- ATTRIBUTES --//
@@ -31,7 +31,7 @@ function ucfbands_shortcode_fg_archive_link( $atts, $content = "" ) {
     // Output
     $shortode_output = '';
 
-    
+
 
     //==========//
     //  OUTPUT  //

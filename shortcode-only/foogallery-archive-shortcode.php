@@ -27,15 +27,6 @@ function ucfbands_shortcode_foogallery_archive( $atts, $content = "" ) {
 
 
 
-    //=========//
-    //  LOGIC  //
-    //=========//
-
-    //-- CLASSES --//
-
-
-
-
     //==========//
     //  OUTPUT  //
     //==========//

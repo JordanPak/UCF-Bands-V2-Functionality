@@ -36,7 +36,7 @@ function ucfbands_shortcode_foogallery_archive( $atts, $content = "" ) {
 
 
         // Archive Title
-        $shortcode_output .= '<span class="foogallery-archive-title">Archive</span>';
+        $shortcode_output .= '<span class="foogallery-archive-title"><i class="fa fa-history"></i>&nbsp;&nbsp;Archive</span>';
 
 
         // list

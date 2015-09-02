@@ -17,7 +17,8 @@ function ucfbands_shortcode_dropdown_button( $atts, $content = '' ) {
 
     //-- ATTRIBUTES --//
 	$atts = shortcode_atts( array(
-        'size'      => 'med',
+        'id'		=> 'dropdownMenu1',
+		'size'      => 'med',
         'color'     => '',
         'outline'   => '',
         'icon'      => '',
@@ -28,6 +29,7 @@ function ucfbands_shortcode_dropdown_button( $atts, $content = '' ) {
     //-- SET VARS --//
 
     // Attributes
+	$button_id = 		$atts['id'];
     $button_size =      $atts['size'];
     $button_color =     $atts['color'];
     $button_outline =   $atts['outline'];
@@ -49,32 +51,19 @@ function ucfbands_shortcode_dropdown_button( $atts, $content = '' ) {
     //-- CLASSES --//
 
     // Default
-    $button_classes .= 'button ';
+    $button_classes .= 'dropdown-toggle button';
 
     // Size
     if ($button_size)
-        $button_classes .= 'button-' . $button_size . ' ';
+        $button_classes .= ' button-' . $button_size;
 
     // Color
     if ($button_color)
-        $button_classes .= 'button-' . $button_color . ' ';
+        $button_classes .= ' button-' . $button_color;
 
     // Outline
     if ($button_outline == 'yes')
-        $button_classes .= 'button-outline ';
-
-
-    //-- URL --//
-
-    // If "http" isn't found, throw in "http://"
-    if ( strpos($button_url, 'http') === false ) {
-        $button_url = 'http://' . $button_url;
-    }
-
-
-    //-- TARGET --//
-    if ($button_new_tab == 'yes')
-        $button_new_tab = 'target="_BLANK"';
+        $button_classes .= ' button-outline';
 
 
     //-- ICON --//
@@ -88,33 +77,43 @@ function ucfbands_shortcode_dropdown_button( $atts, $content = '' ) {
     //  OUTPUT  //
     //==========//
 
-    // Start Opening Tag
-    $shortcode_output .= '<a ';
+	// Dropdown Wrapper
+	$shortcode_output .= '<div class="dropdown">';
+
+	    // Start Anchor Tag
+	    $shortcode_output .= '<a ';
 
 
-        // Classes
-        $shortcode_output .= 'class="' . $button_classes . '" ';
+	        // Classes
+	        $shortcode_output .= 'class="' . $button_classes . '" ';
 
-        // URL
-        $shortcode_output .= 'href="' . $button_url . '" ';
+			// ID
+			$shortcode_output .= 'id="' . $button_id . '" ';
 
-        // Target (new tab)
-        $shortcode_output .= $button_new_tab;
+			// Other Bootstrap Stuff
+			$shortcode_output .= 'data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"';
 
+	        // URL
+	        // $shortcode_output .= 'href="#"';
 
-    // Close Opening Tag
-    $shortcode_output .= '>';
-
-
-        // Icon
-        $shortcode_output .= $button_icon;
-
-        // Text
-        $shortcode_output .= $content;
+	    // Close Anchor Opener
+	    $shortcode_output .= '>';
 
 
-    // Closing Tag
-    $shortcode_output .= '</a>';
+	        // Icon
+	        $shortcode_output .= $button_icon;
+
+	        // Dropdown Links (separate shortcodes)
+	        $shortcode_output .= do_shortcode($content);
+
+			// Caret
+			$shortcode_output .= '<span class="caret"></span>';
+
+	    // Close Anchor
+	    $shortcode_output .= '</a>';
+
+	// Close Dropdown Wrapper
+	$shortcode_output .= '</div>';
 
 
     // Return Output String

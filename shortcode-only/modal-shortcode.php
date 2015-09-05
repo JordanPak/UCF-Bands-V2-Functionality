@@ -117,4 +117,4 @@ function ucfbands_shortcode_modal( $atts, $content = '' ) {
 } // ucfbands_shortcode_button()
 
 // Register the shortcode
-add_shortcode( 'button', 'ucfbands_shortcode_modal' );
+add_shortcode( 'modal', 'ucfbands_shortcode_modal' );

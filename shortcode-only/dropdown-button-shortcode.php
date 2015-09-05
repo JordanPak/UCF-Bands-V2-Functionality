@@ -122,4 +122,4 @@ function ucfbands_shortcode_dropdown_button( $atts, $content = '' ) {
 } // ucfbands_shortcode_button()
 
 // Register the shortcode
-add_shortcode( 'button', 'ucfbands_shortcode_dropdown_button' );
+add_shortcode( 'dropdown-button', 'ucfbands_shortcode_dropdown_button' );

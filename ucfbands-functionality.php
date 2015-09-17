@@ -43,6 +43,10 @@ require_once( 'announcement/announcement-cpt.php' );
 require_once( 'announcement/announcement-shortcode.php' );
 
 
+// SCHEDULE
+require_once( 'schedule/schedule-cpt.php' );
+
+
 // EVENT
 require_once( 'event/event-cpt.php' );
 require_once( 'event/event-cmb2.php' );

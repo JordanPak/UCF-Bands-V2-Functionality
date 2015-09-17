@@ -7,6 +7,32 @@
 */
 
 
+
+/**
+ * UCFBands CPT: Schedule
+ * Shortcode Metabox
+ *
+ * @author Jordan Pakrosnis
+ */
+function ucfbands_schedule_shortcode_metabox() {
+
+	global $post;
+
+   	// Get the data
+   	$id = $post->ID;
+
+   	// Echo out the field
+   	echo '<code style="display: inline-block; margin-top: 5px; padding: 12px 20px;">[schedule id="' . $id . '"]</code>';
+
+} // ucfbands_schedule_shortcode_metabox()
+
+function ucfbands_schedule_display_shortcode_metabox() {
+	add_meta_box('projects_refid', 'Schedule Shortcode', 'ucfbands_schedule_shortcode_metabox', 'ucfbands_schedule', 'side');
+}
+add_action('add_meta_boxes', 'ucfbands_schedule_display_shortcode_metabox');
+
+
+
 /**
  * UCFBands CPT: Schedule
  * Register Schedule CMB
@@ -24,6 +50,7 @@ function ucfbands_schedule_metabox() {
         'context'       => 'normal',
         'priority'      => 'core',
     ) );
+
 
     // Schedule Group
     $group_field_id = $cmb->add_field( array(
@@ -61,7 +88,7 @@ function ucfbands_schedule_metabox() {
         'type' => 'text',
         'repeatable' => true,
     ) );
-	
+
 }
 
 add_action( 'cmb2_init', 'ucfbands_schedule_metabox' );

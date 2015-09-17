@@ -21,8 +21,8 @@ function ucfbands_schedule_shortcode_metabox() {
    	// Get the data
    	$id = $post->ID;
 
-   	// Echo out the field
    	echo '<code style="display: inline-block; margin-top: 5px; padding: 12px 20px;">[schedule id="' . $id . '"]</code>';
+	echo '<p>Use this shortcode in a box to display the schedule.</p>';
 
 } // ucfbands_schedule_shortcode_metabox()
 

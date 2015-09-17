@@ -12,20 +12,20 @@
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_shortcode_schedule( $atts ) {
+function ucfbands_shortcode_schedule( $atts, $content = null ) {
 
 
     //-- ATTRIBUTES --//
-	$atts = shortcode_atts( array(
-        'slug'      => 'slug', // Slug for schedule (as shown in url)
-	), $atts, 'ucfbands_schedule' );
+	$a = shortcode_atts( array(
+        'id' => '',
+	), $atts );
 
 
 
     //-- SET VARS --//
 
     // Attributes
-    $schedule_slug = $atts['slug'];
+    $schedule_id = esc_attr($a['id']);
 
     // Output
     $output = '';
@@ -59,9 +59,9 @@ function ucfbands_shortcode_schedule( $atts ) {
 
 
     // Open Accordion Container
-    $output .= '<div class="SCHEDULE">SCHEDULE HERE';
+    $output .= '<div class="SCHEDULE">';
 
-
+    
     // Close Accordion Container
     $output .= '</div>';
 

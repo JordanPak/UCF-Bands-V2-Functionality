@@ -14,30 +14,20 @@
  */
 function ucfbands_shortcode_schedule( $atts, $content = null ) {
 
-
     //-- ATTRIBUTES --//
 	$a = shortcode_atts( array(
         'id' => '',
 	), $atts );
 
 
-
-    //-- SET VARS --//
-
-    // Attributes
+    // Post ID
     $schedule_id = esc_attr($a['id']);
 
-    // Output
+    // Get Post
+    $schedule = get_post( $schedule_id );
+
+    // Shortcode Output String
     $output = '';
-
-
-
-    //=========//
-    //  LOGIC  //
-    //=========//
-
-    //-- GET POST --//
-
 
 
     //==========//
@@ -45,26 +35,22 @@ function ucfbands_shortcode_schedule( $atts, $content = null ) {
     //==========//
 
 
-    //-- NONE FOUND MESSAGE --//
-
-
-
-    // Get the queried posts
-    // $rehearsals = $rehearsals->get_posts();
-
 
     // Include Parsedown
     require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
     $Parsedown = new Parsedown();
 
 
-    // Open Accordion Container
+    // Container
     $output .= '<div class="SCHEDULE">';
 
-    
-    // Close Accordion Container
-    $output .= '</div>';
+        // Not Found?
+        if ( $schedule == null ) {
+            $output .= '<p>Schedule Not Found</p>';
+        }
 
+    // Close Container
+    $output .= '</div>';
 
 
 

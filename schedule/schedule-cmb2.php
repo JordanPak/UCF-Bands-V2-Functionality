@@ -52,6 +52,28 @@ function ucfbands_schedule_metabox() {
     ) );
 
 
+	// Schedule Download
+	$cmb->add_field( array(
+	    'name'    => 'Schedule Download',
+	    'desc'    => 'Upload a PDF or enter an URL. Download button will only display if checked below.',
+	    'id'      => $prefix . 'file_download',
+	    'type'    => 'file',
+	    // Optional:
+	    'options' => array(
+	        // 'url' => false, // Hide the text input for the url
+	        'add_upload_file_text' => 'Upload PDF' // Change upload button text. Default: "Add or Upload File"
+	    ),
+	) );
+
+	// Download Button
+	$cmb->add_field( array(
+	    'name'    => 'Remove Download Button',
+	    'desc'    => '<br><b>Only applies if file entered</b>. Will be removed from the schedule globally.<br>However, it can still be removed from an individual shortcode by adding button="no" attribute (Ex: <code style="font-style: normal;">[schedule id=\'10\' download=\'no\']</code>).',
+	    'id'      => $prefix . 'remove_download_button',
+	    'type'    => 'checkbox',
+	) );
+
+
     // Schedule Group
     $group_field_id = $cmb->add_field( array(
         'id'          => $prefix . 'schedule_group',

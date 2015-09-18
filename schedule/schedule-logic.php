@@ -18,7 +18,7 @@ function ucfbands_output_schedule( $schedule_id ) {
     // Include Parsedown
     require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
     $Parsedown = new Parsedown();
-    
+
 
     // Get Schedule Post
     $schedule_post = get_post( $schedule_id );
@@ -55,13 +55,38 @@ function ucfbands_output_schedule( $schedule_id ) {
                 // Start List Item
                 $schedule .= '<li>';
 
-                    $schedule .= $time;
+                    // Parse thing into Markdown HTML
+                    $thing = $Parsedown->text($thing);
+
+                    // Time & Thing
+                    $schedule .= '<span>' . $time . '</span>&nbsp;&nbsp;&nbsp;&nbsp;' . $thing;
+
+
+                    // Check for sub-items
+                    if ( $sub_items != '' ) {
+
+                        // Nested UL
+                        $schedule .= '<ul>';
+
+                            foreach ( $sub_items as $sub_item ) {
+
+                                // Parse item into Markdown HTML
+                                $sub_item = $Parsedown->text($sub_item);
+
+                                // Output Sub item
+                                $schedule .= '<li>' . $sub_item . '</li>';
+
+                            } // foreach sub-item
+
+                        $schedule .= '</ul>';
+
+                    } // if sub-items
 
                 // End List Item
-                $schedule .= '</ul>';
+                $schedule .= '</li>';
+
 
             } // Schedule Item Loop
-
 
 
         // Close UL

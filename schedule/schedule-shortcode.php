@@ -42,7 +42,7 @@ function ucfbands_shortcode_schedule( $atts, $content = null ) {
 
 
     // Container
-    $output .= '<div class="SCHEDULE">';
+    // $output .= '<div class="SCHEDULE">';
 
         // Not Found?
         if ( $schedule == null ) {
@@ -51,11 +51,11 @@ function ucfbands_shortcode_schedule( $atts, $content = null ) {
 
         // Schedule Exists
         else {
-            ucfbands_output_schedule( $schedule_id );
+            $output .= ucfbands_output_schedule( $schedule_id );
         }
 
     // Close Container
-    $output .= '</div>';
+    // $output .= '</div>';
 
 
     // Return Output String

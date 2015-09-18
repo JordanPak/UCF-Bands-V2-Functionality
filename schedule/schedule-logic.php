@@ -27,6 +27,45 @@ function ucfbands_output_schedule( $schedule_id ) {
     // Get Meta
     $schedule_meta = ucfbands_schedule_get_meta( $schedule_id );
 
+    // Schedule Items
+    $schedule_items = $schedule_meta['schedule_group'];
+
+
+    // Start Wrap
+    $schedule .= '<div class="event-schedule">';
+
+
+        // Start Ul
+        $schedule .= '<ul>';
+
+
+            //-- SCHEDULE ITEM LOOP --//
+            foreach ( $schedule_items as $schedule_item ) {
+
+                // Get Item Meta
+                $time =         esc_attr( $schedule_item['time'] );
+                $thing =        esc_attr( $schedule_item['thing'] );
+                $sub_items =    $schedule_item['sub_item'];
+
+                // Start List Item
+                $schedule .= '<li>';
+
+                    $schedule .= $time;
+
+                // End List Item
+                $schedule .= '</ul>';
+
+            } // Schedule Item Loop
+
+
+
+        // Close UL
+        $schedule .= '</ul>';
+
+
+    // End Wrap
+    $schedule .= '</div>';
+
 
     // Output Schedule
     return $schedule;

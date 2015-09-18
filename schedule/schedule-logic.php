@@ -52,6 +52,11 @@ function ucfbands_output_schedule( $schedule_id ) {
                 $thing =        esc_attr( $schedule_item['thing'] );
                 $sub_items =    $schedule_item['sub_item'];
 
+
+                // Make "AM" and "PM" lowercase
+                $time = explode( " ", $time );
+                $time[1] = strtolower( $time[1] );
+
                 // Start List Item
                 $schedule .= '<li>';
 
@@ -59,7 +64,7 @@ function ucfbands_output_schedule( $schedule_id ) {
                     $thing = $Parsedown->text($thing);
 
                     // Time & Thing
-                    $schedule .= '<span>' . $time . '</span>' . $thing;
+                    $schedule .= '<span>' . $time[0] . ' ' . $time[1] . '</span>' . $thing;
 
 
                     // Check for sub-items

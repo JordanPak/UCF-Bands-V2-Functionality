@@ -38,6 +38,10 @@ function ucfbands_rehearsal_schedule( $schedule_items ) {
                 $thing =        esc_attr( $schedule_item['thing'] );
                 $sub_items =    $schedule_item['sub_item'];
 
+                // Make "AM" and "PM" lowercase
+                $time = explode( " ", $time );
+                $time[1] = strtolower( $time[1] );
+                
 
                 // Start List Item
                 $schedule .= '<li>';

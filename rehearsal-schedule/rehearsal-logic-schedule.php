@@ -41,7 +41,7 @@ function ucfbands_rehearsal_schedule( $schedule_items ) {
                 // Make "AM" and "PM" lowercase
                 $time = explode( " ", $time );
                 $time[1] = strtolower( $time[1] );
-                
+
 
                 // Start List Item
                 $schedule .= '<li>';
@@ -50,7 +50,7 @@ function ucfbands_rehearsal_schedule( $schedule_items ) {
                     $thing = $Parsedown->text($thing);
 
                     // Time & Thing
-                    $schedule .= '<span>' . $time . '</span>' . $thing;
+                    $schedule .= '<span>' . $time[0] . ' ' . $time[1] . '</span>' . $thing;
 
 
                     // Check for sub-items

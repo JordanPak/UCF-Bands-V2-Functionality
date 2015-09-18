@@ -46,6 +46,7 @@ require_once( 'announcement/announcement-shortcode.php' );
 // SCHEDULE
 require_once( 'schedule/schedule-cpt.php' );
 require_once( 'schedule/schedule-cmb2.php' );
+require_once( 'schedule/schedule-logic.php' );
 require_once( 'schedule/schedule-shortcode.php' );
 
 

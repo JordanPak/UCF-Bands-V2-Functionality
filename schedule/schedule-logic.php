@@ -59,7 +59,7 @@ function ucfbands_output_schedule( $schedule_id ) {
                     $thing = $Parsedown->text($thing);
 
                     // Time & Thing
-                    $schedule .= '<span>' . $time . '</span>&nbsp;&nbsp;&nbsp;&nbsp;' . $thing;
+                    $schedule .= '<span>' . $time . '</span>' . $thing;
 
 
                     // Check for sub-items

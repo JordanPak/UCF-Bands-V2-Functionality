@@ -28,7 +28,7 @@ function ucfbands_rehearsal_schedule( $schedule_items ) {
 
         // Start UL
         $schedule .= '<ul>';
-    
+
 
             //-- SCHEDULE ITEM LOOP --//
             foreach ( $schedule_items as $schedule_item ) {
@@ -46,7 +46,7 @@ function ucfbands_rehearsal_schedule( $schedule_items ) {
                     $thing = $Parsedown->text($thing);
 
                     // Time & Thing
-                    $schedule .= '<span>' . $time . '</span>&nbsp;&nbsp;&nbsp;&nbsp;' . $thing;
+                    $schedule .= '<span>' . $time . '</span>' . $thing;
 
 
                     // Check for sub-items

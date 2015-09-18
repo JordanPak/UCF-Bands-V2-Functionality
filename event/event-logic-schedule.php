@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT Logic: Event
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -12,22 +12,22 @@
  * @author Jordan Pakrosnis
  */
 function ucfbands_event_schedule( $schedule_items ) {
-    
-    
+
+
     // Include Parsedown
     require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
     $Parsedown = new Parsedown();
-    
-    
+
+
     // Schedule Output String
     $schedule = '';
-    
+
 
     $schedule .= '<div class="event-schedule"><h2><i class="fa fa-list"></i>&nbsp;&nbsp;Schedule</h2>';
 
         // Start UL
         $schedule .= '<ul>';
-    
+
 
             //-- SCHEDULE ITEM LOOP --//
             foreach ( $schedule_items as $schedule_item ) {
@@ -40,12 +40,12 @@ function ucfbands_event_schedule( $schedule_items ) {
 
                 // Start List Item
                 $schedule .= '<li>';
-                
+
                     // Parse thing into Markdown HTML
-                    $thing = $Parsedown->text($thing);    
-                
+                    $thing = $Parsedown->text($thing);
+
                     // Time & Thing
-                    $schedule .= '<span>' . $time . '</span>&nbsp;&nbsp;&nbsp;&nbsp;' . $thing;
+                    $schedule .= '<span>' . $time . '</span>' . $thing;
 
 
                     // Check for sub-items
@@ -55,13 +55,13 @@ function ucfbands_event_schedule( $schedule_items ) {
                         $schedule .= '<ul>';
 
                             foreach ( $sub_items as $sub_item ) {
-                                
+
                                 // Parse item into Markdown HTML
                                 $sub_item = $Parsedown->text($sub_item);
-                                
+
                                 // Output Sub item
                                 $schedule .= '<li>' . $sub_item . '</li>';
-                                
+
                             } // foreach sub-item
 
                         $schedule .= '</ul>';
@@ -72,15 +72,15 @@ function ucfbands_event_schedule( $schedule_items ) {
 
             } // foreach Item Loop
 
-    
+
         $schedule .= '</ul>';
-    
+
     // Close Schedule Wrapper
-    $schedule .= '</div>'; 
-    
-    
+    $schedule .= '</div>';
+
+
     // Return Schedule String
     return $schedule;
-    
-    
+
+
 } // ucfbands_event_schedule()

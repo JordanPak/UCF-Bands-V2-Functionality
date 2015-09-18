@@ -15,6 +15,11 @@
  */
 function ucfbands_output_schedule( $schedule_id ) {
 
+    // Include Parsedown
+    require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
+    $Parsedown = new Parsedown();
+    
+
     // Get Schedule Post
     $schedule_post = get_post( $schedule_id );
 

@@ -35,12 +35,6 @@ function ucfbands_shortcode_schedule( $atts, $content = null ) {
     //==========//
 
 
-
-    // Include Parsedown
-    require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
-    $Parsedown = new Parsedown();
-
-
     // Container
     // $output .= '<div class="SCHEDULE">';
 

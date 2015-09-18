@@ -98,8 +98,14 @@ function ucfbands_output_schedule( $schedule_id ) {
         $schedule .= '</ul>';
 
 
-        // DOWNLOAD BUTTON
-        $schedule .= var_dump($schedule_meta['file_download']);
+        //-- SCHEDULE DOWNLOAD --//
+
+        // If Remove Download Button is not checked & There's info in the File Download
+        if ( ($schedule_meta['remove_download_button'] != TRUE) && ($schedule_meta['file_download'] != NULL) ) {
+
+            
+
+        } // If display schedule download
 
 
     // End Wrap

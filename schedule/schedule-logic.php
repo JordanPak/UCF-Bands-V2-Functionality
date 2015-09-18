@@ -98,6 +98,10 @@ function ucfbands_output_schedule( $schedule_id ) {
         $schedule .= '</ul>';
 
 
+        // DOWNLOAD BUTTON
+        $schedule .= var_dump($schedule_meta['file_download']);
+
+
     // End Wrap
     $schedule .= '</div>';
 
@@ -124,7 +128,9 @@ function ucfbands_schedule_get_meta( $schedule_post ) {
     $meta_id_prefix = '_ucfbands_schedule_';
 
     // DEFAULT META //
-    $schedule_meta['schedule_group'] = get_post_meta( $schedule_post, $meta_id_prefix . 'schedule_group', true );
+    $schedule_meta['schedule_group'] =          get_post_meta( $schedule_post, $meta_id_prefix . 'schedule_group', true );
+    $schedule_meta['file_download'] =                get_post_meta( $schedule_post, $meta_id_prefix . 'file_download', true );
+    $schedule_meta['remove_download_button'] =  get_post_meta( $schedule_post, $meta_id_prefix . 'remove_download_button', true );
 
     // Return Meta
     return $schedule_meta;

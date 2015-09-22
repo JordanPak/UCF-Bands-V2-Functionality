@@ -13,7 +13,7 @@
  * @author Jordan Pakrosnis
  * @return string
  */
-function ucfbands_output_schedule( $schedule_id ) {
+function ucfbands_output_schedule( $schedule_id, $output_title = false ) {
 
     // Include Parsedown
     require_once( CHILD_DIR . '/inc/parsedown/Parsedown.php' );
@@ -39,6 +39,11 @@ function ucfbands_output_schedule( $schedule_id ) {
     // Start Wrap
     $schedule .= '<div class="event-schedule">';
 
+
+        // if Title is needed
+        if( $output_title == true) {
+            $schedule .= '<h2><i class="fa fa-list"></i>&nbsp;&nbsp;Schedule</h2>';
+        }
 
         // Start Ul
         $schedule .= '<ul>';

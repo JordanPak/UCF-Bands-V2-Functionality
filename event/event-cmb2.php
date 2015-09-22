@@ -117,9 +117,6 @@ function ucfbands_event_metabox() {
             'gold'   	=> __( '<b>Athletic</b> (Gold)', 'cmb' ),
             'red'       => __( '<b>Audition</b> (Red)', 'cmb' ),
             'green'	    => __( '<b>General/Clinic/Other</b> (Green)', 'cmb' ),
-//            'primary'	=> __( 'Blue', 'cmb' ),
-//            'warning'	=> __( 'Orange', 'cmb' ),
-//            'default'	=> __( 'Gray', 'cmb' )
         ),
     ) );
 

@@ -73,6 +73,20 @@ function ucfbands_schedule_metabox() {
 	    'type'    => 'checkbox',
 	) );
 
+	// Attach to Event
+	$cmb->add_field( array(
+	    'name'        => __( 'Attach to Event' ),
+	    'id'          => $prefix . 'attached_event',
+	    'type'        => 'post_search_text', // This field type
+	    // post type also as array
+	    'post_type'   => 'ucfbands_event',
+	    // Default is 'checkbox', used in the modal view to select the post type
+	    'select_type' => 'radio',
+	    // Will replace any selection with selection from modal. Default is 'add'
+	    'select_behavior' => 'replace',
+		'description' => '<b>Optional</b>. Click search icon, then find the event. The event\'s ID will be entered.',
+	) );
+
 
     // Schedule Group
     $group_field_id = $cmb->add_field( array(

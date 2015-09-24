@@ -43,6 +43,13 @@ require_once( 'announcement/announcement-cpt.php' );
 require_once( 'announcement/announcement-shortcode.php' );
 
 
+// SCHEDULE
+require_once( 'schedule/schedule-cpt.php' );
+require_once( 'schedule/schedule-cmb2.php' );
+require_once( 'schedule/schedule-logic.php' );
+require_once( 'schedule/schedule-shortcode.php' );
+
+
 // EVENT
 require_once( 'event/event-cpt.php' );
 require_once( 'event/event-cmb2.php' );
@@ -56,7 +63,6 @@ require_once( 'event/event-logic-time.php' );
 require_once( 'event/event-logic-parse-address.php' );
 require_once( 'event/event-logic-events-listing.php' );
 require_once( 'event/event-logic-google-map.php' );
-require_once( 'event/event-logic-schedule.php' );
 require_once( 'event/event-logic-program.php' );
 
 

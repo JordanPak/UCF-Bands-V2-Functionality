@@ -43,7 +43,7 @@ function ucfbands_event_get_meta( $event, $schedule = false, $program = false ) 
     $event_meta['show_finish_time']         = get_post_meta( $event, $meta_id_prefix . 'show_finish_time', true );
 
     // Location
-    $event_meta['location']            = get_post_meta( $event, $meta_id_prefix . 'location', true );
+    $event_meta['location']                 = get_post_meta( $event, $meta_id_prefix . 'location', true );
 
     // Icon/Band
     $event_meta['icon_background_color']    = get_post_meta( $event, $meta_id_prefix . 'icon_background_color', true );

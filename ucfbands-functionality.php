@@ -68,9 +68,7 @@ require_once( 'event/event-logic-none-found.php' );
 require_once( 'event/event-logic-get-meta.php' );
 require_once( 'event/event-logic-date-badge.php' );
 require_once( 'event/event-logic-time.php' );
-// require_once( 'event/event-logic-parse-address.php' );
 require_once( 'event/event-logic-events-listing.php' );
-// require_once( 'event/event-logic-google-map.php' );
 require_once( 'event/event-logic-program.php' );
 
 

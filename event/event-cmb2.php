@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT: Event
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -24,15 +24,15 @@ function ucfbands_event_metabox() {
         'context'       => 'normal',
         'priority'      => 'core',
     ) );
-    
+
     // All-Day Event
     $cmb->add_field( array(
         'name' => 'All-Day Event',
         'desc' => 'Displays "Daily" instead of the start/end time or "TBA"',
         'id'   => $prefix . 'is_all_day_event',
         'type' => 'checkbox'
-    ) );    
-    
+    ) );
+
     // Start Date & Time
     $cmb->add_field( array(
         'name' => 'Start Date/Time',
@@ -48,31 +48,31 @@ function ucfbands_event_metabox() {
         'id'   => $prefix . 'finish_date_time',
         'type' => 'text_datetime_timestamp',
     ) );
-    
+
     // Time TBA
     $cmb->add_field( array(
         'name' => 'Time TBA',
         'desc' => 'Displays "TBA" instead of start time.',
         'id'   => $prefix . 'is_time_tba',
         'type' => 'checkbox'
-    ) );  
-    
+    ) );
+
     // Show End Time
     $cmb->add_field( array(
         'name' => 'Show Finish Time',
         'desc' => 'If the event has a close estimated finish or definite finish time, check this.',
         'id'   => $prefix . 'show_finish_time',
         'type' => 'checkbox'
-    ) );  
-    
+    ) );
+
     // Location Name
     $cmb->add_field( array(
         'name'    => 'Location Name',
         'desc'    => 'Leave empty for "TBA"',
         'id'      => $prefix . 'location_name',
         'type'    => 'text'
-    ) ); 
-    
+    ) );
+
     // Location Address
     $cmb->add_field( array(
         'name'    => 'Address',
@@ -80,7 +80,7 @@ function ucfbands_event_metabox() {
         'id'      => $prefix . 'location_address',
         'type'    => 'address'
     ) );
-    
+
     // Google Map
     $cmb->add_field( array(
         'name' => 'Google Map',
@@ -104,8 +104,8 @@ function ucfbands_event_metabox() {
         'name' => 'Ticket Sales Link',
         'id' => $prefix . 'ticket_link',
         'type' => 'text',
-    ) );    
-    
+    ) );
+
     // Icon Background Color
     $cmb->add_field( array(
         'name'             => 'Icon Background Color',
@@ -117,50 +117,24 @@ function ucfbands_event_metabox() {
             'gold'   	=> __( '<b>Athletic</b> (Gold)', 'cmb' ),
             'red'       => __( '<b>Audition</b> (Red)', 'cmb' ),
             'green'	    => __( '<b>General/Clinic/Other</b> (Green)', 'cmb' ),
-//            'primary'	=> __( 'Blue', 'cmb' ),
-//            'warning'	=> __( 'Orange', 'cmb' ),
-//            'default'	=> __( 'Gray', 'cmb' )
-        ),        
-    ) );    
-
-    // Schedule Group
-    $group_field_id = $cmb->add_field( array(
-        'id'          => $prefix . 'schedule_group',
-        'name'        => 'Schedule',
-        'type'        => 'group',
-        'description' => __( 'Add Schedule List Items. Items and sub-items can be formated with <b><a href="https://help.github.com/articles/github-flavored-markdown/" target="_BLANK">GithHub Flavored Markdown</a></b>.', 'cmb' ),
-        'options'     => array(
-            'group_title'   => __( 'Item {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
-            'add_button'    => __( 'Add Schedule Item', 'cmb' ),
-            'remove_button' => __( 'Remove Schedule Item', 'cmb' ),
-            'sortable'      => true // beta
         ),
     ) );
 
-    // Schedule Group: Listing Time
-    $cmb->add_group_field( $group_field_id, array(
-        'name' => 'Time',
-        'id'   => 'time',
-        'type' => 'text_time',
-        'time_format' => 'g:i a',
-    ) );
-    
-    // Schedule Group: Listing Thing
-    $cmb->add_group_field( $group_field_id, array(
-        'name' => 'Thing',
-        'id'   => 'thing',
-        'type' => 'text',
-    ) );
+	// Attach Schedule
+	$cmb->add_field( array(
+	    'name'        => __( 'Attach Schedule' ),
+	    'id'          => $prefix . 'attached_schedule',
+	    'type'        => 'post_search_text', // This field type
+	    // post type also as array
+	    'post_type'   => 'ucfbands_schedule',
+	    // Default is 'checkbox', used in the modal view to select the post type
+	    'select_type' => 'radio',
+	    // Will replace any selection with selection from modal. Default is 'add'
+	    'select_behavior' => 'replace',
+		'description' => '<b>Optional</b>. Click search icon, then find the schedule. The schedules\'s ID will be entered.',
+	) );
 
-    // Schedule Group: Sub-Item
-    $cmb->add_group_field( $group_field_id, array(
-        'name' => 'Sub-Items (Optional)',
-        'id'   => 'sub_item',
-        'type' => 'text',
-        'repeatable' => true,
-    ) );    
 
-    
     // Program Group
     $group_field_id = $cmb->add_field( array(
         'id'          => $prefix . 'program_group',
@@ -174,7 +148,7 @@ function ucfbands_event_metabox() {
             'sortable'      => true // beta
         ),
     ) );
-    
+
     // Program Group: Piece Title
     $cmb->add_group_field( $group_field_id, array(
         'name' => 'Title',
@@ -189,8 +163,8 @@ function ucfbands_event_metabox() {
         'desc' => 'Ex: Boysen',
         'id'   => 'composer',
         'type' => 'text',
-    ) );    
-    
+    ) );
+
     // Program Group: Sub-Listing
     $cmb->add_group_field( $group_field_id, array(
         'name' => 'Piece Note',
@@ -199,8 +173,8 @@ function ucfbands_event_metabox() {
         'type' => 'text',
         'repeatable' => true,
     ) );
-    
-    
+
+
     // Program Guest Compooser
     $cmb->add_field( array(
         'name'    => 'Program Guest Composer(s)/Conductor(s)',

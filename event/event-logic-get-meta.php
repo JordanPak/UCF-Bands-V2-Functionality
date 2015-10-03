@@ -16,14 +16,13 @@
  *      - Band / Icon BG
  *
  * Optional Meta
- *      - Google Map Iframe
  *      - Schedule
  *      - Program w/ Guest
  *
  * @author Jordan Pakrosnis
  * @return string
  */
-function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false, $program = false ) {
+function ucfbands_event_get_meta( $event, $schedule = false, $program = false ) {
 
 
     // Meta Array
@@ -44,7 +43,7 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
     $event_meta['show_finish_time']         = get_post_meta( $event, $meta_id_prefix . 'show_finish_time', true );
 
     // Location
-    $event_meta['location_name']            = get_post_meta( $event, $meta_id_prefix . 'location_name', true );
+    $event_meta['location']            = get_post_meta( $event, $meta_id_prefix . 'location', true );
 
     // Icon/Band
     $event_meta['icon_background_color']    = get_post_meta( $event, $meta_id_prefix . 'icon_background_color', true );
@@ -55,17 +54,6 @@ function ucfbands_event_get_meta( $event, $google_map = false, $schedule = false
 
 
     // OPTIONAL META //
-
-    // Google Map
-    if ( $google_map ) {
-        $event_meta['location_google_map']  = get_post_meta( $event, $meta_id_prefix . 'location_google_map', true );
-        $event_meta['location_google_map_longitude'] = get_post_meta( $event, $meta_id_prefix . 'location_google_map_longitude', true );
-        $event_meta['location_google_map_latitude'] = get_post_meta( $event, $meta_id_prefix . 'location_google_map_latitude', true );
-
-        // Address
-        $event_meta['location_address']     = get_post_meta( $event, $meta_id_prefix . 'location_address', 1 );
-
-    } // if google_map
 
     // Schedule
     if ( $schedule )

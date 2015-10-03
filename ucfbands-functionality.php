@@ -54,6 +54,7 @@ require_once( 'schedule/schedule-shortcode.php' );
 require_once( 'location/location-cpt.php' );
 require_once( 'location/location-cmb2.php' );
 require_once( 'location/location-logic-get-meta.php' );
+require_once( 'location/location-logic-parse-address.php' );
 
 
 // EVENT

@@ -52,6 +52,7 @@ require_once( 'schedule/schedule-shortcode.php' );
 
 // LOCATION
 require_once( 'location/location-cpt.php' );
+require_once( 'location/location-cmb2.php' );
 
 
 // EVENT

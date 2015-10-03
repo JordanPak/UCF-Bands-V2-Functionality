@@ -25,6 +25,12 @@ function ucfbands_location_get_name ( $location ) {
  */
 function ucfbands_location_get_address( $location ) {
 
+    $location_meta = ucfbands_location_get_meta( $location );
+
+    $address = $location_meta['address'];
+
+    return ucfbands_location_address( $address );
+
 } // ucfbands_get_location_address()
 
 

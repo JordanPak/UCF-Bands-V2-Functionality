@@ -31,7 +31,7 @@ function ucfbands_location_metabox() {
 
     // Location Address
     $cmb->add_field( array(
-        'name'    => 'Address<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/custom-field-types/address-field-type.php" target="_BLANK">CMB2 Addres Field Type Plugin</a></i>.</small>',
+        'name'    => 'Address<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/custom-field-types/address-field-type.php" target="_BLANK">CMB2 Address Field Type Plugin</a></i>.</small>',
         'id'      => $prefix . 'address',
         'type'    => 'address',
     ) );

@@ -65,6 +65,20 @@ function ucfbands_event_metabox() {
         'type' => 'checkbox'
     ) );
 
+	// Location
+	$cmb->add_field( array(
+	    'name'        => __( 'Location<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Post-Search-field" target="_BLANK">CMB2 Post Search Field Plugin</a></i>.</small>' ),
+	    'id'          => $prefix . 'location',
+	    'type'        => 'post_search_text', // This field type
+	    // post type also as array
+	    'post_type'   => 'ucfbands_location',
+	    // Default is 'checkbox', used in the modal view to select the post type
+	    'select_type' => 'radio',
+	    // Will replace any selection with selection from modal. Default is 'add'
+	    'select_behavior' => 'replace',
+		'description' => 'Click search icon, then find the location. The location\'s ID will be entered.',
+	) );
+
     // Admission Price
     $cmb->add_field( array(
         'name' => 'Admission/Ticket Price',
@@ -97,7 +111,7 @@ function ucfbands_event_metabox() {
 
 	// Attach Schedule
 	$cmb->add_field( array(
-	    'name'        => __( 'Attach Schedule' ),
+	    'name'        => __( 'Attach Schedule<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Post-Search-field" target="_BLANK">CMB2 Post Search Field Plugin</a></i>.</small>' ),
 	    'id'          => $prefix . 'attached_schedule',
 	    'type'        => 'post_search_text', // This field type
 	    // post type also as array

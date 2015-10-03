@@ -56,6 +56,7 @@ require_once( 'location/location-cmb2.php' );
 require_once( 'location/location-logic-get-meta.php' );
 require_once( 'location/location-logic-parse-address.php' );
 require_once( 'location/location-logic-google-map.php' );
+require_once( 'location/location-get-location.php' );
 
 
 // EVENT

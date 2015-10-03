@@ -65,31 +65,6 @@ function ucfbands_event_metabox() {
         'type' => 'checkbox'
     ) );
 
-    // Location Name
-    $cmb->add_field( array(
-        'name'    => 'Location Name',
-        'desc'    => 'Leave empty for "TBA"',
-        'id'      => $prefix . 'location_name',
-        'type'    => 'text'
-    ) );
-
-    // Location Address
-    $cmb->add_field( array(
-        'name'    => 'Address',
-//        'desc'    => 'Leave empty for "TBA"',
-        'id'      => $prefix . 'location_address',
-        'type'    => 'address'
-    ) );
-
-    // Google Map
-    $cmb->add_field( array(
-        'name' => 'Google Map',
-        'desc' => 'Drag the marker to set the exact location',
-        'id' => $prefix . 'location_google_map',
-        'type' => 'pw_map',
-        'split_values' => true, // Save latitude and longitude as two separate fields
-    ) );
-
     // Admission Price
     $cmb->add_field( array(
         'name' => 'Admission/Ticket Price',

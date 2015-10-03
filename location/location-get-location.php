@@ -7,6 +7,15 @@
  *  @author Jordan Pakrosnis
 */
 
+/**
+ * UCFBands CPT: Location
+ * Get Location Name
+ *
+ * @author Jordan Pakrosnis
+ */
+function ucfbands_location_get_name ( $location ) {
+    return get_the_title( $location );
+}
 
 /**
  * UCFBands CPT: Location

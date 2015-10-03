@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT Logic: Event
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -11,17 +11,17 @@
  * UCFBands Event: Listing
  *
  * For use on shortcode, archive, and other pages.
- * 
+ *
  * @author Jordan Pakrosnis
- * @return string 
+ * @return string
  */
 function ucfbands_events_listing( $events, $is_archive = false ) {
 
-    
+
     // Events Listing Output String
     $events_listing = '';
-    
-    
+
+
 
     //-- GET POSTS --//
 
@@ -32,7 +32,7 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
     //-- LOOP --//
     foreach( $events as $event ) {
 
-        
+
         // Get Current Post
         $event_post = get_post( $event );
 
@@ -44,11 +44,11 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
         // Event Location Logic
         $location = '<span class="location">';
 
-            if ( $event_meta['location_name'] == '' )
+            if ( $event_meta['location'] == '' )
                 $location .= 'TBA';
 
             else
-                $location .= '<a href="' . get_permalink( $event ) .'" title="Location Details" rel="Location Details">' . $event_meta['location_name'] . '</a>';
+                $location .= '<a href="' . get_permalink( $event ) .'" title="Location Details" rel="Location Details">' . ucfbands_location_get_name( $event_meta['location'] ) . '</a>';
 
 
         $location .= '</span>';
@@ -56,7 +56,7 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
 
 
         // ENTRY WRAPPER //
-        
+
         // If Archive
         if ( $is_archive )
             $events_listing .= '<div class="entry-wrapper masonry-block masonry-block-size--one-third">';
@@ -69,7 +69,7 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
                 $event_meta['start_date_time'],
                 $event_meta['finish_date_time'],
                 $event_meta['icon_background_color']
-            );            
+            );
 
 
             // More Info Icon
@@ -109,26 +109,26 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
 
             // Right-Info Wrapper Close
             $events_listing .= '</div>';
-        
-        
+
+
             // If Archive & has details, Show Details Excerpt
             if ( $is_archive && ($event_post->post_content != '') ) {
-            
-                
+
+
                 // Events listing HR & Details Excerpt
                 $events_listing .= '<hr><div class="event-details-excerpt">';
-                
-                
+
+
                     // Get "Excerpt" content from content
                     $event_content = substr($event_post->post_content, 0, 250); // Get excerpt
 
                     $events_listing .= '<p>' . $event_content . ' | <a href="' . get_permalink( $event ) . '">More Details...</a></p>';
-                
-                
+
+
                 // Close excerpt tag
                 $events_listing .= '</div>';
-                
-                
+
+
             } // Show Details Excerpt
 
 
@@ -137,9 +137,9 @@ function ucfbands_events_listing( $events, $is_archive = false ) {
 
 
     } // foreach event
-    
-    
- 
+
+
+
     // Return Events Listing String
     return $events_listing;
 

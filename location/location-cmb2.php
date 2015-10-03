@@ -25,26 +25,21 @@ function ucfbands_location_metabox() {
         'priority'      => 'core',
     ) );
 
+
     // Location Name (NOT USED - POST TITLE INSTEAD)
-    // $cmb->add_field( array(
-    //     'name'    => 'Location Name',
-    //     'desc'    => 'Leave empty for "TBA"',
-    //     'id'      => $prefix . 'location_name',
-    //     'type'    => 'text'
-    // ) );
+
 
     // Location Address
     $cmb->add_field( array(
-        'name'    => 'Address',
+        'name'    => 'Address<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/custom-field-types/address-field-type.php" target="_BLANK">CMB2 Addres Field Type Plugin</a></i>.</small>',
         'id'      => $prefix . 'address',
         'type'    => 'address',
-		'desc'	  => 'Requires the <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/custom-field-types/address-field-type.php" target="_BLANK">CMB2 Addres Field Type Plugin</a>.',
     ) );
 
     // Google Map
     $cmb->add_field( array(
-        'name' => 'Google Map',
-        'desc' => 'Drag the marker to set the exact location. Requires the <a href="https://github.com/mustardBees/cmb_field_map" target="_BLANK">CMB2 Google Maps Field Type Plugin</a>.',
+        'name' => 'Google Map<br><small><i>Requires the <a href="https://github.com/mustardBees/cmb_field_map" target="_BLANK">CMB2 Google Maps Field Type Plugin</a>.</i></small>',
+        'desc' => 'Drag the marker to set the exact location.',
         'id' => $prefix . 'google_map',
         'type' => 'pw_map',
         'split_values' => true, // Save latitude and longitude as two separate fields

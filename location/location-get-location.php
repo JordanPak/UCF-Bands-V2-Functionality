@@ -23,7 +23,7 @@ function ucfbands_location_get_name ( $location ) {
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_get_location_address( $location ) {
+function ucfbands_location_get_address( $location ) {
 
 } // ucfbands_get_location_address()
 
@@ -35,6 +35,6 @@ function ucfbands_get_location_address( $location ) {
  *
  * @author Jordan Pakrosnis
  */
-function ucfbands_get_location_google_map( $location ) {
+function ucfbands_location_get_google_map( $location ) {
 
 } // ucfbands_get_location_google_map()

@@ -50,11 +50,14 @@ require_once( 'schedule/schedule-logic.php' );
 require_once( 'schedule/schedule-shortcode.php' );
 
 
+// LOCATION
+require_once( 'location/location-cpt.php' );
+
+
 // EVENT
 require_once( 'event/event-cpt.php' );
 require_once( 'event/event-cmb2.php' );
 require_once( 'event/event-shortcode.php' );
-
 require_once( 'event/event-logic-build-query.php' );
 require_once( 'event/event-logic-none-found.php' );
 require_once( 'event/event-logic-get-meta.php' );

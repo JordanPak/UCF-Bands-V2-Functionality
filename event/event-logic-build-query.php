@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT Logic: Event
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -11,11 +11,11 @@
  * UCFBands Event: Build Query
  *
  * @author Jordan Pakrosnis
- * @return Event Query 
+ * @return Event Query
  */
 function ucfbands_event_query( $num_events, $band ) {
-    
-    
+
+
     // Taxonomy Query //
     $tax_query = array(
         array(
@@ -25,7 +25,7 @@ function ucfbands_event_query( $num_events, $band ) {
         ),
     );
 
-    
+
     // Meta Query Args
 	// Only get events that haven't passed!
 	$meta_query = array(
@@ -36,8 +36,8 @@ function ucfbands_event_query( $num_events, $band ) {
 			'compare'	=>	'>'
 		)
 	);
-    
-    
+
+
     // Event Query Args
     $events_args = array(
         'post_type'         => 'ucfbands_event',
@@ -50,12 +50,12 @@ function ucfbands_event_query( $num_events, $band ) {
         'meta_key'          => '_ucfbands_event_start_date_time',
         'meta_query'        => $meta_query
     );
-    
+
     // Query/Get Post IDs
     $events = new WP_Query( $events_args );
 
-    
+
     // Return the events
     return $events;
-    
+
 } // ucfbands_event_query()

@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT: Event
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -47,7 +47,7 @@ function ucfbands_cpt_event() {
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => 8,
+		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-calendar',
 		'can_export'          => true,
 		'has_archive'         => true,

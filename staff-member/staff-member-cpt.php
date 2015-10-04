@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT: Staff Member
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -47,7 +47,7 @@ function ucfbands_cpt_staff() {
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => 7,
+		'menu_position'       => 4,
 		'menu_icon'           => 'dashicons-id-alt',
 		'can_export'          => true,
 		'has_archive'         => true,

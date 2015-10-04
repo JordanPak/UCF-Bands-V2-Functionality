@@ -76,7 +76,7 @@ function ucfbands_event_metabox() {
 	    'select_type' => 'radio',
 	    // Will replace any selection with selection from modal. Default is 'add'
 	    'select_behavior' => 'replace',
-		'description' => 'Click search icon, then find the location. The location\'s ID will be entered.',
+		'description' => '<b>LEAVE EMPTY FOR "TBA"</b>. Click search icon, then find the location. The location\'s ID will be entered.',
 	) );
 
     // Admission Price

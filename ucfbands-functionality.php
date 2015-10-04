@@ -50,19 +50,25 @@ require_once( 'schedule/schedule-logic.php' );
 require_once( 'schedule/schedule-shortcode.php' );
 
 
+// LOCATION
+require_once( 'location/location-cpt.php' );
+require_once( 'location/location-cmb2.php' );
+require_once( 'location/location-logic-get-meta.php' );
+require_once( 'location/location-logic-parse-address.php' );
+require_once( 'location/location-logic-google-map.php' );
+require_once( 'location/location-get-location.php' );
+
+
 // EVENT
 require_once( 'event/event-cpt.php' );
 require_once( 'event/event-cmb2.php' );
 require_once( 'event/event-shortcode.php' );
-
 require_once( 'event/event-logic-build-query.php' );
 require_once( 'event/event-logic-none-found.php' );
 require_once( 'event/event-logic-get-meta.php' );
 require_once( 'event/event-logic-date-badge.php' );
 require_once( 'event/event-logic-time.php' );
-require_once( 'event/event-logic-parse-address.php' );
 require_once( 'event/event-logic-events-listing.php' );
-require_once( 'event/event-logic-google-map.php' );
 require_once( 'event/event-logic-program.php' );
 
 

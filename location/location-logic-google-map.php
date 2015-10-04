@@ -1,27 +1,27 @@
 <?php
 /*
  *  UCFBands Theme Functionality
- *  CPT Logic: Event
- *    
+ *  CPT Logic: Location
+ *
  *  @author Jordan Pakrosnis
 */
 
 
 /**
- * UCFBands Event: Google Map
+ * UCFBands Location: Google Map
  *
  * Outputs Google Map with Marker at Event Location
- * 
+ *
  * @author Jordan Pakrosnis
- * @return string 
+ * @return string
  */
-function ucfbands_event_google_map( $latitude, $longitude ) {
-    
+function ucfbands_location_google_map( $latitude, $longitude ) {
+
     //-- NOTE: GOOGLE MAPS API MUST ALREADY BE LOADED! --//
-    
+
     // Set Coordinates
     $coordinates = $latitude . ',' . $longitude;
-    
+
     ?>
 
     <script>
@@ -53,6 +53,6 @@ function ucfbands_event_google_map( $latitude, $longitude ) {
     <div id="googleMap" style="width:100%; height:250px;"></div>
 
 
-    <?php 
-    
-} // ucfbands_event_google_map()
+    <?php
+
+} // ucfbands_location_google_map()

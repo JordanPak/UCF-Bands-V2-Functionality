@@ -2,7 +2,7 @@
 /*
  *  UCFBands Theme Functionality
  *  CPT: Announcement
- *    
+ *
  *  @author Jordan Pakrosnis
 */
 
@@ -14,7 +14,7 @@
  * @author Jordan Pakrosnis
  */
 function ucfbands_cpt_announcement() {
-    
+
 	$labels = array(
 		'name'                => _x( 'Announcements', 'Post Type General Name', 'text_domain' ),
 		'singular_name'       => _x( 'Announcement', 'Post Type Singular Name', 'text_domain' ),
@@ -48,7 +48,7 @@ function ucfbands_cpt_announcement() {
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => 6,
+		'menu_position'       => 4,
         'menu_icon'           => 'dashicons-format-quote',
 		'can_export'          => true,
 		'has_archive'         => true,
@@ -58,7 +58,7 @@ function ucfbands_cpt_announcement() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'announcement', $args );
-    
+
 }
 
 // Hook into the 'init' action

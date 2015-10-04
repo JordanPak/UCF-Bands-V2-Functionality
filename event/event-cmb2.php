@@ -65,30 +65,19 @@ function ucfbands_event_metabox() {
         'type' => 'checkbox'
     ) );
 
-    // Location Name
-    $cmb->add_field( array(
-        'name'    => 'Location Name',
-        'desc'    => 'Leave empty for "TBA"',
-        'id'      => $prefix . 'location_name',
-        'type'    => 'text'
-    ) );
-
-    // Location Address
-    $cmb->add_field( array(
-        'name'    => 'Address',
-//        'desc'    => 'Leave empty for "TBA"',
-        'id'      => $prefix . 'location_address',
-        'type'    => 'address'
-    ) );
-
-    // Google Map
-    $cmb->add_field( array(
-        'name' => 'Google Map',
-        'desc' => 'Drag the marker to set the exact location',
-        'id' => $prefix . 'location_google_map',
-        'type' => 'pw_map',
-        'split_values' => true, // Save latitude and longitude as two separate fields
-    ) );
+	// Location
+	$cmb->add_field( array(
+	    'name'        => __( 'Location<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Post-Search-field" target="_BLANK">CMB2 Post Search Field Plugin</a></i>.</small>' ),
+	    'id'          => $prefix . 'location',
+	    'type'        => 'post_search_text', // This field type
+	    // post type also as array
+	    'post_type'   => 'ucfbands_location',
+	    // Default is 'checkbox', used in the modal view to select the post type
+	    'select_type' => 'radio',
+	    // Will replace any selection with selection from modal. Default is 'add'
+	    'select_behavior' => 'replace',
+		'description' => 'Click search icon, then find the location. The location\'s ID will be entered.',
+	) );
 
     // Admission Price
     $cmb->add_field( array(
@@ -122,7 +111,7 @@ function ucfbands_event_metabox() {
 
 	// Attach Schedule
 	$cmb->add_field( array(
-	    'name'        => __( 'Attach Schedule' ),
+	    'name'        => __( 'Attach Schedule<br><small><i>Requires the <a href="https://github.com/WebDevStudios/CMB2-Post-Search-field" target="_BLANK">CMB2 Post Search Field Plugin</a></i>.</small>' ),
 	    'id'          => $prefix . 'attached_schedule',
 	    'type'        => 'post_search_text', // This field type
 	    // post type also as array

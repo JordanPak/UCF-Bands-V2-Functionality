@@ -32,7 +32,8 @@ require_once( 'admin/styles/global.php' );
 // Admin Dashboard
 //require_once( 'admin/dashboard.php' );
 
-
+// Save Post actions
+require_once ( 'admin/save-post-action.php');
 
 //==============================//
 //  CONTENT TYPES & SHORTCODES  //

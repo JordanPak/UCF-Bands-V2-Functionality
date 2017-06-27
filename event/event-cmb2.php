@@ -138,6 +138,22 @@ function ucfbands_event_metabox() {
         ),
     ) );
 
+    // Program Group: Band Heading
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Band',
+        'desc' => 'Ex: UCF Symphonic Band',
+        'id'   => 'band',
+        'type' => 'text',
+    ) );
+
+    // Program Group: Band Conductor
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Conductor',
+        'desc' => 'Ex: John Williams',
+        'id'   => 'conductor',
+        'type' => 'text',
+    ) );  
+
     // Program Group: Piece Title
     $cmb->add_group_field( $group_field_id, array(
         'name' => 'Title',

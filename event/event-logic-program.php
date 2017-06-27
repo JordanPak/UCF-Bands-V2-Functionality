@@ -35,6 +35,8 @@ function ucfbands_event_program( $program, $program_guest_composer ) {
             foreach ( $program as $piece ) {
 
                 // Get Item Meta
+                $piece_band =       ! empty( $piece['band'] ) ? esc_attr( $piece['band'] ) : '';
+                $piece_conductor =  ! empty( $piece['conductor'] ) && $piece_band ? '<span>' . esc_attr( $piece['conductor'] ) . ', Conductor</span>' : '';
                 $piece_title =      esc_attr( $piece['title'] );
                 $piece_composer =   esc_attr( $piece['composer'] );
                 $piece_notes =                $piece['piece_note'];
@@ -42,6 +44,9 @@ function ucfbands_event_program( $program, $program_guest_composer ) {
 
                 // Piece List Item
                 $program_output .= '<li>';
+
+                    // Band heading
+                    $program_output .= $piece_band ? '<h4>' . $piece_band . $piece_conductor . '</h4>' : '';
 
                     // Piece Title
                     $program_output .= '<span class="piece-title">' . $piece_title . '</span>';

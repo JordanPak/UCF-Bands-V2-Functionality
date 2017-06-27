@@ -37,7 +37,7 @@ function ucfbands_shortcode_events( $atts ) {
     $no_events_found =  '';
     
     // Output
-    $shortode_output =  '';    
+    $shortcode_output =  '';    
     
     
     

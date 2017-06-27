@@ -38,7 +38,7 @@ function ucfbands_shortcode_announcements( $atts ) {
     $no_announcements_found =   '';
     
     // Output
-    $shortode_output = '';
+    $shortcode_output = '';
     
     
     

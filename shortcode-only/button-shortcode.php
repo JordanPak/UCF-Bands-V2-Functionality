@@ -41,7 +41,7 @@ function ucfbands_shortcode_button( $atts, $content = '' ) {
     $button_classes = '';
 
     // Output
-    $shortode_output = '';
+    $shortcode_output = '';
 
 
 
